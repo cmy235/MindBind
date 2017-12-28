@@ -1,0 +1,29 @@
+///// Frontend Routes
+
+/login
+/signup
+/classroom - all of user's decks
+/decks/new - create a deck
+/decks/:deckId - show a deck
+/decks/:deckId/edit - update a deck
+
+
+///// API Endpoints
+
+# users
+POST /api/users - sign up
+
+# decks
+GET /api/decks - returns the decks from the deck form search
+POST /api/decks - creates a deck
+DELETE /api/decks/:id - removes a deck
+
+# flashcards
+GET /api/decks/:id/cards - returns that deck's cards
+POST /api/cards - adds a card to a deck
+DELETE /api/cards - removes a card from a deck
+
+
+# categories
+GET /api/category/:id - returns the categories list
+POST /api/category/:id/decks - returns the decks in those categories

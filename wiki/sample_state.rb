@@ -19,13 +19,13 @@
     decks: {
       42: {
         id: 42,
-        category_id: "12",
+        category_id: 12,
         current_user_follows: true
       },
 
       63: {
         id: 63,
-        category_id: "9",
+        category_id: 9,
         current_user_follows: false
       }
     }
@@ -34,15 +34,15 @@
   {
     categories: {
       12: {
-        id: 12,
+        decks: 12, 67, 44
         category: "History"
       },
       9: {
-        id: 9,
+        decks: 9, 18
         category: "Economics"
       },
       14: {
-        id: 14,
+        decks: 14, 22, 6, 49
         category: "Physics"
       }
     }

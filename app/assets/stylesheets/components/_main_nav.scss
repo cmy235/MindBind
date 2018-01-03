@@ -1,35 +1,49 @@
 .main-nav {
-	font-family: 'Montserrat', sans-serif;
 	display: flex;
+	position: absolute;
 	justify-content: space-between;
+	font-family: 'Montserrat', sans-serif;
 	align-items: center;
 	background-color: rgba(0,0,0,0.44);
-	width: 100%;
+	width: 97%;
+	top: -5px;
+	left: -5px;
 	height: 60px;
-	margin: 0 auto;
-	padding: 0 36px;
+	padding: 0 18px;
 }
 
 body {
    background-image: image_url("main_landing.jpg");
-	 background-size: cover;
+   background-size: cover;
 	 background-repeat: no-repeat;
-	//  background-color: #cccccc;
 	// Photo by Climate KIC on Unsplash
  }
 
-
-
 .signup-button {
+	font-family: inherit;
   text-align: center;
-	padding: 5px 18px;
 	text-decoration: none!important;
   color: white;
   background: #29a5dc;
-  // border: 1px solid black;
-  padding: 10px 20px;
+  padding: 5px 14px;
   border-radius: 4px;
-  // display: inline-block;// NOT FOR FLEX ITEMS!
+	margin-right: 15px;
+	border-style: none;
+
+}
+
+.login-button {
+	font-family: inherit;
+	background-color: Transparent;
+	cursor:pointer;
+  overflow: hidden;
+  outline:none;
+	padding: 10px;
+	color: white;
+	border-style: none;
+	display: inline;
+	text-decoration: none!important;
+	margin: 0 0 0 32px;
 }
 
 .logo-container {
@@ -37,23 +51,32 @@ body {
 	right: 15px;
 }
 
+
 .login-signup-container {
-	font-size: 14px;
+	font-size: 15px;
 	font-family: 'Montserrat', sans-serif;
 	display: flex;
 	align-items: center;
 }
 
-.signup-button a:hover {
+.signup-button:hover {
 	display: inline;
-  background: rgba(41, 165, 220, 0.75);
+  background: rgba(41, 165, 220, 0.42);
 	text-decoration: underline;
 }
 
-.login-button {
-	padding-right: 14px;
+.mindbind-title-one {
+	font-size: 20px;
 	color: white;
-	display: inline;
-	text-decoration: none!important;
-	margin: 0 0 0 32px;
+	position: relative;
+	display: inline-block;
+	font-weight: bolder;
+}
+
+.mindbind-title-two {
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	display: inline-block;
+	position: relative;
 }

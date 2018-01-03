@@ -1,8 +1,15 @@
 
 .login-form-modal {
+  position: absolute;
+  background-color: white;
   // this will be set on the whole page, parent div
 	// entire page grayed out/opacity
 	// form at center
+}
+
+.login-title {
+  color: orange;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .signup-form-modal {

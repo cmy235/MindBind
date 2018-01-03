@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ logout, currentUser }) => {
+const Greeting = ({ logout, currentUser, openModal1, openModal2 }) => {
   if (currentUser) {
     return greetingLogout(currentUser, logout);
   } else {
-    return sessionLinks();
+    return sessionLinks(openModal1, openModal2);
   }
 };
 
@@ -17,19 +17,28 @@ const greetingLogout =  (currentUser, logout) => (
   </div>
 );
 
-const sessionLinks = () => (
+const sessionLinks = (openModal1, openModal2) => (
     <nav className="main-nav">
+      
       <header className="logo-container">
-        MindBind
+        <div className="mindbind-title-one">
+          MIND
+        </div>
+        <div className="mindbind-title-two">
+          BIND
+        </div>
       </header>
+
       <div className="login-signup-container">
-        <div className="login-button">
-          <Link to="/login">Login</Link>
-        </div>
-        <div className="signup-button">
-          <Link to="/signup">Get Started</Link>
-        </div>
+            <button className="login-button"
+              onClick={openModal1}
+              >Login</button>
+            <button
+              className="signup-button"
+              onClick={openModal2}
+              >Get Started</button>
       </div>
+
     </nav>
 );
 

@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.displayLogin = this.displayLogin.bind(this);
+    this.displaySignup = this.displaySignup.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,17 +28,11 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // set state
+    // made these divs with specific classnames classNames not
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user}); // either call login(user) or signup(user)
   }
-
-    displayLogin() {
-      return <Link to="/login">Login</Link>
-    }
-
-    displaySignup() {
-      return <Link to="/signup">Get Started</Link>
-    }
 
   renderErrors() {
     return(
@@ -50,21 +46,41 @@ class SessionForm extends React.Component {
     );
   }
 
-
-  render() {
+  displayLogin() {
     return (
-      <div className="main-nav">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          MindBind
-          <br/>
-          <div className="login-button">
-            {this.displayLogin()}
-          </div>
-          <div className="signup-button">
-            {this.displaySignup()}
-          </div>
-            {this.renderErrors()}
-          <div className="login-form">
+        <div class="login-container">
+        <h2 class="login-title">Login</h2>
+        <form onSubmit={this.handleSubmit} className="login-form-modal">
+            <br/>
+            <label>Username:
+              <input type="text"
+                placeholder="you@email.com"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+              />
+            </label>
+            <br/>
+            <label>Password:
+              <input type="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+            </label>
+            <br/>
+            <input type="submit" value="Login" />
+        </form>
+        </div>
+    );
+  }
+
+
+  displaySignup() {
+    return (
+      <div class="signup-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-modal">
             <br/>
             <label>Username:
               <input type="text"
@@ -83,11 +99,18 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input type="submit" value="Submit" />
-          </div>
         </form>
-      </div>
+        </div>
     );
   }
+
+  render() {
+    return (
+      this.displaySignup()
+    );
+  }
+
+
 }
 
 export default withRouter(SessionForm);

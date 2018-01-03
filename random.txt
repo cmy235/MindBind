@@ -14,3 +14,15 @@ APP
 
 // <Route exact path="/" component={UI_Container} />
 // <UI_Container component={SessionFormContainer} />
+
+
+OLD in session_form 
+
+
+    displayLogin() {
+      return <Link to="/login">Login</Link>;
+    }
+
+    displaySignup() {
+      return <Link to="/signup">Get Started</Link>;
+    }

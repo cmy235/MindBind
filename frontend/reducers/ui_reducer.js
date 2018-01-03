@@ -10,9 +10,9 @@ const uiReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case OPEN_MODAL1:
-      return Object.assign({}, state, {modal1: true});
+      return Object.assign({}, state, {modal1: true, modal2: false});
     case OPEN_MODAL2:
-      return Object.assign({}, state, {modal2: true});
+      return Object.assign({}, state, {modal1: false, modal2: true});
     case CLOSE_MODALS:
       return Object.assign({}, state, {modal1: false, modal2: false});
     default:

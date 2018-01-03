@@ -30,13 +30,13 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
+    displayLogin() {
+      return <Link to="/login">Login</Link>
     }
-  }
+
+    displaySignup() {
+      return <Link to="/signup">Get Started</Link>
+    }
 
   renderErrors() {
     return(
@@ -50,14 +50,20 @@ navLink() {
     );
   }
 
+
   render() {
     return (
-      <div className="login-form-container">
+      <div className="main-nav">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          MindBind!
+          MindBind
           <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
+          <div className="login-button">
+            {this.displayLogin()}
+          </div>
+          <div className="signup-button">
+            {this.displaySignup()}
+          </div>
+            {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label>Username:

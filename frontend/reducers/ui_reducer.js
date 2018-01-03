@@ -1,22 +1,23 @@
 import merge from 'lodash/merge';
+import { OPEN_MODAL1, OPEN_MODAL2, CLOSE_MODALS } from '../actions/ui_actions';
 
-export const OPEN_MODAL1 = "OPEN_MODAL1";
-export const OPEN_MODAL2 = "OPEN_MODAL2";
-
-const initialState = {
+let initialState = {
   modal1: false,
   modal2: false
 };
 
-const uiReducer = (initialState, action){
+const uiReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case OPEN_MODAL1:
       return Object.assign({}, state, {modal1: true});
     case OPEN_MODAL2:
       return Object.assign({}, state, {modal2: true});
+    case CLOSE_MODALS:
+      return Object.assign({}, state, {modal1: false, modal2: false});
     default:
-      return initialState;
+      return state;
   }
-}
+};
 
 export default uiReducer;

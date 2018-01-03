@@ -1,16 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import GreetingContainer from './greeting/greeting_container';
-import {Route} from 'react-router-dom';
-import SessionFormContainer from './session_form/session_form_container';
+import {Route, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import SessionFormContainer from './session_form/session_form_container';
+import GreetingContainer from './greeting/greeting_container';
+import UI_Container from './ui/ui_container';
+
 
 const App = () => (
   <div>
       <header>
         <GreetingContainer />
-     </header>
-
+      </header>
      <AuthRoute path="/login" component={SessionFormContainer} />
      <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

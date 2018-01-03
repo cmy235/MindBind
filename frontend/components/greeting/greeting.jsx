@@ -1,25 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const greetingLogic = ({ currentUser, logout }) => (
-  
-)
-
-const Greeting = ({ currentUser, logout }) => (
+const Greeting = ({ logout, currentUser }) => {
   if (currentUser) {
-    return(
-    <div className="header-class">
-      <h2 className="headerName">{currentUser.username}</h2>
-      <button onClick={logout}>Log Out</button>
-        // send them to their dashboards page!
-        // show logout option (navbar in header)
-    </div>
-    )
+    return greetingLogout(currentUser, logout);
   } else {
-    return(
-      sessionLinks();
-    )
+    return sessionLinks();
   }
+};
+
+
+const greetingLogout =  (currentUser, logout) => (
+  <div className="header-class">
+    <h2 className="headerName">{currentUser.username}</h2>
+    <button onClick={logout}>Log Out</button>
+  </div>
 );
 
 const sessionLinks = () => (
@@ -30,3 +25,7 @@ const sessionLinks = () => (
 );
 
 export default Greeting;
+
+
+// send them to their dashboards page
+// show logout option (navbar in header)

@@ -2,27 +2,30 @@
 
 /login
 /signup
-/classroom - all of user's decks
-/decks/new - create a deck
-/decks/:deckId - show a deck
-/decks/:deckId/edit - update a deck
+/dashboard - decks index, profile view
+/decks/:id/study - study view for deck/cards index
+/decks/:id/study/cardId - study view for one card
+
 
 
 ///// API Endpoints
 
 # users
 POST /api/users - sign up
+POST /api/session - login
+POST /api/session/:id - logout
 
 # decks
-GET /api/decks - returns the decks from the deck form search
+GET /api/decks - returns all decks
+GET /api/decks/:id - returns a deck
 POST /api/decks - creates a deck
 DELETE /api/decks/:id - removes a deck
 
-# flashcards
-GET /api/decks/:id/cards - returns that deck's cards
-POST /api/cards - adds a card to a deck
-DELETE /api/cards - removes a card from a deck
-
+# cards
+GET /api/decks/:deckId/cards - returns that deck's cards
+GET /api/decks/:deckId/cards/:id - returns a specific card
+POST /api/decks/:deckId/cards - adds a card to a deck
+DELETE /api/decks/:deckId/cards/:id - removes a card from a deck
 
 # categories
 GET /api/category/:id - returns the categories list

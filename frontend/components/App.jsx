@@ -10,6 +10,7 @@ const App = () => (
       <header>
         <GreetingContainer />
      </header>
+
      <AuthRoute path="/login" component={SessionFormContainer} />
      <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

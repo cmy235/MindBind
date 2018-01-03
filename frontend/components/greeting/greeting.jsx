@@ -18,9 +18,18 @@ const greetingLogout =  (currentUser, logout) => (
 );
 
 const sessionLinks = () => (
-    <nav className="login-signup">
-      {/*<Link to="/login">Login</Link>or
-      <Link to="/signup">Sign up!</Link>*/}
+    <nav className="main-nav">
+      <header className="logo-container">
+        MindBind
+      </header>
+      <div className="login-signup-container">
+        <div className="login-button">
+          <Link to="/login">Login</Link>
+        </div>
+        <div className="signup-button">
+          <Link to="/signup">Get Started</Link>
+        </div>
+      </div>
     </nav>
 );
 

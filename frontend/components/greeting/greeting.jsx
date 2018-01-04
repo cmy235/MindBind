@@ -11,7 +11,7 @@ const Greeting = ({ logout, currentUser, openModal1, openModal2 }) => {
 
 
 const greetingLogout =  (currentUser, logout) => (
-  <div className="header-class">
+  <div className="main-nav">
     <h2 className="headerName">{currentUser.username}</h2>
     <button onClick={logout}>Log Out</button>
   </div>
@@ -21,7 +21,7 @@ const sessionLinks = (openModal1, openModal2) => (
     <nav className="main-nav">
       <ul>
 
-      <header className="logo-container">
+      <div className="logo-container">
         <a href="/">
         <li>
           <img src="app/assets/images/mind.png"></img>
@@ -37,7 +37,7 @@ const sessionLinks = (openModal1, openModal2) => (
         </div>
       </li>
         </a>
-      </header>
+      </div>
     </ul>
 
       <div className="login-signup-container">

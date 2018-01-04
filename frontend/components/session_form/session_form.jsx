@@ -74,8 +74,8 @@ class SessionForm extends React.Component {
           </div>
           <br/>
         <input className="modal-login-button" type="submit" value="Login"></input>
-        <i class="far fa-times-circle"
-            onClick={closeModals}
+      <i className="far fa-times-circle"
+            onChange={this.props.closeModals}
             ></i>
       </form>
       </div>

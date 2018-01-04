@@ -74,11 +74,17 @@
 }
 
 
-.far {
-  position: relative;
-  right: -2px;
-}
+// .far {
+//   position: absolute;
+//   top: -5px;
+//   right: -5px;
+// }
 .fa-times-circle {
-  position: relative;
-  right: -2px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: #29a5dc;
+  // background-color: black;
+  // overflow: hidden;
+  // border: #29a5dc 2px solid;
  }

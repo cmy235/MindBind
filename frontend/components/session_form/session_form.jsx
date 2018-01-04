@@ -28,8 +28,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // set state
-    // made these divs with specific classnames classNames not
     const user = this.state;
     this.props.processForm({user}); // either call login(user) or signup(user)
   }
@@ -48,31 +46,40 @@ class SessionForm extends React.Component {
 
   displayLogin() {
     return (
-        <div class="login-container">
-        <h2 class="login-title">Login</h2>
-        <form onSubmit={this.handleSubmit} className="login-form-modal">
-            <br/>
-            <label>Username:
-              <input type="text"
-                placeholder="you@email.com"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                placeholder="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Login" />
-        </form>
-        </div>
+      <div className="modal-overlay">
+      <div class="login-container">
+
+      <h2 class="login-title">Login</h2>
+      <br/>
+      <form onSubmit={this.handleSubmit} className="login-form-modal">
+          <br/>
+        <div className="login-input">
+          <label>
+            <input type="text"
+              placeholder="you@email.com"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="input-username"
+            />
+          </label>
+          <br/>
+          <label>
+            <input type="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="input-password"
+            />
+          </label>
+          </div>
+          <br/>
+        <input className="modal-login-button" type="submit" value="Login"></input>
+        <i class="far fa-times-circle"
+            onClick={closeModals}
+            ></i>
+      </form>
+      </div>
+      </div>
     );
   }
 
@@ -106,7 +113,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      this.displaySignup()
+      this.displayLogin()
     );
   }
 

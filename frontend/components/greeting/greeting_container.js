@@ -10,7 +10,7 @@ const mapStateToProps = ({ session }) => (
 const mapDispatchToProps = (dispatch) => (
     {logout: () => dispatch(logout()),
     openModal1: () => dispatch(openModal1()),
-    openModal2: () => dispatch(openModal2()),
+    openModal2: () => dispatch(openModal2())
   }
 );
 

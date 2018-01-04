@@ -19,15 +19,26 @@ const greetingLogout =  (currentUser, logout) => (
 
 const sessionLinks = (openModal1, openModal2) => (
     <nav className="main-nav">
-      
+      <ul>
+
       <header className="logo-container">
+        <a href="/">
+        <li>
+          <img src="app/assets/images/mind.png"></img>
+        </li>
+        <li>
         <div className="mindbind-title-one">
           MIND
         </div>
+      </li>
+      <li>
         <div className="mindbind-title-two">
           BIND
         </div>
+      </li>
+        </a>
       </header>
+    </ul>
 
       <div className="login-signup-container">
             <button className="login-button"

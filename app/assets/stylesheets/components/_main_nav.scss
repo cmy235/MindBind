@@ -1,23 +1,13 @@
-.main-nav {
+.main-nav  {
 	display: flex;
 	position: absolute;
 	justify-content: space-between;
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
 	background-color: rgba(0,0,0,0.44);
-	width: 97%;
-	top: -5px;
-	left: -5px;
-	height: 60px;
-	padding: 0 18px;
+	width: 100vw;
 }
 
-body {
-   background-image: image_url("main_landing.jpg");
-   background-size: cover;
-	 background-repeat: no-repeat;
-	// Photo by Climate KIC on Unsplash
- }
 
 .signup-button {
 	font-family: inherit;
@@ -26,10 +16,9 @@ body {
   color: white;
   background: #29a5dc;
   padding: 5px 14px;
-  border-radius: 4px;
-	margin-right: 15px;
+  border-radius: 2px;
+	margin-right: 20px;
 	border-style: none;
-
 }
 
 .login-button {
@@ -46,10 +35,6 @@ body {
 	margin: 0 0 0 32px;
 }
 
-.logo-container {
-	align-items: center;
-	right: 15px;
-}
 
 
 .login-signup-container {
@@ -65,18 +50,23 @@ body {
 	text-decoration: underline;
 }
 
+.logo-container > ul {
+  // display: flex;
+  // align-items: center;
+  text-align: center;
+}
+
 .mindbind-title-one {
+  display: inline;
+  // padding-left: 15px;
 	font-size: 20px;
 	color: white;
-	position: relative;
-	display: inline-block;
 	font-weight: bolder;
 }
 
 .mindbind-title-two {
+  display: inline;
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
-	display: inline-block;
-	position: relative;
 }

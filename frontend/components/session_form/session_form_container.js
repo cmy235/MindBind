@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, { type }) => {
   const processForm = (type === 'login') ? login : signup;
   return {
-    processForm: user => dispatch(processForm(user))
+    processForm: user => dispatch(processForm(user)),
+    
   };
 };
 

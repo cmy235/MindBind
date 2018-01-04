@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
 const showModal1 = () => (
-  <div className="login-form-modal">
-    <SessionFormContainer type="login"/>
-  </div>
+  <SessionFormContainer type="login"/>
 )
 
 const showModal2 = () => (
-  <div className="signup-form-modal">
-    <SessionFormContainer type="signup"/>
-  </div>
+  <SessionFormContainer type="signup"/>
 )
 
 

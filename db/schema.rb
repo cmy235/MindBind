@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104161118) do
+ActiveRecord::Schema.define(version: 20180104224633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "decks", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "author_id", null: false
+    t.integer "category_id", null: false
+    t.index ["author_id"], name: "index_decks_on_author_id", unique: true
+    t.index ["category_id"], name: "index_decks_on_category_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false

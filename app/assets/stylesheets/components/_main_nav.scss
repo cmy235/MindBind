@@ -35,10 +35,14 @@
 	margin: 0 0 0 32px;
 }
 
+.login-button:hover {
+  color: #29a5dc;
+}
+
 
 
 .login-signup-container {
-	font-size: 15px;
+	font-size: 13px;
 	font-family: 'Montserrat', sans-serif;
 	display: flex;
 	align-items: center;
@@ -50,10 +54,10 @@
 	text-decoration: underline;
 }
 
-.logo-container > ul {
-  // display: flex;
-  // align-items: center;
-  text-align: center;
+.logo-container {
+  display: flex;
+  align-items:baseline;
+  // text-align: center;
 }
 
 .mindbind-title-one {

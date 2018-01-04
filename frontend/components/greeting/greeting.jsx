@@ -19,42 +19,34 @@ const greetingLogout =  (currentUser, logout) => (
 
 const sessionLinks = (openModal1, openModal2) => (
     <nav className="main-nav">
-      <ul>
-
-      <div className="logo-container">
-        <a href="/">
+      <a href="/">
+      <ul className="logo-container">
         <li>
           <img src="app/assets/images/mind.png"></img>
         </li>
-        <li>
-        <div className="mindbind-title-one">
+        <li className="mindbind-title-one">
           MIND
-        </div>
-      </li>
-      <li>
-        <div className="mindbind-title-two">
+        </li>
+      <li  className="mindbind-title-two">
           BIND
-        </div>
-      </li>
-        </a>
-      </div>
-    </ul>
+        </li>
+      </ul>
+    </a>
 
-      <div className="login-signup-container">
-            <button className="login-button"
-              onClick={openModal1}
-              >Login</button>
-            <button
-              className="signup-button"
-              onClick={openModal2}
-              >Get Started</button>
-      </div>
+    <div className="login-signup-container">
+          <button className="login-button"
+            onClick={openModal1}
+            >Login</button>
+          <button
+            className="signup-button"
+            onClick={openModal2}
+            >Get Started</button>
+    </div>
 
     </nav>
 );
 
 export default Greeting;
-
 
 // send them to their dashboards page
 // show logout option (navbar in header)

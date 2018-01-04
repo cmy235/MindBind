@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
           </div>
           <br/>
         <input className="modal-login-button" type="submit" value="Login"></input>
-      <i className="far fa-times-circle"
+      <i className="fas fa-times-circle"
             onChange={this.props.closeModals}
             ></i>
       </form>
@@ -86,37 +86,80 @@ class SessionForm extends React.Component {
 
   displaySignup() {
     return (
+      <div className="modal-overlay">
       <div class="signup-container">
-        <form onSubmit={this.handleSubmit} className="signup-form-modal">
+
+      <h2 class="login-title">Sign Up via Email</h2>
+      <br/>
+    <form onSubmit={this.handleSubmit} className="signup-form-modal">
+          <br/>
+
+        <ul className="flex-outer">
+          <section className="name-wrapper">
+            <li>
+                <input type="text"
+                  placeholder="First Name"
+                  value={this.state.firstname}
+                  onChange={this.update('firstname')}
+                  className="input-firstname"
+                />
+            </li>
             <br/>
-            <label>Username:
+          <li>
               <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
-        </form>
-        </div>
+                placeholder="Last Name"
+                value={this.state.lastname}
+                onChange={this.update('lastname')}
+                className="input-lastname"/>
+          </li>
+          </section>
+
+          <br/>
+        <li>
+            <input type="text"
+              placeholder="Email Address"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="input-username"
+            />
+          </li>
+          <br/>
+        <li>
+            <input type="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="input-password"
+            />
+          </li>
+          <br/>
+        <li>
+            <input type="password"
+              placeholder="Confirm Password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="input-password"
+            />
+        <br/>
+      </li>
+          <br/>
+
+        <input className="modal-signup-button" type="submit" value="Sign Up"></input>
+      <i class="fas fa-times-circle icon-star-empty"></i>
+            onChange={this.props.closeModals}
+        </ul>
+      </form>
+      </div>
+      </div>
     );
   }
+
 
   render() {
-    return (
-      this.displayLogin()
-    );
+    console.log(this.props.processForm);
+    console.log(this.state);
+    return this.displayLogin();
   }
-
 
 }
 

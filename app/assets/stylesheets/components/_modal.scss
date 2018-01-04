@@ -10,7 +10,7 @@
 
 .login-container {
   position: absolute;
-  top: 35%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   vertical-align: top;
@@ -33,7 +33,9 @@
 .login-input {
   text-align: left;
   margin-left: 50px;
-  // padding-left: 20px;
+  margin-right: 50px;
+  // border: solid #f2f2f2 1px;
+  border-radius: 2px;
 }
 
 .login-title {
@@ -45,16 +47,23 @@
 }
 
 .input-username {
-  margin: 10px auto;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #f2f2f2;
+  // border-bottom: solid #f2f2f2 1px;
+
 }
 
 .input-password {
-  margin: 10px auto;
+  margin-top: 10px;
+  padding: 15px;
+  background: #f2f2f2;
+  // border-top: solid #f2f2f2 1px;
+
 }
 
 .modal-login-button {
   position: relative;
-  // text-align: center;
   right: -113px;
   font-family: inherit;
   text-align: center;
@@ -125,7 +134,7 @@
   font-family: 'Montserrat', sans-serif;
   flex: 1 0 120px;
   text-align: center;
-  width: 40%;
+  width: 66%;
   border-radius: 3px;
   padding: 6px;
   background-color: #29a5dc;
@@ -165,6 +174,11 @@
   background-color: white;
   justify-content: space-between;
   box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+hr {
+  color: #d3d3d3;
+  width: 70%;
 }
 
 .signup-form-modal {

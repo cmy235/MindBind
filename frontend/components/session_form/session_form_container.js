@@ -3,10 +3,11 @@ import { login, logout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { closeModal } from '../../actions/ui_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { type }) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
+    errors: state.errors.session,
+    type: type
   };
 };
 

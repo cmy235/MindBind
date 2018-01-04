@@ -22,7 +22,12 @@ const sessionLinks = (openModal1, openModal2) => (
       <a href="/">
       <ul className="logo-container">
         <li>
-          <img src="app/assets/images/mind.png"></img>
+
+
+
+
+        <img src={window.img.head}></img>
+
         </li>
         <li className="mindbind-title-one">
           MIND

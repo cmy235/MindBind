@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user}); // either call login(user) or signup(user)
+    this.props.processForm({user});
   }
 
   renderErrors() {
@@ -54,29 +54,26 @@ class SessionForm extends React.Component {
       <form onSubmit={this.handleSubmit} className="login-form-modal">
           <br/>
         <div className="login-input">
-          <label>
             <input type="text"
               placeholder="you@email.com"
               value={this.state.username}
               onChange={this.update('username')}
               className="input-username"
             />
-          </label>
           <br/>
-          <label>
             <input type="password"
               placeholder="password"
               value={this.state.password}
               onChange={this.update('password')}
               className="input-password"
             />
-          </label>
           </div>
           <br/>
+        <hr/>
         <input className="modal-login-button" type="submit" value="Login"></input>
-      <i className="fas fa-times-circle"
-            onChange={this.props.closeModals}
-            ></i>
+            <div onClick={this.props.closeModals}>
+            <i class="fas fa-times-circle icon-star-empty"></i>
+            </div>
       </form>
       </div>
       </div>
@@ -143,10 +140,11 @@ class SessionForm extends React.Component {
         <br/>
       </li>
           <br/>
-
+        <hr/>
         <input className="modal-signup-button" type="submit" value="Sign Up"></input>
-      <i class="fas fa-times-circle icon-star-empty"></i>
-            onChange={this.props.closeModals}
+        <div onClick={this.props.closeModals}>
+        <i class="fas fa-times-circle icon-star-empty"></i>
+        </div>
         </ul>
       </form>
       </div>
@@ -156,9 +154,11 @@ class SessionForm extends React.Component {
 
 
   render() {
-    console.log(this.props.processForm);
-    console.log(this.state);
-    return this.displayLogin();
+    if (this.props.type === 'signup'){
+      return this.displaySignup();
+    } else if (this.props.type === 'login'){
+      return this.displayLogin();
+    }
   }
 
 }

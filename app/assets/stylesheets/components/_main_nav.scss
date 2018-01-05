@@ -1,6 +1,7 @@
 .main-nav  {
 	display: flex;
-	position: absolute;
+  height: 60px;
+	// position: fixed;
 	justify-content: space-between;
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
@@ -8,6 +9,23 @@
 	width: 100vw;
 }
 
+.main-nav-current-user  {
+	display: flex;
+  height: 60px;
+	// position: fixed;
+	justify-content: space-between;
+  flex-direction: row-reverse;
+	font-family: 'Montserrat', sans-serif;
+	align-items: center;
+	background-color: rgb(0,0,0);
+	width: 100vw;
+}
+
+.headerName {
+  color: white;
+  margin-right: 40px;
+  margin-left: 30px;
+}
 
 .signup-button {
 	font-family: inherit;
@@ -79,4 +97,24 @@
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
+}
+
+
+.logout-button {
+	font-family: inherit;
+  text-align: center;
+	text-decoration: none!important;
+  color: white;
+  background: #29a5dc;
+  padding: 5px 14px;
+  border-radius: 2px;
+	margin-right: -700px;
+	border-style: none;
+}
+
+
+.logout-button:hover {
+	display: inline;
+  background: rgba(41, 165, 220, 0.42);
+	text-decoration: underline;
 }

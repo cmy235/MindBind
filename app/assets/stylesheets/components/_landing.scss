@@ -1,0 +1,10 @@
+
+.background-img {
+  width: 100vw;
+  z-index: 1;
+  background-image: image_url("main_landing.jpg");
+  background-size: cover;
+  background-position:top;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

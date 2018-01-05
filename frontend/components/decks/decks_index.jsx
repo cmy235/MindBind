@@ -12,19 +12,18 @@ class DecksIndex extends React.Component {
   }
 
   render (){
-    debugger
+
     return(
       <div>
-        <ul>
           {
           this.props.decks.map( (deck) => (
-            <DeckIndexItem
-              key={deck.id}
-              deck={deck}
-            />
+            <div className="deck-container">
+              <div className="deck-list">
+                <ul className="deck-list-item">{deck.title}</ul>
+              </div>
+            </div>
           ))
         }
-        </ul>
       </div>
     );
   }

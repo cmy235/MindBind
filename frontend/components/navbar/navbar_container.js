@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import Navbar from './Navbar';
 import {openModal1, openModal2} from '../../actions/ui_actions';
 
 const mapStateToProps = ({ session }) => (
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => (
 );
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

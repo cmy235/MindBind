@@ -6,7 +6,7 @@ import { requestDeck, requestDecks } from '../../actions/deck_actions';
 
 
 const mapStateToProps = (state, { deck }) => ({
-  decks: selectAllDecks(state),
+  decks: selectAllDecks(state)
   // cards: selectDeckCards(state, state.entities.decks)
   // card: selectDeckSingleCard(state, deck.cards)
 });

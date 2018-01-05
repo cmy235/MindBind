@@ -22,12 +22,7 @@ const sessionLinks = (openModal1, openModal2) => (
       <a href="/">
       <ul className="logo-container">
         <li>
-
-
-
-
         <img src={window.img.head}></img>
-
         </li>
         <li className="mindbind-title-one">
           MIND
@@ -39,13 +34,13 @@ const sessionLinks = (openModal1, openModal2) => (
     </a>
 
     <div className="login-signup-container">
-          <button className="login-button"
-            onClick={openModal1}
-            >Login</button>
-          <button
-            className="signup-button"
-            onClick={openModal2}
-            >Get Started</button>
+      <button className="login-button"
+        onClick={openModal1}
+        >Login</button>
+      <button
+        className="signup-button"
+        onClick={openModal2}
+        >Get Started</button>
     </div>
 
     </nav>

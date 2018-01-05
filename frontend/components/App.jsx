@@ -14,9 +14,8 @@ const App = () => (
         <GreetingContainer />
       </header>
       <Route exact path="/" component={UI_Container} />
-    {/* <Route exact path="decks" component={DecksIndexContainer} /> */}
-
-  </div>
+      <Route exact path="/decks" component={DecksIndexContainer} />
+ </div>
 );
 
 export default App;

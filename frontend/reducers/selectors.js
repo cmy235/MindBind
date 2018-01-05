@@ -1,6 +1,6 @@
 import values from 'lodash/values';
 
-export const selectAllDecks = state => values(state.entities.pokemon);
+export const selectAllDecks = state => values(state.entities.decks);
 
 export const selectDeckCards = (state, deck) => {
   if (deck) {

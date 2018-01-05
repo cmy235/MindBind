@@ -5,6 +5,7 @@ let initialState = {};
 
 let newState;
 const deckReducer = (state = initialState, action) => {
+  // debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_DECK:

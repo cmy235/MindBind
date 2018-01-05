@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import ui from './ui';
 
 const mapStateToProps = (state) => ({
-  modal1: state.ui.modal1,
-  modal2: state.ui.modal2
+  modal1: state.ui.modal1, // false
+  modal2: state.ui.modal2 // false
 });
 
 const mapDispatchToProps = (dispatch) => (

@@ -10,12 +10,12 @@
 
 class Deck < ApplicationRecord
 
-validates :title, :author, :category, presence: true
+validates :title, presence: true
 
 belongs_to :user,
 primary_key: :id,
 foreign_key: :author_id
-
+#
 # belongs_to: :category,
 # primary_key: :id,
 # foreign_key: :category_id

@@ -1,3 +1,2 @@
-
 json.username @user.username
-json.password @user.password_digest
+json.id @user.id

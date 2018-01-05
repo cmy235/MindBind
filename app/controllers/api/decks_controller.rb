@@ -1,5 +1,5 @@
 
-class DecksController < ApplicationController
+class Api::DecksController < ApplicationController
 
   before_action :require_logged_in
 
@@ -7,7 +7,7 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
 
     if @deck.save
-      render json:
+      render json: {}
     else
       render json: ["Deck needs a title and category"], status: 422
     end

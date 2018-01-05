@@ -14,11 +14,3 @@ export const selectDeckCards = (state, deck) => {
 export const selectDeckSingleCard = (state, cardId) => {
   return state.entities.cards[cardId];
 };
-
-export const selectDeckCategory = (state, category_id) => {
-  return state.entities.cards[cardId];
-};
-
-// for a deck we want to be able to select
-// - its cards
-// - its category

@@ -15,10 +15,12 @@ class Api::DecksController < ApplicationController
 
   def index
     @decks = Deck.all
+    render :index
   end
 
   def show
     @deck = Deck.find(params[:id])
+    render :show
   end
 
   def edit

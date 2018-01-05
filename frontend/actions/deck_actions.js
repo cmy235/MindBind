@@ -1,4 +1,4 @@
-import * as APIUtil from '../actions/deck_actions';
+import * as APIUtil from '../util/deck_api_util';
 
 export const RECEIVE_ALL_DECKS = "RECEIVE_ALL_DECKS";
 export const RECEIVE_DECK = "RECEIVE_DECK";
@@ -17,15 +17,15 @@ export const receiveDeck = (deck) => {
   };
 };
 
-export const requestDeck = (deckId) => {
+export const requestDeck = (deckId) => dispatch => {
   return APIUtil.fetchDeck(deckId).then ( (deck) => {
-    return receiveDeck(deck);
+    return dispatch(receiveDeck(deck));
   });
 };
 
 
-export const requestDecks = () => {
+export const requestDecks = () => dispatch => {
   return APIUtil.fetchDecks().then ( (decks) => {
-    return receiveDecks(decks);
+    return dispatch(receiveAllDecks(decks));
   });
 };

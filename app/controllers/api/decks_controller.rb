@@ -1,15 +1,15 @@
 
 class Api::DecksController < ApplicationController
 
-  before_action :require_logged_in
+  # before_action :require_logged_in
 
   def create
     @deck = Deck.new(deck_params)
 
     if @deck.save
-      render json: {}
+      render :show
     else
-      render json: ["Deck needs a title and category"], status: 422
+      render json: @deck.errors.full_messages, status: 422
     end
   end
 

@@ -1,8 +1,9 @@
 import { RECEIVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
-import { merge } from 'lodash/merge';
+import  merge  from 'lodash/merge';
 
 let initialState = {};
 
+let newState;
 const deckReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

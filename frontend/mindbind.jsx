@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signup = UIaction.signup;
   // const store = configureStore();
   window.receiveDeck = ACTION.receiveDeck;
-  window.fetchDecks = APIUtil.fetchDecks;
-  window.fetchDeck = APIUtil.fetchDeck;
-  
+  window.receiveAllDecks = ACTION.receiveAllDecks;
+
+  window.requestDecks = ACTION.requestDecks;
+  window.requestDeck = ACTION.requestDeck;
+
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };

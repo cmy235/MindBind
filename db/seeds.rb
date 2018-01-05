@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+decks = {
+  1 => {
+    'title'=> 'american history',
+    'author_id'=> 1,
+    'category_id'=> 7
+  },
+
+  2 => {
+    'title'=> 'american history',
+    'author_id'=> 1,
+    'category_id'=> 7
+  },
+
+  3 => {
+    'title'=> 'american history',
+    'author_id'=> 1,
+    'category_id'=> 7
+  }
+
+}

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import { closeModal } from '../../actions/ui_actions';
+import { closeModals } from '../../actions/ui_actions';
 
 const mapStateToProps = (state, { type }) => {
   return {

@@ -8,23 +8,20 @@
 
 
 
-decks = {
-  1 => {
+Deck.create!({
     'title'=> 'american history',
     'author_id'=> 1,
     'category_id'=> 7
-  },
+  })
 
-  2 => {
-    'title'=> 'american history',
+Deck.create!({
+    'title'=> 'psychology',
     'author_id'=> 1,
-    'category_id'=> 7
-  },
+    'category_id'=> 2
+  })
 
-  3 => {
-    'title'=> 'american history',
+  Deck.create!({
+    'title'=> 'biology',
     'author_id'=> 1,
-    'category_id'=> 7
-  }
-
-}
+    'category_id'=> 21
+  })

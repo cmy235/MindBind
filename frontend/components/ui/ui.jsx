@@ -10,8 +10,6 @@ const showModal2 = () => (
   <SessionFormContainer type="signup"/>
 );
 
-
-
 const show = ({ modal1, modal2, openModal1, openModal2, closeModals}) => {
   if (modal1){
     return showModal1();
@@ -21,8 +19,5 @@ const show = ({ modal1, modal2, openModal1, openModal2, closeModals}) => {
     return null;
   }
 };
-
-
-
 
 export default show;

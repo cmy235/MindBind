@@ -1,23 +1,44 @@
-
 import React from 'react';
 import DeckIndexItem from './deck_index_item';
+import AddDeckContainer from './add_deck_container';
+import AddDeckForm from './add_deck_form';
 
 class DecksIndex extends React.Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      showDeckForm: false
+    };
+
+    this.addDeckModal = this.addDeckModal.bind(this);
+
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.requestDecks();
   }
+
+  addDeckModal() {
+    this.setState({
+      showDeckForm: true
+    });
+  }
+
+
 
   render (){
     return(
       <div>
         <div className="deck-title-container">
           <div className="search-add-icons">
-
-          <i class="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
+            <span onClick={this.addDeckModal}>
+              {this.state.showDeckForm ?
+                <AddDeckContainer type=""/> :
+                null
+              }
+              <i class="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
+            </span>
 
           <i class="search-button fas fa-search btn fa-2x"></i>
           </div>
@@ -41,17 +62,9 @@ class DecksIndex extends React.Component {
             </div>
           ))
         }
-        <div className="add-deck-form">
-          <p class="add-deck-title">New Deck</p>
-          <div className="form-buttons">
-            <button class="" type="button">Cancel</button>
-            <button class="save-button" type="button">Save</button>
-          </div>
-        </div>
 
         <div className="cards-container">
           <h2> insert CardIndexContainer here! </h2>
-
         </div>
       </div>
     );

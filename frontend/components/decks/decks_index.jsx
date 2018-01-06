@@ -12,18 +12,41 @@ class DecksIndex extends React.Component {
   }
 
   render (){
-
     return(
       <div>
+        <div className="deck-title-container">
+          <div className="search-add-icons">
+
+          <i class="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
+
+
+          <i class="search-button fas fa-search btn fa-2x"></i>
+          </div>
+          <div className="deck-title">
+          Decks
+        </div>
+        </div>
           {
           this.props.decks.map( (deck) => (
             <div className="deck-container">
               <div className="deck-list">
-                <ul className="deck-list-item">{deck.title}</ul>
+                <ul
+                  className="deck-list-item">
+                  <div className="item-title">
+                  <img className="deck-img" src={window.img.deck}></img>
+                    <div className="in-line">{deck.title}</div>
+                    <div className="gray-bar"></div>
+                  </div>
+                </ul>
               </div>
             </div>
           ))
         }
+
+        <div className="cards-container">
+          <h2> Cards go here!</h2>
+
+        </div>
       </div>
     );
   }

@@ -7,7 +7,10 @@
     ).html_safe %>
   <% end %>
 
-  window.img = {mind: '<%= asset_url("head.png") %>'}
+  window.img = {
+    logo: '<%= asset_url("logo.png") %>',
+    deck: '<%= asset_url("deck_icon.png") %>'
+}
 
 </script>
 

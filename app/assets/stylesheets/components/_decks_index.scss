@@ -1,45 +1,139 @@
 
 
 
-.deck-section {
-  width: 35%;
+// .deck-section {
+//   width: 27%;
+// }
+
+
+.deck-title-container {
+  // margin-top: -57px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  height: 56px;
+  // border-right: #e8e8e8 solid 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-size: 18px;
+  font-family: Times;
+  text-align: left;
+  width: 33%;
+  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
 }
 
+
+
+.search-add-icons {
+  // display: flex;
+  // justify-content: space-between;
+  padding-left: 50px;
+}
+
+.add-button {
+  padding-right: 12px;
+}
+
+.search-icon {
+  padding-left: 12px;
+}
+
+
 .deck-container {
-  // this should match the height of navbar
-  margin-top: 60px;
-  width: 38%;
+  top: 60px;
+  width: 28%;
+}
 
+.fa-search {
+  color: #5bc0de;
+}
 
+.fa-plus-square {
+  color: #5cb85c;
 }
 
 
 .deck-title {
-  font-size: 18px;
-  font-family: Times;
+  left: 12px;
+  position: absolute;
   text-align: left;
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
 }
 
 
 .deck-list {
-  margin-top: 60px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   background-color: white;
 }
 
-
 .deck-list-item {
-  padding-left: 10px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  // position: absolute;
+  // display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px 5px;
+  margin-top: 0px;
   margin-right: 8px;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  margin-left: 4px;
+  // border-right: 6px solid #f5f5f5;
+  border-right: #e8e8e8 solid 4px;
+  border: 1px solid #dddddd;
   background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #29a5dc;
+  border-radius: 3px;
+  width: 100%;
+  border-style: dotted;
+  // padding-bottom: 5px;
+}
+
+.in-line {
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+  bottom: 12px;
+}
+
+.deck-img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border: 1px solid #dddddd;
+}
+
+.gray-bar {
+  margin-top: 2px;
+  width: 70%;
+  position: relative;
+	width: 100%;
+	height: 10px;
+	background: #acacac;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
 }
 
 .deck-list-item:hover {
   background-color: white;
+}
+
+.deck-list-item:active {
+  background-color: white;
+  border: 6px solid #f5f5f5;
+}
+
+.cards-container {
+  float: right;
+  height: 100%;
+  width: 62%;
+  background-color: green;
 }

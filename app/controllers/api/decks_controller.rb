@@ -1,7 +1,7 @@
 
 class Api::DecksController < ApplicationController
 
-  # before_action :require_logged_in
+  before_action :require_logged_in
 
   def create
     @deck = Deck.new(deck_params)

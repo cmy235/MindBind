@@ -9,3 +9,15 @@ body {
   // margin: 0px;
   // Photo by Climate KIC on Unsplash
  }
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+}

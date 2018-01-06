@@ -131,9 +131,22 @@
   border: 6px solid #f5f5f5;
 }
 
-.cards-container {
-  float: right;
-  height: 100%;
-  width: 62%;
-  background-color: green;
+.add-deck-form {
+  width: 35%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  background: #f5f5f5;
+  /* font-family: 'Montserrat'; */
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.form-buttons {
+  display: flex;
+  align-items: center;
+}
+.add-deck-title > p {
+  font-size: 12px;
+  font-weight: bold;
 }

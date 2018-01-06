@@ -14,3 +14,11 @@ export const fetchDeck = (deckId) => {
     method: 'get'
   });
 };
+
+export const addDeck = ({ deck }) => {
+  return $.ajax({
+    url: 'api/decks',
+    method: 'post',
+    data: { deck }
+  });
+};

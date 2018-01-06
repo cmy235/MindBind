@@ -29,3 +29,9 @@ export const requestDecks = () => dispatch => {
     return dispatch(receiveAllDecks(decks));
   });
 };
+
+export const addDeck = (deck) => dispatch => {
+  return APIUtil.addDeck(deck).then ( (deck) => {
+    return dispatch(receiveDeck(deck));
+  });
+};

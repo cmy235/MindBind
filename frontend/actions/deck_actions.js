@@ -31,6 +31,7 @@ export const requestDecks = () => dispatch => {
 };
 
 export const addDeck = (deck) => dispatch => {
+  debugger
   return APIUtil.addDeck(deck).then ( (deck) => {
     return dispatch(receiveDeck(deck));
   });

@@ -10,7 +10,6 @@ class AddDeckForm extends React.Component {
       title: ""
     };
 
-
     this.submitNewDeck = this.submitNewDeck.bind(this);
   }
 
@@ -22,28 +21,25 @@ class AddDeckForm extends React.Component {
 
 
   submitNewDeck(e){
+    debugger
     e.preventDefault();
     const deck = this.state;
-    debugger
     this.props.addDeck({deck});
+    debugger
   }
 
   updateDeckName(deck){
-
     return (e) => this.setState({
       [deck]: e.currentTarget.value
     });
   }
 
   render() {
-
     return(
-      <div>
       <div className="modal-overlay">
         <div className="add-deck-form">
           <form onSubmit={this.submitNewDeck}>
             <p className="add-deck-title">New Deck</p>
-
               <input
                 placeholder="e.g., European History"
                 value={this.state.title}
@@ -51,23 +47,19 @@ class AddDeckForm extends React.Component {
                 className="form-input"
                 type="text">
               </input>
-
               <div className="form-buttons">
                 <div onClick={this.props.closeDeckModal}
                   className="cancel-button"
-                  type="button">Cancel</div>
-
-                <span onClick={this.props.addDeck}>
-                  <button className="save-button btn-primary" type="button">Save</button>
-                </span>
+                  type="button">Cancel
+                </div>
+                <input type="submit" className="save-button" value="Save"></input>
               </div>
           </form>
         </div>
-      </div>
-      </div>
+        </div>
+
     );
   }
-
 }
 
 export default AddDeckForm;

@@ -4,8 +4,9 @@ class Api::DecksController < ApplicationController
   before_action :require_logged_in
 
   def create
+    # debugger
     @deck = Deck.new(deck_params)
-
+# debugger
     if @deck.save
       render :show
     else
@@ -39,7 +40,7 @@ class Api::DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit(:title);
+    params.require(:deck).permit(:title)
   end
 
 end

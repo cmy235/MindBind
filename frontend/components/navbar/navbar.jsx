@@ -14,7 +14,8 @@ const navbarLog =  (currentUser, logout) => (
   <div className="main-nav-current-user">
     <h2 className="headerName">Hello, {currentUser.username}!</h2>
     <button className="logout-button"
-      onClick={logout}>Log Out</button>
+      onClick={logout}
+      >Log Out</button>
 
       <a href="/">
       <ul className="logo-container">

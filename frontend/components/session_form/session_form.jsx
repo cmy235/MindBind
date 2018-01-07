@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/decks');
     }
   }
 
@@ -27,9 +27,11 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+    debugger
   }
 
   renderErrors() {

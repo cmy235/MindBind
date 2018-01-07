@@ -15,6 +15,10 @@ validates :title, presence: true
 belongs_to :user,
 primary_key: :id,
 foreign_key: :author_id
+
+has_many :cards,
+primary_key: :id,
+foreign_key: :deck_id
 #
 # belongs_to: :category,
 # primary_key: :id,

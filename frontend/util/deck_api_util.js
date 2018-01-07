@@ -19,6 +19,6 @@ export const addDeck = (deck) => {
   return $.ajax({
     url: 'api/decks',
     method: 'post',
-    data: { deck }
+    data: deck
   });
 };

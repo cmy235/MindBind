@@ -6,13 +6,11 @@ class AddDeckForm extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      showDeckModal: true,
-      deckName: ""
+      title: ""
     };
 
-    this.closeDeckModal = this.closeDeckModal.bind(this);
+
     this.submitNewDeck = this.submitNewDeck.bind(this);
   }
 
@@ -22,48 +20,43 @@ class AddDeckForm extends React.Component {
     }
   }
 
-  closeDeckModal() {
-    this.setState({
-      showDeckModal: false
-    });
-  }
 
   submitNewDeck(e){
     e.preventDefault();
-    this.props.addDeck({});
+    const deck = this.state;
+    debugger
+    this.props.addDeck({deck});
   }
 
-  updateDeckName(deckName){
-    return (event) => {
-      this.setState({ [deckName]: event.target.value });
-    };
+  updateDeckName(deck){
+
+    return (e) => this.setState({
+      [deck]: e.currentTarget.value
+    });
   }
 
   render() {
 
-    const backToIndex = (
-      this.state.showDeckModal ?
-        null :
-        <DecksIndexContainer />
-    );
-
     return(
       <div>
-      {backToIndex}
       <div className="modal-overlay">
         <div className="add-deck-form">
           <form onSubmit={this.submitNewDeck}>
             <p className="add-deck-title">New Deck</p>
-              <input onChange={this.updateDeckName('deckName')}
-                value={this.state.deck}
+
+              <input
+                placeholder="e.g., European History"
+                value={this.state.title}
+                onChange={this.updateDeckName('title')}
                 className="form-input"
-                type="text"
-                placeholder="e.g., European History">
+                type="text">
               </input>
+
               <div className="form-buttons">
-                <button onClick={this.closeDeckModal}
+                <div onClick={this.props.closeDeckModal}
                   className="cancel-button"
-                  type="button">Cancel</button>
+                  type="button">Cancel</div>
+
                 <span onClick={this.props.addDeck}>
                   <button className="save-button btn-primary" type="button">Save</button>
                 </span>

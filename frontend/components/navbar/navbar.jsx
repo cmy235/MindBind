@@ -19,7 +19,7 @@ const navbarLog =  (currentUser, logout) => (
       <a href="/">
       <ul className="logo-container">
         <li>
-      
+
         </li>
         <li className="mindbind-title-one">
           MIND
@@ -59,7 +59,15 @@ const sessionLinks = (openModal1, openModal2) => (
         >Get Started</button>
     </div>
     </nav>
-  </div>
+    <div className="greeting">The World's Best Flashcards</div>
+    <div className="bottom-boxes">
+      <div className="box-1">Browse Flashcards</div>
+      <div className="box-2">Make Flashcards</div>
+      <div className="box-3">Make Me Smarter!</div>
+    </div>
+</div>
+
+
 );
 
 export default Navbar;

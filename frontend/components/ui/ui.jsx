@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 
+
 const showModal1 = () => (
   <SessionFormContainer type="login"/>
 );

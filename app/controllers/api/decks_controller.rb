@@ -14,7 +14,7 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    @decks = current_user.decks.all
     render :index
   end
 

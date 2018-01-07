@@ -7,21 +7,42 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+# User.destroy_all
+Deck.destroy_all
+
+#
+# User.create!({
+#   username: "userTwo",
+#   password: "chewbacca"
+#   })
+#
+#
+# User.create!({
+#   username: "student_noob_036",
+#   password: "chewbacca"
+#   })
+#
+#
+# User.create!({
+#   username: "HistoryBuff46",
+#   password: "chewbacca"
+#   })
+
 
 Deck.create!({
     'title'=> 'american history',
-    'author_id'=> 1,
+    'author_id'=> 16,
     'category_id'=> 7
   })
 
 Deck.create!({
     'title'=> 'psychology',
-    'author_id'=> 1,
+    'author_id'=> 16,
     'category_id'=> 2
   })
 
   Deck.create!({
     'title'=> 'biology',
-    'author_id'=> 1,
+    'author_id'=> 17,
     'category_id'=> 21
   })

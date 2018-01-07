@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import DecksIndexContainer from './decks_index_container';
 
 class AddDeckForm extends React.Component {
 
@@ -6,10 +8,18 @@ class AddDeckForm extends React.Component {
     super(props);
 
     this.state = {
-      showDeckModal: true
+      showDeckModal: true,
+      deckName: ""
     };
 
     this.closeDeckModal = this.closeDeckModal.bind(this);
+    this.submitNewDeck = this.submitNewDeck.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/decks');
+    }
   }
 
   closeDeckModal() {
@@ -18,30 +28,50 @@ class AddDeckForm extends React.Component {
     });
   }
 
+  submitNewDeck(e){
+    e.preventDefault();
+    this.props.addDeck({});
+  }
+
+  updateDeckName(deckName){
+    return (event) => {
+      this.setState({ [deckName]: event.target.value });
+    };
+  }
+
   render() {
-    debugger
+
+    const backToIndex = (
+      this.state.showDeckModal ?
+        null :
+        <DecksIndexContainer />
+    );
+
     return(
+      <div>
+      {backToIndex}
       <div className="modal-overlay">
-      <div className="add-deck-form">
-        <form>
-          <p className="add-deck-title">New Deck</p>
-            <input className="form-input" type="text" placeholder="e.g., European History">
-            </input>
-          <div className="form-buttons">
-            <span onClick={this.closeDeckModal}>
-              {this.state.showDeckModal ?
-                null :
-                <DecksIndexContainer />
-              }
-              <button className="cancel-button" type="button">Cancel</button>
-            </span>
-            <span onClick={this.props.addDeck}>
-              <button className="save-button btn-primary" type="button">Save</button>
-            </span>
-          </div>
-        </form>
+        <div className="add-deck-form">
+          <form onSubmit={this.submitNewDeck}>
+            <p className="add-deck-title">New Deck</p>
+              <input onChange={this.updateDeckName('deckName')}
+                value={this.state.deck}
+                className="form-input"
+                type="text"
+                placeholder="e.g., European History">
+              </input>
+              <div className="form-buttons">
+                <button onClick={this.closeDeckModal}
+                  className="cancel-button"
+                  type="button">Cancel</button>
+                <span onClick={this.props.addDeck}>
+                  <button className="save-button btn-primary" type="button">Save</button>
+                </span>
+              </div>
+          </form>
+        </div>
       </div>
-    </div>
+      </div>
     );
   }
 

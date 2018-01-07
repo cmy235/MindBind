@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { addDeck } from '../../actions/deck_actions';
 import AddDeckForm from './add_deck_form';
 
-const mapStateToProps = (state, {user}) => {
+const mapStateToProps = (state) => {
   return {
-    deck_ids: user.deck_ids
+    decks: state.entities.decks
   };
 };
 

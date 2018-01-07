@@ -5,6 +5,7 @@ class Api::UserController < ApplicationController
     if @user.save
       login(@user)
       render "api/users/show"
+      # render "api/decks/index"
     else
       render json: @user.errors.full_messages, status: 422
     end

@@ -46,6 +46,7 @@ class DecksIndex extends React.Component {
           Decks
         </div>
         </div>
+        <div className="deck-outer">
           {
           this.props.decks.map( (deck) => (
             <div className="deck-container">
@@ -62,6 +63,7 @@ class DecksIndex extends React.Component {
             </div>
           ))
         }
+      </div>
 
         <div className="cards-container">
           <h2> insert CardIndexContainer here! </h2>

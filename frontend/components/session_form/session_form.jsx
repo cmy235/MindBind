@@ -88,7 +88,9 @@ class SessionForm extends React.Component {
 
       <h2 class="login-title">Sign Up via Email</h2>
       <br/>
-    <form onSubmit={this.handleSubmit} className="signup-form-modal">
+    <form onSubmit={this.handleSubmit}
+       className="signup-form-modal">
+
           <br/>
 
         <ul className="flex-outer">

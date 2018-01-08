@@ -2,6 +2,8 @@ import React from 'react';
 import DeckIndexItem from './deck_index_item';
 import AddDeckContainer from './add_deck_container';
 import AddDeckForm from './add_deck_form';
+import CardsIndexContainer from '../cards/cards_index_container';
+
 
 class DecksIndex extends React.Component {
   constructor(props){
@@ -67,9 +69,8 @@ class DecksIndex extends React.Component {
           ))
         }
       </div>
-
         <div className="cards-container">
-          <h2> insert CardIndexContainer here! </h2>
+          < CardsIndexContainer />
         </div>
       </div>
     );

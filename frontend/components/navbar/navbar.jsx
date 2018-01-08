@@ -34,6 +34,7 @@ const navbarLog =  (currentUser, logout) => (
 );
 
 const sessionLinks = (openModal1, openModal2) => (
+  <div>
     <div className="background-img">
     <nav className="main-nav">
       <a href="/">
@@ -60,6 +61,7 @@ const sessionLinks = (openModal1, openModal2) => (
         >Get Started</button>
     </div>
     </nav>
+  </div>
     <div className="greeting">The World's Best Flashcards</div>
     <div className="bottom-boxes">
       <div className="box-1">Browse Flashcards</div>
@@ -70,7 +72,7 @@ const sessionLinks = (openModal1, openModal2) => (
         onClick={openModal2}
         >Make Me Smarter!</div>
     </div>
-</div>
+    </div>
 
 
 );

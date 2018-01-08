@@ -1,6 +1,16 @@
 .cards-container {
-  float: right;
-  height: 100%;
-  width: 62%;
-  background-color: green;
+  background: red;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 38%;
+  width: 100vw;
+}
+
+.deck-name {
+  color: #ff8a47;
+  font-size: 32px;
+  padding: 50px;
+  border-bottom: 1px solid #eeeeee;
+  font-family: 'Montserrat', sans-serif;
 }

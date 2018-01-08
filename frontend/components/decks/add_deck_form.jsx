@@ -21,11 +21,11 @@ class AddDeckForm extends React.Component {
 
 
   submitNewDeck(e){
-    debugger
     e.preventDefault();
     const deck = this.state;
-    this.props.addDeck({deck});
-    debugger
+debugger
+    this.props.addDeck(deck);
+
   }
 
   updateDeckName(deck){
@@ -48,11 +48,11 @@ class AddDeckForm extends React.Component {
                 type="text">
               </input>
               <div className="form-buttons">
-                <div onClick={this.props.closeDeckModal}
+                <button onClick={this.props.closeDeckModal}
                   className="cancel-button"
-                  type="button">Cancel
-                </div>
-                <input type="submit" className="save-button" value="Save"></input>
+                  >Cancel
+                </button>
+                <button className="save-button">Save</button>
               </div>
           </form>
         </div>

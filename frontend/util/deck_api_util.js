@@ -16,10 +16,10 @@ export const fetchDeck = (deckId) => {
 };
 
 export const addDeck = (deck) => {
-  debugger
+  
   return $.ajax({
     url: 'api/decks',
     method: 'post',
-    data: deck
+    data: {deck: deck}
   });
 };

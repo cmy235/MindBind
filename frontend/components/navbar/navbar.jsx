@@ -63,8 +63,12 @@ const sessionLinks = (openModal1, openModal2) => (
     <div className="greeting">The World's Best Flashcards</div>
     <div className="bottom-boxes">
       <div className="box-1">Browse Flashcards</div>
-      <div className="box-2">Make Flashcards</div>
-      <div className="box-3">Make Me Smarter!</div>
+      <div className="box-2"
+        onClick={openModal2}
+        >Make Flashcards</div>
+      <div className="box-3"
+        onClick={openModal2}
+        >Make Me Smarter!</div>
     </div>
 </div>
 

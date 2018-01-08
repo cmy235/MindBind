@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/deck_api_util';
 
-export const RECEIVE_ALL_CARDS = "RECEIVE_ALL_CARDS";
-export const RECEIVE_CARD = "RECEIVE_CARD";
+export const RECEIVE_ALL_DECKS = "RECEIVE_ALL_DECKS";
+export const RECEIVE_DECK = "RECEIVE_DECK";
 
 import  merge  from 'lodash/merge';
 
@@ -33,7 +33,7 @@ export const requestDecks = () => dispatch => {
 };
 
 export const addDeck = (deck) => dispatch => {
-  debugger
+
   return APIUtil.addDeck(deck).then ( (deck) => {
     return dispatch(receiveDeck(deck));
   });

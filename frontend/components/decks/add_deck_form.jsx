@@ -23,7 +23,6 @@ class AddDeckForm extends React.Component {
   submitNewDeck(e){
     e.preventDefault();
     const deck = this.state;
-debugger
     this.props.addDeck(deck);
 
   }

@@ -1,7 +1,7 @@
 import values from 'lodash/values';
 
 // decks in state to array
-export const selectAllDecks = state => values(state.entities.decks);
+export const selectAllDecks = state => values(state.entities.deck);
 
 export const selectDeckCards = (state, deck) => {
   if (deck) {

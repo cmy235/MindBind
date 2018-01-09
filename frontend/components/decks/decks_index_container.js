@@ -13,7 +13,7 @@ const mapStateToProps = (state, { deck }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   requestDecks: () => dispatch(requestDecks()),
-  addDeck: () => dispatch(addDeck())
+  addDeck: (deck) => dispatch(addDeck(deck))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(decksIndex);

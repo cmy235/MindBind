@@ -34,16 +34,15 @@ class DecksIndex extends React.Component {
 
     // const addDeck = <AddDeckContainer type=""/>;
 
+    debugger
     return(
       <div>
         {addDeck}
         <div className="deck-title-container">
           <div className="search-add-icons">
             <span onClick={this.showDeckModal}>
-
               <i class="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
             </span>
-
           <i class="search-button fas fa-search btn fa-2x"></i>
           </div>
           <div className="deck-title">

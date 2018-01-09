@@ -35,7 +35,7 @@ class DecksIndex extends React.Component {
         /> :
         null);
 
-    debugger
+
     return(
       <div>
         {addDeck}
@@ -49,7 +49,7 @@ class DecksIndex extends React.Component {
           <div className="deck-title">
           Decks
         </div>
-        </div>
+      </div>
         <div className="deck-outer">
           {
           this.props.decks.map( (deck) => (
@@ -69,7 +69,6 @@ class DecksIndex extends React.Component {
           ))
         }
       </div>
-
       </div>
     );
   }

@@ -24,7 +24,7 @@ class DeckShow extends React.Component {
    }
 
   render() {
-    debugger
+
     return (
       <div className='cards-container'>Deck Show Page,
          current deck: {this.props.match.params.deckId}

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state) => ({
-  cards: state.entities.deck
+  cards: Object.values(state.entities.cards)
 });
 
 const mapDispatchToProps = (dispatch) => ({

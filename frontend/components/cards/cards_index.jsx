@@ -13,7 +13,6 @@ class CardsIndex extends React.Component {
   }
 
 
-
   render() {
 
     const addCard = (this.state.showDeckForm ?
@@ -24,12 +23,16 @@ class CardsIndex extends React.Component {
         null);
 
     const currentDeckId = this.props.match.params.deckId;
-    const front = "front";
 
     return (
       <div>
         {addCard}
-        <div className="deck-name">{currentDeckId}
+        <div className="deck-name">
+          {
+            this.props.cards.map( (card) => (
+              <ul>{card.front}</ul>
+            ))
+          }
         </div>
 
        </div>

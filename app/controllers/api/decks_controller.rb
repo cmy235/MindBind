@@ -5,12 +5,10 @@ class Api::DecksController < ApplicationController
   def create
     @deck = Deck.new(deck_params)
     @deck.author_id = current_user.id
-    debugger
 
     if @deck.save
       render :show
     else
-
       render json: @deck.errors.full_messages, status: 422
     end
   end

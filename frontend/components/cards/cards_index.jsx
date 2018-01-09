@@ -1,6 +1,8 @@
 import React from 'react';
 import AddCardContainer from './add_card_container';
 
+// TODO: Take deck props from route params.
+
 class CardsIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class CardsIndex extends React.Component {
   }
 
   render() {
-    // debugger
+    //
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}

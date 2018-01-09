@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import UI_Container from './ui/ui_container';
 import DecksIndexContainer from './decks/decks_index_container';
-
+import DeckShow from './decks/deck_show';
 
 const App = () => (
   <div>
@@ -14,7 +14,8 @@ const App = () => (
         <NavbarContainer />
       </header>
       <Route exact path="/" component={UI_Container} />
-      <Route exact path="/decks" component={DecksIndexContainer} />
+      <Route path="/decks" component={DecksIndexContainer} />
+      <Route path= "/decks/:deckId" component={DeckShow} />
  </div>
 );
 

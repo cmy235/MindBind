@@ -3,14 +3,17 @@ import DeckIndexItem from './deck_index_item';
 import AddDeckContainer from './add_deck_container';
 import AddDeckForm from './add_deck_form';
 import CardsIndexContainer from '../cards/cards_index_container';
+import { Link } from 'react-router-dom';
 
 class DecksIndex extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      showDeckForm: false
+      showDeckForm: false,
+      // showDeckIndex: false
     };
+
     this.showDeckModal = this.showDeckModal.bind(this);
   }
 
@@ -24,15 +27,25 @@ class DecksIndex extends React.Component {
     });
   }
 
+  // showCards(deckId) {
+  //   {
+  //     this.props.decks.deckId.cards.map( (card)
+  //     {card.front}
+  //   )
+  // }
+  // }
+
   render (){
     const addDeck = (this.state.showDeckForm ?
-          <AddDeckContainer
-            showModal={this.state.showDeckForm}
-            closeDeckModal={() => this.setState({showDeckForm: false})}
-            /> :
+      <AddDeckContainer
+        showModal={this.state.showDeckForm}
+        closeDeckModal={() => this.setState({showDeckForm: false})}
+        /> :
         null);
 
-    // const addDeck = <AddDeckContainer type=""/>;
+    // const showCards = (this.state.showCardIndex ?
+    //   <CardsIndexContainer />
+    // );
 
     debugger
     return(
@@ -55,10 +68,11 @@ class DecksIndex extends React.Component {
             <div className="deck-container">
               <div className="deck-list">
                 <ul
-                  className="deck-list-item">
+                  className="deck-list-item"
+                  >
                   <div className="item-title">
                   <img className="deck-img" src={window.img.deck}></img>
-                    <div className="in-line">{deck.title}</div>
+                    <Link to={`/decks/${deck.id}`} className="in-line">{deck.title}</Link>
                     <div className="gray-bar"></div>
                   </div>
                 </ul>
@@ -67,12 +81,14 @@ class DecksIndex extends React.Component {
           ))
         }
       </div>
-        <div className="cards-container">
-          < CardsIndexContainer />
-        </div>
+
       </div>
     );
   }
 }
 
 export default DecksIndex;
+
+// <div className="cards-container">
+//   {showCards}
+// </div>

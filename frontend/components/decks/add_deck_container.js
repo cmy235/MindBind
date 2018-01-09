@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, { type }) => {
   return {
-    addDeck: (deck) => dispatch(addDeck(deck))
+    addDeck: (deck) => dispatch(addDeck(deck)),
+    removeDeck: (deck) => dispatch(removeDeck(deck))
   };
 };
 

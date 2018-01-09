@@ -26,7 +26,6 @@ export const requestDeck = (deckId) => dispatch => {
   });
 };
 
-
 export const requestDecks = () => dispatch => {
   return APIUtil.fetchDecks().then ( (decks) => {
     return dispatch(receiveAllDecks(decks));
@@ -34,9 +33,13 @@ export const requestDecks = () => dispatch => {
 };
 
 export const addDeck = (deck) => dispatch => {
-  debugger
   return APIUtil.addDeck(deck).then ( (deck) => {
-    debugger
     return dispatch(receiveDeck(deck));
+  });
+};
+
+export const removeDeck = (deck) => dispatch => {
+  return APIUtil.removeDeck(deck).then ( () => {
+    return dispatch(receiveDeck());
   });
 };

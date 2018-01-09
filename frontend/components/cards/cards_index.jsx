@@ -12,8 +12,10 @@ class CardsIndex extends React.Component {
     };
   }
 
+
+
   render() {
-    //
+
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}
@@ -21,10 +23,13 @@ class CardsIndex extends React.Component {
             /> :
         null);
 
+    const currentDeckId = this.props.match.params.deckId;
+    const front = "front";
+
     return (
       <div>
         {addCard}
-        <div className="deck-name">Deck name here
+        <div className="deck-name">{currentDeckId}
         </div>
 
        </div>

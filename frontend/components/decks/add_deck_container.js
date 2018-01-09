@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addDeck } from '../../actions/deck_actions';
+import { addDeck, removeDeck } from '../../actions/deck_actions';
 import AddDeckForm from './add_deck_form';
 
 const mapStateToProps = (state) => {

@@ -27,14 +27,6 @@ class DecksIndex extends React.Component {
     });
   }
 
-  // showCards(deckId) {
-  //   {
-  //     this.props.decks.deckId.cards.map( (card)
-  //     {card.front}
-  //   )
-  // }
-  // }
-
   render (){
     const addDeck = (this.state.showDeckForm ?
       <AddDeckContainer
@@ -42,10 +34,6 @@ class DecksIndex extends React.Component {
         closeDeckModal={() => this.setState({showDeckForm: false})}
         /> :
         null);
-
-    // const showCards = (this.state.showCardIndex ?
-    //   <CardsIndexContainer />
-    // );
 
     debugger
     return(

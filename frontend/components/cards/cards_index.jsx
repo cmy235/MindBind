@@ -11,7 +11,7 @@ class CardsIndex extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}

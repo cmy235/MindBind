@@ -2,6 +2,7 @@ import React from 'react';
 import { RECEIVE_CARDS, RECEIVE_ALL_CARDS,
    REMOVE_CARD, RECEIVE_CARD } from '../actions/card_actions.js';
 import { RECEIVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
+import  merge  from 'lodash/merge';
 
 let initialState = {};
 

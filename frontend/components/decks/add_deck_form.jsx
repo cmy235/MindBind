@@ -21,10 +21,10 @@ class AddDeckForm extends React.Component {
 
 
   submitNewDeck(e){
+    debugger
     e.preventDefault();
     const deck = this.state;
     this.props.addDeck(deck);
-
   }
 
   updateDeckName(deck){
@@ -34,6 +34,7 @@ class AddDeckForm extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div className="modal-overlay">
         <div className="add-deck-form">

@@ -5,6 +5,7 @@ class Api::DecksController < ApplicationController
   def create
     @deck = Deck.new(deck_params)
     @deck.author_id = current_user.id
+    debugger
 
     if @deck.save
       render :show

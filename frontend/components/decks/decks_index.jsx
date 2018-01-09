@@ -4,7 +4,6 @@ import AddDeckContainer from './add_deck_container';
 import AddDeckForm from './add_deck_form';
 import CardsIndexContainer from '../cards/cards_index_container';
 
-
 class DecksIndex extends React.Component {
   constructor(props){
     super(props);

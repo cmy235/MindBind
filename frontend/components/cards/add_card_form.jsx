@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import AddDeckContainer from './add_deck_container';
+import AddCardContainer from './add_card_container';
 
-class AddCard extends React.Component {
+class AddCardForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -49,14 +49,9 @@ class AddCard extends React.Component {
       <input className="add-card-button" type="submit" value="Add Card"></input>
 
       </form>
-
     );
   }
 
-
-
-
-
-
-
 }
+
+export default AddCardForm;

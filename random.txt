@@ -36,3 +36,15 @@ CARDS INDEX CONTAINER BELOW
 
 import React from 'react';
 import CardsIndexContainer from '../cards/cards_index_container';
+
+CARDS INDEX HERE: rendering in div
+
+{
+  this.props.cards.map( (card) => (
+<ul className="card-list">
+  <li className="card-list-item">
+    {card.front}
+  </li>
+</ul>
+  ))
+}

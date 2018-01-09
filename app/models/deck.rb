@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  title       :string           not null
 #  author_id   :integer          not null
-#  category_id :integer          not null
+#  category_id :integer
 #
 
 class Deck < ApplicationRecord

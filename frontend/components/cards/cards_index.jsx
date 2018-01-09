@@ -11,7 +11,8 @@ class CardsIndex extends React.Component {
   }
 
   render() {
-    const addDeck = (this.state.showDeckForm ?
+    debugger
+    const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}
             closeCardForm={() => this.setState({showCardForm: false})}
@@ -20,17 +21,10 @@ class CardsIndex extends React.Component {
 
     return (
       <div>
+        {addCard}
         <div className="deck-name">Deck name here
         </div>
-        {
-          this.props.cards.map( (card) => (
-        <ul className="card-list">
-          <li className="card-list-item">
-            {card.front}
-          </li>
-        </ul>
-          ))
-        }
+
        </div>
       );
   }

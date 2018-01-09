@@ -1,11 +1,14 @@
 import React from 'react';
 import { RECEIVE_CARDS, RECEIVE_ALL_CARDS,
-   REMOVE_CARD } from '../../actions/card_actions.js';
+   REMOVE_CARD, RECEIVE_CARD } from '../actions/card_actions.js';
+import { RECEIVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
 
 let initialState = {};
 
 const cardsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case RECEIVE_DECK:
+      return merge({}, state, action.cards);
     case RECEIVE_CARD:
       const card = action.card;
       const cardObject = {[card.id]: card};

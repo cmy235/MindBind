@@ -12,16 +12,17 @@ export const receiveAllDecks = (decks) => {
   };
 };
 
-export const receiveDeck = (deck) => {
+export const receiveDeck = ({cards, deck}) => {
   return {
     type: RECEIVE_DECK,
-    deck: deck
+    deck: deck,
+    cards: cards
   };
 };
 
 export const requestDeck = (deckId) => dispatch => {
-  return APIUtil.fetchDeck(deckId).then ( (deck) => {
-    return dispatch(receiveDeck(deck));
+  return APIUtil.fetchDeck(deckId).then ( (payload) => {
+    return dispatch(receiveDeck(payload));
   });
 };
 

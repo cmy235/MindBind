@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addCard } from '../../actions/deck_actions';
-import AddCardForm from './add_deck_form';
+import AddCardForm from './add_card_form';
 
 const mapStateToProps = (state) => {
   return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch, { type }) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddDeckForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCardForm);

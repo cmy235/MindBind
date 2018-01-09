@@ -7,11 +7,13 @@ import  merge  from 'lodash/merge';
 // must structure cards preoperly in jbuilder:
 // card obj, deck obj both inside {}
 
-let initialState = {
-  deckId: {
-    cardIds: []
-  }
-};
+// let initialState = {
+//   deckId: {
+//     cardIds: []
+//   }
+// };
+
+let initialState = {};
 
 let newState;
 const deckReducer = (state = initialState, action) => {

@@ -19,12 +19,12 @@ class AddCardForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    debugger
+
     const card = this.state;
     const deckId = this.props.match.params.deckId;
     let cardObj = Object.assign({}, card, {deck_id: deckId});
     this.props.addCard(cardObj);
-    debugger
+
   }
 
   update(field) {

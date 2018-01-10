@@ -1,6 +1,6 @@
 
 export const addCard = (card) => {
-  debugger
+
   return $.ajax({
     url: "api/cards",
     method: "post",

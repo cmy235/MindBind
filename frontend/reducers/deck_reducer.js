@@ -17,7 +17,7 @@ let initialState = {};
 
 let newState;
 const deckReducer = (state = initialState, action) => {
-  debugger
+
 
   Object.freeze(state);
   switch (action.type) {
@@ -27,7 +27,7 @@ const deckReducer = (state = initialState, action) => {
       // cards = cards.delete(cardToDelete);
       // // return { deck: cardIds?};
     case RECEIVE_CARD:
-    debugger
+
       // take action.card
       // looks at deckId
       // THIS WORKED BELOW
@@ -40,19 +40,19 @@ const deckReducer = (state = initialState, action) => {
       // THIS WORKED BELOW
       // let newDeck = Object.assign({}, state[deckId].cardIds);
       let newDeck = Object.assign({}, deck, {[deckIds]: action.payload.deck.cardIds});
-        debugger
+
       // grab that deck with the proper deckId
       // push cardsId into deck's cardIds array
       return newDeck;
     case RECEIVE_DECK:
-    debugger
+    
       const deck = Object.assign({}, action.deck);
       const cardIds = action.cards ? Object.keys(action.cards) : [];
       deck.cardIds = cardIds;
       // const deck = action.deck;
       const deckObject = {[deck.id]: deck};
       newState = merge({}, state, deckObject);
-      debugger
+
       return newState;
     case RECEIVE_ALL_DECKS:
       newState = merge({}, state, action.decks);

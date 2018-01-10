@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Navbar from './Navbar';
+import Navbar from './navbar';
 import {openModal1, openModal2} from '../../actions/ui_actions';
 
 const mapStateToProps = ({ session }) => (

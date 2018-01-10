@@ -5,10 +5,10 @@ import { requestDeck } from '../../actions/deck_actions';
 
 
 const mapStateToProps = (state) => {
-
+debugger
   return {
-    // deckId: match.params.deckId
-    state: state.entities
+    state: state.entities,
+    deckName: state.entities.title
   };
 };
 

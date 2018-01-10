@@ -41,11 +41,15 @@ debugger
         <div><p>{
           card ? card.front : "Add some cards"}</p>
           <button className="delete-card-button"
-              onClick={card ? () => this.props.deleteCard(card.id) : ""}
-              >Remove card</button>
+            onClick={card ? () => this.props.deleteCard(card.id) : ""}
+            >Remove card</button>
+            <div className="card-flip-container">
               <FlipCard
-            cardFlipped={ true } onClick={ this.toggleCard }
-            width={ 50 } height={ 25 } />
+              cardFlipped={ true } onClick={ this.toggleCard }
+              frontChild={<CardFront question={card.front} />}
+              backChild={<CardBack answer={card.back} />}
+              width={ "50%" } height={ "25%" } />
+            </div>
         </div>
       );
     });

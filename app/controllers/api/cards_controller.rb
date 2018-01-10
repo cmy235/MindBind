@@ -1,10 +1,10 @@
 
 class Api::CardsController < ApplicationController
   def create
-    # 
+    #
     @card = Card.new(card_params)
     # @card.deck_id = Deck.find(params[:deck_id])
-# 
+#
     if @card.save
       render :show
     else
@@ -21,10 +21,14 @@ class Api::CardsController < ApplicationController
   end
 
   def destroy
-    @card = current_user.decks.find(params[:id])
+    # deck = current_user.decks.find(params[:id]);
+    @card = Card.find(params[:id])
+
+    # debugger
+    # @card = Deck.find(params[:id])
     if @card
       @card.destroy!
-      render json: :index
+      render :show
     else
       render json: @card.errors.full_messages
     end

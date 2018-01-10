@@ -13,6 +13,7 @@ export const receiveAllDecks = (decks) => {
 };
 
 export const receiveDeck = ({cards, deck}) => {
+  
   return {
     type: RECEIVE_DECK,
     deck: deck,

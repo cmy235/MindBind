@@ -1,7 +1,8 @@
 json.deck do
-  json.id @deck.id
-  json.title @deck.title
+  json.extract! @deck, :id, :title, :author_id, :category_id
+  json.cardIds @deck.card_ids
 end
+
 
 json.cards do
   @deck.cards.each do |card|

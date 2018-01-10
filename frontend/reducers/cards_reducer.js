@@ -9,15 +9,20 @@ let initialState = {};
 const cardsReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_DECK:
-      return merge({}, state, action.cards);
+    let newState;
+    if (action.cards){
+      newState = merge({}, state, action.cards);
+      } else {
+        newState = state;
+      }
+    return newState;
     case RECEIVE_CARD:
       const card = action.card;
       const cardObject = {[card.id]: card};
-      newState = merge({}, state, deckObject);
+      newState = merge({}, state, cardObject);
       return newState;
     case RECEIVE_ALL_CARDS:
-      // all cards of that deck_id
-      return newState;
+      return state;
     default:
       return state;
   }

@@ -15,7 +15,7 @@ const App = () => (
       </header>
       <Route exact path="/" component={UI_Container} />
       <Route path="/decks" component={DecksIndexContainer} />
-      <Route path= "/decks/:deckId" component={DeckShowContainer} />
+      <Route path= "/decks/:deckId" component={DeckShowContainer}/>
  </div>
 );
 

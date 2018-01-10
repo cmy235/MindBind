@@ -1,17 +1,18 @@
 
 export const addCard = (card) => {
+  debugger
   return $.ajax({
-    url: `api/decks/${card.deck_id}/cards`,
-    mathod: "post",
-    data: { card }
+    url: "api/cards",
+    method: "post",
+    data: {card}
   });
 };
 
 
 export const editCard = (card) => {
   return $.ajax({
-    url: `api/decks/${card.deck_id}/cards`,
-    mathod: "post",
+    url: `api/cards/${deckId}/cards`,
+    method: "post",
     data: { card }
   });
 };
@@ -19,23 +20,23 @@ export const editCard = (card) => {
 
 export const deleteCard = (card) => {
   return $.ajax({
-    url: `api/decks/${card.deck_id}/${card.id}`,
-    mathod: "delete"
+    url: `api/cards/${card.deck_id}/${card.id}`,
+    method: "delete"
   });
 };
 
 
 export const fetchCard = (card) => {
   return $.ajax({
-    url: `api/decks/${card.deck_id}/cards`,
-    mathod: "get"
+    url: `api/cards/${card.deck_id}/cards`,
+    method: "get"
   });
 };
 
 
 export const fetchCards = (deckId) => {
   return $.ajax({
-    url: `api/decks/${deckId}/cards`,
-    mathod: "get"
+    url: `api/cards/${deckId}/cards`,
+    method: "get"
   });
 };

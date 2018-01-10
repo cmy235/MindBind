@@ -11,11 +11,11 @@ export const receiveAllCards = (cards) => {
   };
 };
 
-export const receiveCard = ({card, deck}) => {
+export const receiveCard = (payload) => {
+  debugger
   return {
     type: RECEIVE_CARD,
-    card: card,
-    deck: deck
+    payload: payload
   };
 };
 
@@ -26,7 +26,8 @@ export const removeCard = ({card, deck}) => {
   };
 };
 
-export const addCard = (card, deck) => {
+export const addCard = (card) => {
+  debugger
   return APIUtil.addCard(card).then( (payload)=> {
     dispatch(receiveCard(payload));
   });

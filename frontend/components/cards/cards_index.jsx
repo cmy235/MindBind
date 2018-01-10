@@ -10,11 +10,12 @@ class CardsIndex extends React.Component {
     this.state = {
       showCardForm: false
     };
+
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   render() {
-
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}
@@ -24,17 +25,19 @@ class CardsIndex extends React.Component {
 
     const currentDeckId = this.props.match.params.deckId;
 
-    return (
-      <div>
-        {addCard}
-        <div className="deck-name">
-          {
-            this.props.cards.map( (card) => (
-              <ul>{card.front}</ul>
-            ))
-          }
-        </div>
+    const cards = this.props.deck.cardIds.map( (cardId) => {
+      const card = this.props.cards[cardId];
+      return (
+        <p className="card-list-item">{card ? card.front : "Add some cards!"}</p>
+      );
+    });
 
+    return (
+      <div className="card-list-outer">
+        <div className="card-list-container">
+          {cards}
+        </div>
+        <AddCardContainer />
        </div>
       );
   }

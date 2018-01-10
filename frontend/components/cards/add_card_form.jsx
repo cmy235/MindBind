@@ -11,14 +11,20 @@ class AddCardForm extends React.Component {
       back: ""
     };
 
-    this.addCard = this.addCard.bind(this);
-    this.deleteCard = this.deleteCard.bind(this);
+    // this.addCard = this.addCard.bind(this);
+    // this.deleteCard = this.deleteCard.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const deck = this.state;
-    this.props.addCard(card);
+    debugger
+    const card = this.state;
+    const deckId = this.props.match.params.deckId;
+    let cardObj = Object.assign({}, card, {deck_id: deckId});
+    this.props.addCard(cardObj);
+    debugger
   }
 
   update(field) {
@@ -27,6 +33,7 @@ class AddCardForm extends React.Component {
     });
   }
 
+
   render() {
     return(
       <form onSubmit={this.handleSubmit}
@@ -34,14 +41,14 @@ class AddCardForm extends React.Component {
 
         <input type="text"
           placeholder="i.e., There are __ continents?"
-          value={this.state.password}
+          value={this.state.front}
           onChange={this.update('front')}
           className="input-front"
         />
 
         <input type="text"
           placeholder="i.e., 7"
-          value={this.state.password}
+          value={this.state.back}
           onChange={this.update('back')}
           className="input-back"
         />

@@ -1,19 +1,21 @@
 import { connect } from 'react-redux';
-import { addCard } from '../../actions/deck_actions';
+import { addCard } from '../../actions/card_actions';
 import AddCardForm from './add_card_form';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    cards: state.entities.cards
+    cards: state.entities.cards,
+    deckId: ownProps.match.params.deckId
   };
 };
 
 
-const mapDispatchToProps = (dispatch, { type }) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     addCard: (card) => dispatch(addCard(card))
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddCardForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddCardForm));

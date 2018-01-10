@@ -1,19 +1,19 @@
 
-class CardsController < ApplicationController
-
+class Api::CardsController < ApplicationController
   def create
+    # debugger
     @card = Card.new(card_params)
-    @card.deck_id = Deck.find(params[:deck_id])
-
+    # @card.deck_id = Deck.find(params[:deck_id])
+# debugger
     if @card.save
-      render json: :index
+      render :show
     else
       render json: @card.errors.full_messages
     end
   end
 
   def index
-    @cards = current_user.decks.find(params[:deck_id])
+    # @cards = current_user.decks.find(params[:deck_id])
   end
 
   def show
@@ -33,7 +33,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:front, :back)
+    params.require(:card).permit(:front, :back, :deck_id)
   end
 
 end

@@ -6,9 +6,13 @@ import { requestDeck } from '../../actions/deck_actions';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = (state) => ({
-  cards: Object.values(state.entities.cards)
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    cards: state.entities.cards,
+    deck: (state.entities.deck[ownProps.match.params.deckId]) || { cardIds: [] }
+  };
+};
+
 
 const mapDispatchToProps = (dispatch) => ({
   fetchDeck: (deckId) => dispatch(requestDeck(deckId)),

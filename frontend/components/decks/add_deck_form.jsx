@@ -21,7 +21,6 @@ class AddDeckForm extends React.Component {
 
 
   submitNewDeck(e){
-
     e.preventDefault();
     const deck = this.state;
     this.props.addDeck(deck);
@@ -56,7 +55,7 @@ class AddDeckForm extends React.Component {
               </div>
           </form>
         </div>
-        </div>
+      </div>
 
     );
   }

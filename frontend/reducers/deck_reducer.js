@@ -39,9 +39,8 @@ const deckReducer = (state = initialState, action) => {
       // then key into deck in the state
       // THIS WORKED BELOW
       // let newDeck = Object.assign({}, state[deckId].cardIds);
-      let newDeck = Object.assign({}, 
-        deck,
-        {deckIds: action.payload.deck.cardIds});
+      let newDeck = Object.assign({}, deck, {[deckIds]: action.payload.deck.cardIds});
+        debugger
       // grab that deck with the proper deckId
       // push cardsId into deck's cardIds array
       return newDeck;
@@ -53,6 +52,7 @@ const deckReducer = (state = initialState, action) => {
       // const deck = action.deck;
       const deckObject = {[deck.id]: deck};
       newState = merge({}, state, deckObject);
+      debugger
       return newState;
     case RECEIVE_ALL_DECKS:
       newState = merge({}, state, action.decks);

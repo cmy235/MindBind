@@ -1,6 +1,9 @@
 import React from 'react';
 import AddCardContainer from './add_card_container';
 import { FlipCard } from 'react-flop-card';
+import CardFront from './card_front';
+import CardBack from './card_back';
+
 
 // TODO: Take deck props from route params.
 
@@ -24,6 +27,13 @@ debugger
      });
   }
 
+  flipCard (back) {
+    debugger
+   const flop = document.getElementById("card-text");
+   flop.innerHTML= back;
+}
+
+
   debugger
   render() {
     const addCard = (this.state.showDeckForm ?
@@ -34,21 +44,21 @@ debugger
         null);
 
     const currentDeckId = this.props.match.params.deckId;
-
     const cards = this.props.deck.cardIds.map( (cardId) => {
     const card = this.props.cards[cardId];
       return (
-        <div><p>{
-          card ? card.front : "Add some cards"}</p>
+        <div className="card-list-inner">
+          <div className="card-text">
+          {card ? card.front : "Add some cards"}
+          </div>
+          <button className="flip-button"
+              onClick={	() => this.flipCard(card.back) }
+              >Flip card!
+          </button>
           <button className="delete-card-button"
             onClick={card ? () => this.props.deleteCard(card.id) : ""}
-            >Remove card</button>
+            >X</button>
             <div className="card-flip-container">
-              <FlipCard
-              cardFlipped={ true } onClick={ this.toggleCard }
-              frontChild={<CardFront question={card.front} />}
-              backChild={<CardBack answer={card.back} />}
-              width={ "50%" } height={ "25%" } />
             </div>
         </div>
       );
@@ -67,3 +77,11 @@ debugger
 }
 
 export default CardsIndex;
+//
+// <FlipCard
+//   cardFlipped={ true } onClick={ this.toggleCard }
+//   frontChild={<CardFront front={card.front} />}
+//   backChild={<CardBack back={card.back} />}
+//   width={ "50%" } height={ "25%" } />
+//
+//

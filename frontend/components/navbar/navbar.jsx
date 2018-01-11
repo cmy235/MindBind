@@ -1,26 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ logout, currentUser, openModal1, openModal2 }) => {
-  if (currentUser) {
-    return navbarLog(currentUser, logout);
-  } else {
-    return sessionLinks(openModal1, openModal2);
+
+class Navbar extends React.Component{
+  constructor(props){
+    super(props);
+    this.deployLogout = this.deployLogout.bind(this);
   }
-};
 
+render() {
+  if (this.props.currentUser) {
+    return this.navbarLog();
+  } else {
+    return this.sessionLinks();
+  }
+}
 
-const navbarLog =  (currentUser, logout) => (
-  <div className="main-nav-current-user">
-    <h2 className="headerName">Hello, {currentUser.username}!</h2>
+deployLogout() {
+  this.props.logout();
+  this.props.history.push("/");
+}
+
+navbarLog () {
+  return(
+    <div className="main-nav-current-user">
+    <h2 className="headerName">Hello, {this.props.currentUser.username}!</h2>
     <button className="logout-button"
-      onClick={logout}
+      onClick={this.deployLogout}
       >Log Out</button>
 
-      <a href="/">
+    <Link to="/decks">
       <ul className="logo-container">
         <li>
-
         </li>
         <li className="mindbind-title-one">
           MIND
@@ -29,15 +40,17 @@ const navbarLog =  (currentUser, logout) => (
           BIND
         </li>
       </ul>
-    </a>
+      </Link>
   </div>
 );
+}
 
-const sessionLinks = (openModal1, openModal2) => (
+ sessionLinks (){
+return(
   <div>
     <div className="background-img">
     <nav className="main-nav">
-      <a href="/">
+      <a href="/decks/">
       <ul className="logo-container">
         <li>
         <img src={window.img.head}></img>
@@ -53,11 +66,11 @@ const sessionLinks = (openModal1, openModal2) => (
 
     <div className="login-signup-container">
       <button className="login-button"
-        onClick={openModal1}
+        onClick={this.props.openModal1}
         >Login</button>
       <button
         className="signup-button"
-        onClick={openModal2}
+        onClick={this.props.openModal2}
         >Get Started</button>
 
     </div>
@@ -67,16 +80,16 @@ const sessionLinks = (openModal1, openModal2) => (
     <div className="bottom-boxes">
       <div className="box-1">Browse Flashcards</div>
       <div className="box-2"
-        onClick={openModal2}
+        onClick={this.props.openModal2}
         >Make Flashcards</div>
       <div className="box-3"
-        onClick={openModal2}
+        onClick={this.props.openModal2}
         >Make Me Smarter!</div>
     </div>
     </div>
-
-
-);
+  );
+}
+}
 
 export default Navbar;
 

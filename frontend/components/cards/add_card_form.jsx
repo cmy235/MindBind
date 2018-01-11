@@ -40,20 +40,20 @@ class AddCardForm extends React.Component {
         className="add-card-form">
 
         <input type="text"
-          placeholder="i.e., There are __ continents?"
+          placeholder="There are __ continents?"
           value={this.state.front}
           onChange={this.update('front')}
-          className="input-front"
-        />
+          className="add-card-input"
+          />
 
         <input type="text"
-          placeholder="i.e., 7"
+          placeholder="7"
           value={this.state.back}
           onChange={this.update('back')}
-          className="input-back"
+          className="add-card-input"
         />
 
-      <input className="add-card-button" type="submit" value="Add Card"></input>
+      <input className="flip-button" type="submit" value="Add Card!"></input>
 
       </form>
     );

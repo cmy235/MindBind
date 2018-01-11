@@ -8,6 +8,16 @@
   // justify-content: space-between;
 }
 
+.add-card-input {
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  padding-top: 8px;
+  margin-top: 2px;
+  margin-right: 7px;
+}
+
 .card-flip-container {
   background-color: red;
 }
@@ -19,14 +29,13 @@
   font-family: 'Montserrat', sans-serif;
   color: #ff8a47;
   padding: 20px;
-  margin-top: 60px;
   margin-bottom: 40px;
   border-bottom: 1px solid #eeeeee;
 }
 
 .card-list-outer {
   background-color: #ffffff;
-  margin-top: 60px;
+  // margin-top: 60px;
 }
 
 .card-list-container {
@@ -37,6 +46,7 @@
 .card-list-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border-top: 1px gray;
   border-bottom: 1px gray;
@@ -46,16 +56,23 @@
 .flip-button {
   color: white;
   background-color: #29a5dc;
-  border: 2px solid black;
   border-radius: 2px;
-  width: 30%;
+  width: 20%;
   height: 10%;
   text-align: center;
   font-size: 10px;
+  padding: 4px;
 }
 
 .add-card-form {
-  background: green;
+  width: 75%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 3px solid #ff8a47;
+  border-radius: 3px;
+  align-items: center;
 }
 
 .card-list-item {
@@ -70,14 +87,17 @@
 .card-text {
   width: 50%;
   font-size: 14px;
+  border-top: 2px solid #dddddd;
 }
 
 .delete-card-button {
   font-size: 10px;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   text-align: center;
   border: 2px solid red;
+  border-radius: 3px;
+  text-align: center;
 }
 
 .study-button {

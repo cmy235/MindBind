@@ -9,13 +9,7 @@ export const receiveCategories = (query) => {
 };
 
 export const searchCategories = (query) => dispatch => {
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> search_func
   return APIUtil.searchCategories(query).then( (results) => {
-
     return dispatch(receiveCategories(results));
   });
 };

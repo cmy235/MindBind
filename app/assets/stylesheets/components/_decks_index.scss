@@ -30,7 +30,7 @@
 .search-add-icons {
   // display: flex;
   // justify-content: space-between;
-  padding-left: 50px;
+  padding-left: 100px;
 }
 
 .add-button {
@@ -53,6 +53,7 @@
 
 .fa-plus-square {
   color: #5cb85c;
+  margin-right: -15px;
 }
 
 
@@ -133,15 +134,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 32%;
+  width: 29.2%;
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 15px;
-  margin-left: 10px;
   background: #f5f5f5;
   /* font-family: 'Montserrat'; */
   font-size: 18px;

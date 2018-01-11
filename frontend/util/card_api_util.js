@@ -19,7 +19,7 @@ export const editCard = (card) => {
 
 
 export const removeCard = (cardId) => {
-  debugger
+  
   return $.ajax({
     url: `api/cards/${cardId}`,
     method: "delete"

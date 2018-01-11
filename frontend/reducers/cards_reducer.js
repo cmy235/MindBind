@@ -20,7 +20,7 @@ const cardsReducer = (state = {}, action) => {
       newState = Object.assign({}, state, cardObject);
       return newState;
     case REMOVE_CARD:
-    debugger
+    
       newState = Object.assign({}, state);
       delete newState[action.cardId];
       return newState;

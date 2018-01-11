@@ -3,8 +3,9 @@ import { searchCategories } from '../../actions/search_action';
 import Search from './search';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
-    results: state.query
+    results: state.entities.query.results
   };
 };
 

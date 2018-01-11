@@ -10,7 +10,7 @@ import CardBack from './card_back';
 class CardsIndex extends React.Component {
   constructor(props) {
     super(props);
-debugger
+
     this.state = {
       showCardForm: false,
       cardFlipped: false
@@ -27,12 +27,12 @@ debugger
   }
 
   flipCard (back) {
-    debugger
+    
    const flop = document.getElementById("card-text");
    flop.innerHTML= back;
 }
 
-  debugger
+  
   render() {
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer

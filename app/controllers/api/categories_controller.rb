@@ -1,5 +1,5 @@
 class Api::CategoriesController < ApplicationController
-debugger
+
   def index
     @categories = Category.all
     if params[:query]
@@ -14,11 +14,11 @@ debugger
   end
 
   def search
-    debugger
+
     if params[:query].present?
       @categories = Category.where('UPPER(name) ~ UPPER(?)', params[:query].upcase)
       # @categories = Category.where('name LIKE ?', params[:query].upcase)
-      debugger
+      
       render template: 'api/categories/index.json'
     else
       # @categories = Category.none

@@ -19,15 +19,20 @@ class Search extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const query = this.state.query;
-    debugger
     this.props.searchCategories({query});
   }
 
   render(){
-debugger
+    let displayResults = "";
+      if (this.props.results) {
+        const myProps = this.props.results;
+        const categoriesList = myProps.map( (category) => {
+        displayResults = category.name;
+      });
+      }
+
     return(
       <div>
         <form onSubmit={this.handleSubmit}
@@ -41,11 +46,21 @@ debugger
           <button  className="modal-signup-button"> Search </button>
         </form>
 
-        <div className="results"> Results: {this.props.results}</div>
+        <div className="results-list"><ul> {displayResults} </ul></div>
       </div>
     );
   }
-
 }
 
 export default Search;
+
+{/*
+{ let resultsProps;
+  if (this.props) {
+    resultsProps = this.props;
+    resultsArray = resultsProps.results.map( (category) => {
+    return category.name;
+});
+}
+}
+*/}

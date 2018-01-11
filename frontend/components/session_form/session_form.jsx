@@ -14,6 +14,15 @@ class SessionForm extends React.Component {
     this.displaySignup = this.displaySignup.bind(this);
   }
 
+  demoSubmit(){
+  return (
+    <input type="submit"
+      id="demo-user"
+      onClick={() => this.setState({username: "demoUser", password: "starwars"})}
+      value="DEMO" />
+  );
+}
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/decks');
@@ -27,11 +36,9 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
-
   }
 
   renderErrors() {
@@ -78,7 +85,13 @@ class SessionForm extends React.Component {
             <div onClick={this.props.closeModals}>
             <i class="fas fa-times-circle icon-star-empty"></i>
             </div>
+
+          <button onClick={() => (this.setState({
+              username: "demoUser",
+              password: "starwars"
+            }))} className="modal-login-button">Demo</button>
       </form>
+
       </div>
       </div>
     );
@@ -152,7 +165,10 @@ class SessionForm extends React.Component {
         <i class="fas fa-times-circle icon-star-empty"></i>
         </div>
         </ul>
+
       </form>
+
+
       </div>
       </div>
     );

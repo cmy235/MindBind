@@ -26,6 +26,33 @@
   max-width: 700px;
   opacity: 1;
   z-index: 1000;
+
+}
+
+
+.demo {
+  position: relative;
+  font-family: inherit;
+  background-color: Transparent;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  padding: 10px;
+  color: white;
+  border-style: none;
+  display: inline;
+  text-decoration: none!important;
+  background: red;
+  height: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  width: 20%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #29a5dc;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
 }
 
 .login-form-modal {
@@ -73,7 +100,7 @@
   margin-right: 15px;
   border-style: none;
   z-index: 1000;
-
+  margin-top: 5px;
 }
 
 
@@ -163,13 +190,13 @@
 
 .signup-container {
   position: absolute;
-  top: 8%;
+  top: 3%;
   left: 50%;
   transform: translateX(-50%);
   vertical-align: top;
   border-radius: 2px;
   width: 500px;
-  height: 550px;
+  height: 575px;
   background-color: white;
   justify-content: space-between;
   box-shadow: 0px 4px 4px rgba(0,0,0,0.25);

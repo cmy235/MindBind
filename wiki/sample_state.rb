@@ -31,7 +31,7 @@
       }
     }
   },
-    
+
     { cards: {
       1: {
         id: 1,
@@ -45,25 +45,25 @@
         id: 1,
         deck_id: 63
         }
-      } 
+      }
     }
 
   {
     categories: {
       12: {
+        name: "History"
         id: 12,
-        decks: [12, 67, 44]
-        category: "History"
+        deck_ids: [12, 67, 44]
       },
       9: {
+        name: "Economics"
         id: 9,
-        decks: [9, 18]
-        category: "Economics"
+        deck_ids: [9, 18]
       },
       14: {
+        name: "Physics"
         id: 14,
-        decks: [14, 22, 6, 49]
-        category: "Physics"
+        deck_ids: [14, 22, 6, 49]
       }
     }
    }

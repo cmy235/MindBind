@@ -56,15 +56,6 @@
 }
 
 
-.deck-title {
-  left: 12px;
-  position: absolute;
-  text-align: left;
-  margin-left: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-}
-
 
 .deck-list {
   display: flex;
@@ -103,8 +94,8 @@
 }
 
 .in-line {
-  position: relative;
-  display: inline-block;
+  // position: relative;
+  // display: inline-block;
   padding-left: 10px;
   bottom: 12px;
 }

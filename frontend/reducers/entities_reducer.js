@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import deck from './deck_reducer';
-import cards from './cards_reducer';
+import deckReducer from './deck_reducer';
+import cardsReducer from './cards_reducer';
 
 const entitiesReducer = combineReducers({
-  deck,
-  cards
+  deck: deckReducer,
+  cards: cardsReducer
 });
 
 export default entitiesReducer;

@@ -10,6 +10,7 @@ class DeckShow extends React.Component {
     super(props);
 
     this.fetchDeck = this.props.fetchDeck.bind(this);
+
   }
 
   componentDidMount() {
@@ -24,15 +25,32 @@ class DeckShow extends React.Component {
    }
 
   render() {
+    let deckName;
+    if (this.props.deck) {
+      deckName = this.props.deck.title;
+    } else {
+      deckName = "";
+    }
+
 
     return (
-      <div className='cards-container'>Deck Show Page,
-         current deck: {this.props.match.params.deckId}
+      <div className='cards-container'>
+        <div className="deck-name">{deckName}
+          </div>
          <CardsIndexContainer />
        </div>
-
       );
   }
 }
 
+
 export default withRouter(DeckShow);
+
+
+
+
+
+
+//
+// {if (this.props.state.deck[this.props.match.params.deckId].title)}
+// {currentDeckName ? <h2> currentDeckName </h2> : ""}

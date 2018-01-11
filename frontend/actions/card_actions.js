@@ -4,49 +4,53 @@ export const RECEIVE_ALL_CARDS = "RECEIVE_ALL_CARDS";
 export const RECEIVE_CARD = "RECEIVE_CARD";
 export const REMOVE_CARD = "REMOVE_CARD";
 
-export const receiveAllCards = (cards) => {
+const receiveAllCards = (cards) => {
   return {
     type: RECEIVE_ALL_CARDS,
     cards: cards
   };
 };
 
-export const receiveCard = (payload) => {
-
+const receiveCard = ({card, deck}) => {
+  debugger
   return {
     type: RECEIVE_CARD,
-    payload: payload
+    card: card,
+    deck: deck
   };
 };
 
-export const removeCard = ({card, deck}) => {
+const removeCard = ({card, deck}) => {
+  debugger
   return {
     type: REMOVE_CARD,
-    card: card
+    cardId: card.id,
+    deck: deck
   };
 };
 
-export const addCard = (card) => {
-
+export const addCard = (card) => dispatch => {
   return APIUtil.addCard(card).then( (payload)=> {
     dispatch(receiveCard(payload));
   });
 };
 
 
-export const deleteCard = (cardId) => {
-  return APIUtil.deleteCard(cardId).then( ()=> {
-    dispatch(removeCard());
+export const deleteCard = (cardId) => dispatch => {
+  debugger
+  return APIUtil.removeCard(cardId).then( (payload)=> {
+    debugger
+    dispatch(removeCard(payload));
   });
 };
 
-// export const fetchCard = (card) => {
+// export const fetchCard = (card) => dispatch => {
 //   return APIUtil.fetchCard(card).then( (card)=> {
 //     dispatch(receiveCard(card));
 //   });
 // };
 
-export const fetchCards = (deckId) => {
+export const fetchCards = (deckId) => dispatch => {
   return APIUtil.fetchCards(deckId).then( ()=> {
     dispatch(receiveCard());
   });

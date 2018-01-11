@@ -4,11 +4,11 @@ import DeckShow from './deck_show';
 import { requestDeck } from '../../actions/deck_actions';
 
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = (state, ownProps) => {
+debugger
   return {
-    // deckId: match.params.deckId
-    state: state.entities
+    deck: state.entities.deck[ownProps.match.params.deckId],
+    deckName: state.entities.title
   };
 };
 

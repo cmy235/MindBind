@@ -1,26 +1,58 @@
 .cards-container {
   position: absolute;
-  top: 60px;
+  top: 90px;
   bottom: 0;
   left: 38%;
   width: 62vw;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.card-flip-container {
+  background-color: red;
 }
 
 .deck-name {
-  color: #ff8a47;
-  font-size: 32px;
+  font-size: 46px;
   padding: 50px;
   border-bottom: 1px solid #eeeeee;
   font-family: 'Montserrat', sans-serif;
+  color: #ff8a47;
+  background: red;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .card-list-outer {
-  background-color: yellow;
+  background-color: #ffffff;
+  margin-top: 60px;
 }
 
 .card-list-container {
   width: 85%;
-  background: blue;
+
+}
+
+.card-list-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px gray;
+  border-bottom: 1px gray;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.flip-button {
+  color: white;
+  background-color: #29a5dc;
+  border: 2px solid black;
+  border-radius: 2px;
+  width: 30%;
+  height: 10%;
+  text-align: center;
+  font-size: 10px;
 }
 
 .add-card-form {
@@ -30,15 +62,23 @@
 .card-list-item {
   margin-top: 30px;
   font-size: 16px;
-  font-family: monospace;
   border-top: 2px gray;
   border-bottom: 2px gray;
   color: #29a5dc;
   background-color: #eeeeee;
 }
 
-.card-list-text {
+.card-text {
+  width: 50%;
+  font-size: 14px;
+}
 
+.delete-card-button {
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 2px solid red;
 }
 
 .study-button {

@@ -5,6 +5,7 @@
 #   json.id @card.id
 #   json.deckId @card.deck
 
+
 # card: card_object
 json.card @card
 

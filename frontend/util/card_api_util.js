@@ -18,9 +18,10 @@ export const editCard = (card) => {
 };
 
 
-export const deleteCard = (card) => {
+export const removeCard = (cardId) => {
+  debugger
   return $.ajax({
-    url: `api/cards/${card.deck_id}/${card.id}`,
+    url: `api/cards/${cardId}`,
     method: "delete"
   });
 };

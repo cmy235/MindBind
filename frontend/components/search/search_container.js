@@ -5,7 +5,8 @@ import Search from './search';
 const mapStateToProps = (state) => {
   debugger
   return {
-    results: state.entities.query.results
+    // gives an array of 8 below!
+    results: state.entities.query.categories
   };
 };
 

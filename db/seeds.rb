@@ -58,53 +58,93 @@ u3 = User.create!({
   password: "chewbacca"
   })
 
-c1 = Category.create!({
+cat1 = Category.create!({
   'name'=> "Science"
   })
 
-c2 = Category.create!({
+cat2 = Category.create!({
   'name'=> "History"
   })
 
 
-c3 = Category.create!({
+cat3 = Category.create!({
   'name'=> "Medicine"
   })
 
-c4 = Category.create!({
+cat4 = Category.create!({
   'name'=> "Other"
   })
+
+cat5 = Category.create!({
+  'name'=> "Bio-science"
+  })
+
+cat6 = Category.create!({
+  'name'=> "Art"
+  })
+
+
+cat7 = Category.create!({
+  'name'=> "Algebra"
+  })
+
+cat8 = Category.create!({
+  'name'=> "Genetics"
+  })
+
+
+cat9 = Category.create!({
+  'name'=> "Algebra"
+  })
+
+cat10 = Category.create!({
+  'name'=> "Genetics"
+  })
+
+
+cat7 = Category.create!({
+  'name'=> "Algebra"
+  })
+
+cat8 = Category.create!({
+  'name'=> "Genetics"
+  })
+
+cat8 = Category.create!({
+  'name'=> "Social Science"
+  })
+
 
 
 d1 = Deck.create!({
   'title'=> 'organic chemistry',
   'author_id'=> u3.id,
-  'category_id'=> c1
+  'category_id'=> cat1.id
 })
 
 d2 = Deck.create!({
     'title'=> 'american history',
     'author_id'=> u1.id,
-    'category_id'=>c2
+    'category_id'=>cat2.id
   })
 
 d3 = Deck.create!({
     'title'=> 'psychology',
     'author_id'=> u1.id,
-    'category_id'=> 2
+    'category_id'=> cat3.id
   })
 
 d4 = Deck.create!({
     'title'=> 'biology',
     'author_id'=> u2.id,
-    'category_id'=> c3
+    'category_id'=> cat3.id
   })
 
 
 d5 = Deck.create!({
   'title'=> 'roman history',
   'author_id'=> u3.id,
-  'category_id'=> c2
+  'category_id'=> cat2.id
 })
 
 

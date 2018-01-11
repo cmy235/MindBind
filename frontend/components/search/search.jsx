@@ -25,11 +25,16 @@ class Search extends React.Component {
   }
 
   render(){
-    let displayResults = "";
+    debugger
+    let displayCategoryName = "";
+    let displayDecks = "Search for some categories/decks!";
       if (this.props.results) {
         const myProps = this.props.results;
         const categoriesList = myProps.map( (category) => {
-        displayResults = category.name;
+        displayCategoryName = category.name;
+        let decksArray = category.decks.map( (deck) => {
+          displayDecks=deck.title;
+        });
       });
       }
 
@@ -46,7 +51,16 @@ class Search extends React.Component {
           <button  className="modal-signup-button"> Search </button>
         </form>
 
-        <div className="results-list"><ul> {displayResults} </ul></div>
+        <div className="results-list">
+          <ul>
+
+            {displayCategoryName}
+
+
+            {displayDecks}
+
+          </ul>
+        </div>
       </div>
     );
   }

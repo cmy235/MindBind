@@ -10,6 +10,7 @@ export const receiveCategories = (query) => {
 
 export const searchCategories = (query) => dispatch => {
   return APIUtil.searchCategories(query).then( (results) => {
+    debugger
     return dispatch(receiveCategories(results));
   });
 };

@@ -12,7 +12,7 @@ const receiveAllCards = (cards) => {
 };
 
 const receiveCard = ({card, deck}) => {
-  debugger
+  
   return {
     type: RECEIVE_CARD,
     card: card,
@@ -21,7 +21,7 @@ const receiveCard = ({card, deck}) => {
 };
 
 const removeCard = ({card, deck}) => {
-  debugger
+  
   return {
     type: REMOVE_CARD,
     cardId: card.id,
@@ -37,9 +37,9 @@ export const addCard = (card) => dispatch => {
 
 
 export const deleteCard = (cardId) => dispatch => {
-  debugger
+  
   return APIUtil.removeCard(cardId).then( (payload)=> {
-    debugger
+    
     dispatch(removeCard(payload));
   });
 };

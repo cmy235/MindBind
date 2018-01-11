@@ -20,7 +20,6 @@ debugger
     this.toggleCard = this.toggleCard.bind(this);
   }
 
-
   toggleCard (){
      this.setState({
        cardFlipped: true
@@ -32,7 +31,6 @@ debugger
    const flop = document.getElementById("card-text");
    flop.innerHTML= back;
 }
-
 
   debugger
   render() {

@@ -42,9 +42,12 @@ class DecksIndex extends React.Component {
         <div className="deck-title-container">
           <div className="search-add-icons">
             <span onClick={this.showDeckModal}>
-              <i class="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
+              <i className="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
             </span>
-          <i class="search-button fas fa-search btn fa-2x"></i>
+              <Link to={"/search"} className="in-line">
+                <i className="search-button fas fa-search btn fa-2x">
+                </i>
+              </Link>
           </div>
           <div className="deck-title">
           Decks

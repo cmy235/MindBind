@@ -8,6 +8,7 @@ import UI_Container from './ui/ui_container';
 import DecksIndexContainer from './decks/decks_index_container';
 import DeckShowContainer from './decks/deck_show_container';
 
+
 const App = () => (
   <div>
       <header>
@@ -15,7 +16,8 @@ const App = () => (
       </header>
       <Route exact path="/" component={UI_Container} />
       <Route path="/decks" component={DecksIndexContainer} />
-      <Route path= "/decks/:deckId" component={DeckShowContainer}/>
+      <Route path= "/decks/:deckId" component={DeckShowContainer} />
+
  </div>
 );
 

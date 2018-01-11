@@ -59,6 +59,7 @@ const sessionLinks = (openModal1, openModal2) => (
         className="signup-button"
         onClick={openModal2}
         >Get Started</button>
+
     </div>
     </nav>
   </div>

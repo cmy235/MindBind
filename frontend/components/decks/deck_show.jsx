@@ -25,9 +25,18 @@ class DeckShow extends React.Component {
    }
 
   render() {
+    let deckName;
+    if (this.props.deck) {
+      deckName = this.props.deck.title;
+    } else {
+      deckName = "";
+    }
+
 
     return (
-      <div className='cards-container'>deck name:
+      <div className='cards-container'>
+        <div className="deck-name">{deckName}
+          </div>
          <CardsIndexContainer />
        </div>
       );

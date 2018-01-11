@@ -7,6 +7,7 @@ import NavbarContainer from './navbar/navbar_container';
 import UI_Container from './ui/ui_container';
 import DecksIndexContainer from './decks/decks_index_container';
 import DeckShowContainer from './decks/deck_show_container';
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -17,7 +18,7 @@ const App = () => (
       <Route exact path="/" component={UI_Container} />
       <Route path="/decks" component={DecksIndexContainer} />
       <Route path= "/decks/:deckId" component={DeckShowContainer} />
-
+      <Route path="/search" component={SearchContainer} />
  </div>
 );
 

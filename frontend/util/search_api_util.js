@@ -1,10 +1,10 @@
 
-export const searchCategories = (query) => {
+export const searchCategories = query => {
   debugger
   return $.ajax({
-    url: "/categories/search",
+    url: "/api/search",
     dataType: "json",
     method: "get",
-    data: { query }
+    data: query
   });
 };

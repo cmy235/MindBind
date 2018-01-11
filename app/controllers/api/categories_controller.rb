@@ -1,19 +1,28 @@
 class Api::CategoriesController < ApplicationController
-
+debugger
   def index
     @categories = Category.all
+    if params[:query]
+      @categories = Category.find(params[:query])
+    else
+      @categories = Category.all
+    end
   end
 
   def show
-    @category = Category.find(params[:id])
+    # @category = Category.find(params[:query])
   end
 
   def search
     debugger
     if params[:query].present?
-      @categories = User.where('name ~ ?', params[:query])
+      @categories = Category.where('UPPER(name) ~ UPPER(?)', params[:query].upcase)
+      # @categories = Category.where('name LIKE ?', params[:query].upcase)
+      debugger
+      render template: 'api/categories/index.json'
     else
-      @categories = User.none
+      # @categories = Category.none
+      render ["Category not found"]
     end
   end
 

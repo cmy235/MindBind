@@ -11,8 +11,8 @@ User.destroy_all
 Deck.destroy_all
 
 cy = User.create!({
-  username: "cyanz27",
-  password: "chewbacca"
+  username: "demoUser",
+  password: "starwars"
   })
 
 orgo = Deck.create!({
@@ -58,18 +58,34 @@ u3 = User.create!({
   password: "chewbacca"
   })
 
+c1 = Category.create!({
+  'name'=> "Science"
+  })
+
+c2 = Category.create!({
+  'name'=> "History"
+  })
+
+
+c3 = Category.create!({
+  'name'=> "Medicine"
+  })
+
+c4 = Category.create!({
+  'name'=> "Other"
+  })
 
 
 d1 = Deck.create!({
   'title'=> 'organic chemistry',
   'author_id'=> u3.id,
-  'category_id'=> 21
+  'category_id'=> c1
 })
 
 d2 = Deck.create!({
     'title'=> 'american history',
     'author_id'=> u1.id,
-    'category_id'=> 7
+    'category_id'=>c2
   })
 
 d3 = Deck.create!({
@@ -81,15 +97,16 @@ d3 = Deck.create!({
 d4 = Deck.create!({
     'title'=> 'biology',
     'author_id'=> u2.id,
-    'category_id'=> 21
+    'category_id'=> c3
   })
 
 
 d5 = Deck.create!({
   'title'=> 'roman history',
   'author_id'=> u3.id,
-  'category_id'=> 34
+  'category_id'=> c2
 })
+
 
 c1 = Card.create!({
   'front'=> "True/False: The Roman empire was the largest empire in history",

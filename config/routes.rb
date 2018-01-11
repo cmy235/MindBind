@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :decks, only: [:create, :show, :index, :edit, :destroy]
     resources :cards, only: [:create, :show, :index, :destroy]
-    resources :categories, only: [:show, :index]
+    resources :categories, only: [:show, :index, :search]
+    
   end
+
+  get "api/search", to: "api/categories#search"
 
   root "static_pages#root"
 end

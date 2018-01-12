@@ -22,7 +22,7 @@ When the add button is clicked, the state is switched to true and the <AddDeckCo
 
 Also on the decks index page is a link to the specific deckId, which renders the DeckShowContainer (which contains CardsIndex).
 
-[text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/decks_pic.png)
+![](https://github.com/cmy235/MindBind/blob/master/app/assets/images/decks_pic.png)
 
 
 ```javascript
@@ -38,7 +38,7 @@ Cards are related to decks via a one-to-many association in the database.  The r
 Search decks/categories
 --
 
-[text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/search_img.png)
+![](https://github.com/cmy235/MindBind/blob/master/app/assets/images/search_img.png)
 
 The search function was completed using an ajax request to a CategoriesController on the backend.
 

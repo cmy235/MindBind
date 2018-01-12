@@ -2,14 +2,17 @@
 
 MindBind is a learning app which allows you to create decks of flashcards to study.  You can add decks, create and delete card to certain decks, as well as search for categories of decks via the search page. Find the live version <HERE>.
   
-* Technologies Used
+Technologies Used:
 
 Mindbind was developed using Javascript, React, HTML & CSS, Ruby and Rails.  
 
-* How it works
+How it works
+--
+
 Users can log into the website and see their user home page.  Decks already added by the user will be visible, and user can use the add deck form to create another deck for their list.  They can then add/remove cards to these decks as needed.  User can then search for a deck in the database and add it to their list.
 
-* Specific features
+Specific features
+-
 
 Add/remove cards to a deck
 --

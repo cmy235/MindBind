@@ -30,7 +30,7 @@ DECKS IMAGE
 ```
 Cards are related to decks via a one-to-many association in the database.  The redux state is updated with these relationsihps based on the deckId of the current page it is on. (i.e., if the page is /decks/42 then the add card will be submitted to the deck with id=42). 
 
-(https://github.com/cmy235/MindBind/blob/master/app/assets/images/cards.png)
+![text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/cards.png)
 
 
 Search decks/categories

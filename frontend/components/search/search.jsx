@@ -26,19 +26,32 @@ class Search extends React.Component {
 
   render(){
     debugger
-    let displayCategoryName = "";
+    let displayCategoryName = ;
     let displayDecks = "Search for some categories/decks!";
       if (this.props.results) {
-        const myProps = this.props.results;
-        const categoriesList = myProps.map( (category) => {
-        displayCategoryName = category.name;
-        let decksArray = category.decks.map( (deck) => {
-          displayDecks=deck.title;
-        });
+        const searchResults = this.props.results;
+        debugger
+        const categoriesList = searchResults.map( (category) => {
+          displayCategoryName.push(category.name;
+
+          let decksArray = category.decks.map( (deck) => {
+            displayDecks.push=deck.title;
+          }
+          return displayCategoryName
+        );
+
       });
       }
 
     return(
+
+      <div className="search-container">
+        <SearchBox />
+      </div>
+      <div className="search-container">
+        <SearchResults />
+      </div>
+
       <div>
         <form onSubmit={this.handleSubmit}
           className="search-form">
@@ -53,12 +66,12 @@ class Search extends React.Component {
 
         <div className="results-list">
           <ul>
+            {
 
+            }
             {displayCategoryName}
-
-
+          <br/>
             {displayDecks}
-
           </ul>
         </div>
       </div>

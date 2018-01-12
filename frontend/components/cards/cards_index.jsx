@@ -13,7 +13,7 @@ class CardsIndex extends React.Component {
 
     this.state = {
       showCardForm: false,
-      cardFlipped: false
+      cardsArray: []
     };
 
     // this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,11 +22,14 @@ class CardsIndex extends React.Component {
 
   toggleCard (){
      this.setState({
-       cardFlipped: true
+       cardsArray: true
      });
   }
 
+
+
   render() {
+
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
             showModal={this.state.showCardForm}
@@ -35,18 +38,20 @@ class CardsIndex extends React.Component {
         null);
 
     const currentDeckId = this.props.match.params.deckId;
-    const cards = this.props.deck.cardIds.map( (cardId) => {
+    const cards = this.props.deck.cardIds.map( (cardId, idx) => {
     const card = this.props.cards[cardId];
+
+
       return (
         <div className="card-list-inner">
-          <FlipCard
-            width={"50%"}
-            height={"25%"}
-            onClick={ () => this.setState({cardFlipped: !this.state.cardFlipped })}
-           frontChild={<CardFront front={card ? card.front : ""} />}
-           backChild={<CardBack back={card ? card.back : ""} />}
-           flipped={this.state.cardFlipped}
-         />
+          <div className="card-text">
+              <div class="card-front">
+                { card ? <CardFront front={card.front}/> : "" }
+              </div>
+              <div class="card-back">
+                { card ? <CardBack back={card.back}/> : "" }
+              </div>
+          </div>
 
           <button className="delete-card-button"
             onClick={card ? () => this.props.deleteCard(card.id) : ""}
@@ -70,21 +75,3 @@ class CardsIndex extends React.Component {
 }
 
 export default CardsIndex;
-
-
-{/*
-  <div className="card-text">
-    <div class="front">
-      {card ? card.front : "Add some cards"}
-    </div>
-    <div class="back">
-      {card ? card.back : ""}
-    </div>
-  </div>
-
-
-  <button className="flip-button"
-      >Flip card!
-  </button>
-
-*/}

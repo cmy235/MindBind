@@ -44,6 +44,7 @@
 }
 
 .card-list-inner {
+  width: 150%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,17 +65,21 @@
   padding: 4px;
 }
 
+#card-back {
+
+}
+
 .cards-display {
   display: flex;
   align-items: baseline;
-  .card-front {
-    padding: 5px;
   }
 
-  .card-back {
+.card-front {
     padding: 5px;
-  }
 
+}
+.card-back {
+  padding: 5px;
 }
 
 .add-card-form {

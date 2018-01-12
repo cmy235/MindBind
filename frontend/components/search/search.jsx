@@ -27,7 +27,7 @@ class Search extends React.Component {
   }
 
   render(){
-    debugger
+    
 
     let categoriesArray = [];
       if (this.props.results) {

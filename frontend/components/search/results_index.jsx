@@ -9,7 +9,7 @@ class ResultsIndex extends React.Component {
 
   render() {
     const decks = this.props.decks.map( (deck) => {
-      debugger
+      
         return(
           <div>{ deck ? deck.title : "Category has no deck!"}</div>
         );

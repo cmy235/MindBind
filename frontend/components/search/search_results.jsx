@@ -12,7 +12,9 @@ class SearchResults extends React.Component {
     const categories = this.props.categoriesArray.map( (category) => {
       return(
         <div className="results-list-outer">
-          {category.name}
+          <div className="category-title">
+            {category.name}
+          </div>
           <div className="results-list-outer">
             <ResultsIndex decks={category.decks}/>
           </div>
@@ -22,9 +24,7 @@ class SearchResults extends React.Component {
 
 
     return(
-      <div>
-        <div>Categories are: {categories}</div>
-      </div>
+        <div>{categories}</div>
     );
   }
 }

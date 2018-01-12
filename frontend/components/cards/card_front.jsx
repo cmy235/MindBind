@@ -10,8 +10,8 @@ class CardFront extends React.Component {
   render() {
 
     return(
-      <div>
-        FRONT
+      <div class="card-front">
+        {this.props.front ? this.props.front : ""}
       </div>
     );
   }

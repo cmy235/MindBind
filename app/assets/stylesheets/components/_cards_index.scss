@@ -64,6 +64,19 @@
   padding: 4px;
 }
 
+.cards-display {
+  display: flex;
+  align-items: baseline;
+  .card-front {
+    padding: 5px;
+  }
+
+  .card-back {
+    padding: 5px;
+  }
+
+}
+
 .add-card-form {
   width: 75%;
   height: 10%;

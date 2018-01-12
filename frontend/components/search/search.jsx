@@ -50,7 +50,7 @@ class Search extends React.Component {
               onChange={this.update('query')}
               className="input-query"
             />
-          <button className="modal-signup-button"> Search </button>
+          <button className="search-cat-button"> Search </button>
         </form>
       </div>
       <div className="results-container">

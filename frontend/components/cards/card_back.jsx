@@ -10,8 +10,8 @@ class CardBack extends React.Component {
   render() {
 
     return(
-      <div>
-        BACK
+      <div class="card-back">
+        { this.props.back ? this.props.back : ""}
       </div>
     );
   }

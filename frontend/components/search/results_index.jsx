@@ -17,7 +17,9 @@ class ResultsIndex extends React.Component {
 
     return(
       <div className="deck-info">
-        {decks}
+        <ul>
+          {decks}
+        </ul>
       </div>
     );
   }

@@ -9,6 +9,7 @@
 
 .search-form {
   height: 90px;
+  display: flex;
 }
 
 .results-list-outer {
@@ -16,8 +17,21 @@
   // margin-top: 90px;
 }
 
-.deck-info {
+.input-query {
+  background: white;
+  margin-left: 25px;
+  height: 20px;
+  padding: 10px 25px;
 
+}
+
+.deck-info {
+  color: #29a5dc;
+}
+
+.category-title {
+  text-transform: uppercase;
+  padding: 10px;
 }
 
 .results-container {
@@ -31,4 +45,19 @@
   // bottom: 0;
   width: 100%;
   background-color: yellow;
+}
+
+.search-cat-button {
+  font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* width: 66%; */
+    border-radius: 3px;
+    padding: 6px;
+    background-color: #29a5dc;
+    color: white;
+    position: relative;
+    // left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 25px;
+    height: 20px;
 }

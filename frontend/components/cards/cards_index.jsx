@@ -26,14 +26,6 @@ class CardsIndex extends React.Component {
      });
   }
 
-{/*
-  flipCard (back) {
-   const flop = document.getElementById("card-text");
-   flop.innerHTML= back;
-}
-*/}
-
-
   render() {
     const addCard = (this.state.showDeckForm ?
           <AddCardContainer
@@ -51,24 +43,11 @@ class CardsIndex extends React.Component {
             width={"50%"}
             height={"25%"}
             onClick={ () => this.setState({cardFlipped: !this.state.cardFlipped })}
-           frontChild={<CardFront question={card.front} />}
-           backChild={<cardFront answer={card.back} />}
+           frontChild={<CardFront front={card ? card.front : ""} />}
+           backChild={<CardBack back={card ? card.back : ""} />}
            flipped={this.state.cardFlipped}
          />
-       
-          <div className="card-text">
-            <div class="front">
-              {card ? card.front : "Add some cards"}
-            </div>
-            <div class="back">
-              {card ? card.back : ""}
-            </div>
-          </div>
 
-
-          <button className="flip-button"
-              >Flip card!
-          </button>
           <button className="delete-card-button"
             onClick={card ? () => this.props.deleteCard(card.id) : ""}
             >x</button>
@@ -91,3 +70,21 @@ class CardsIndex extends React.Component {
 }
 
 export default CardsIndex;
+
+
+{/*
+  <div className="card-text">
+    <div class="front">
+      {card ? card.front : "Add some cards"}
+    </div>
+    <div class="back">
+      {card ? card.back : ""}
+    </div>
+  </div>
+
+
+  <button className="flip-button"
+      >Flip card!
+  </button>
+
+*/}

@@ -45,13 +45,14 @@ class Search extends React.Component {
         <form onSubmit={this.handleSubmit}
           className="search-form">
             <input type="text"
-              placeholder="e.g., math"
+              placeholder="e.g. math, science"
               value={this.state.query}
               onChange={this.update('query')}
               className="input-query"
             />
           <button className="search-cat-button"> Search </button>
         </form>
+        <img src={window.img.girl}></img>
       </div>
       <div className="results-container">
         <SearchResults categoriesArray={categoriesArray} />

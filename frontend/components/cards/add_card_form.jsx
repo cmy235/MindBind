@@ -11,20 +11,16 @@ class AddCardForm extends React.Component {
       back: ""
     };
 
-    // this.addCard = this.addCard.bind(this);
-    // this.deleteCard = this.deleteCard.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
   handleSubmit(e){
     e.preventDefault();
-
     const card = this.state;
     const deckId = this.props.match.params.deckId;
     let cardObj = Object.assign({}, card, {deck_id: deckId});
     this.props.addCard(cardObj);
-
   }
 
   update(field) {

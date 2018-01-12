@@ -11,8 +11,7 @@ How it works
 
 Users can log into the website and see their user home page.  Decks already added by the user will be visible, and user can use the add deck form to create another deck for their list.  They can then add/remove cards to these decks as needed.  User can then search for a deck in the database and add it to their list.
 
-Specific features
--
+## Specific features
 
 Add/remove cards to a deck
 --
@@ -23,7 +22,7 @@ When the add button is clicked, the state is switched to true and the <AddDeckCo
 
 Also on the decks index page is a link to the specific deckId, which renders the DeckShowContainer (which contains CardsIndex).
 
-DECKS IMAGE
+[text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/decks_pic.png)
 
 
 ```javascript
@@ -39,7 +38,7 @@ Cards are related to decks via a one-to-many association in the database.  The r
 Search decks/categories
 --
 
-SEARCH IMG HERE
+[text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/search_img.png)
 
 The search function was completed using an ajax request to a CategoriesController on the backend.
 

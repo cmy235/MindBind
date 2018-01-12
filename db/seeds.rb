@@ -9,36 +9,12 @@
 
 User.destroy_all
 Deck.destroy_all
+Category.destroy_all
 
 cy = User.create!({
   username: "demoUser",
   password: "starwars"
   })
-
-orgo = Deck.create!({
-  'title'=> 'Organic Chemistry',
-  'author_id'=> cy.id,
-  'category_id'=> 21
-})
-
-usa = Deck.create!({
-    'title'=> 'American History',
-    'author_id'=> cy.id,
-    'category_id'=> 7
-  })
-
-roman = Deck.create!({
-    'title'=> 'Roman History',
-    'author_id'=> cy.id,
-    'category_id'=> 7
-  })
-
-d2 = Deck.create!({
-    'title'=> 'Fun Facts!',
-    'author_id'=> cy.id,
-    'category_id'=> 7
-  })
-
 
 
 u1 = User.create!({
@@ -85,65 +61,64 @@ cat6 = Category.create!({
 
 
 cat7 = Category.create!({
-  'name'=> "Algebra"
+  'name'=> "Law"
   })
 
 cat8 = Category.create!({
-  'name'=> "Genetics"
+  'name'=> "Foreign Language"
   })
 
 
 cat9 = Category.create!({
-  'name'=> "Algebra"
+  'name'=> "Business"
   })
 
 cat10 = Category.create!({
-  'name'=> "Genetics"
+  'name'=> "Technology"
   })
 
 
-cat7 = Category.create!({
-  'name'=> "Algebra"
+cat11 = Category.create!({
+  'name'=> "Math"
   })
 
-cat8 = Category.create!({
-  'name'=> "Genetics"
+cat12 = Category.create!({
+  'name'=> "Vocations"
   })
 
-cat8 = Category.create!({
-  'name'=> "Social Science"
+cat13 = Category.create!({
+  'name'=> "Certifications"
   })
-
 
 
 d1 = Deck.create!({
   'title'=> 'organic chemistry',
-  'author_id'=> u3.id,
+  'author_id'=> cy.id,
   'category_id'=> cat1.id
 })
 
 d2 = Deck.create!({
     'title'=> 'american history',
-    'author_id'=> u1.id,
+    'author_id'=> cy.id,
     'category_id'=>cat2.id
   })
 
 d3 = Deck.create!({
     'title'=> 'psychology',
-    'author_id'=> u1.id,
+    'author_id'=> cy.id,
     'category_id'=> cat3.id
   })
 
 d4 = Deck.create!({
     'title'=> 'biology',
-    'author_id'=> u2.id,
+    'author_id'=> cy.id,
     'category_id'=> cat3.id
   })
 
 
 d5 = Deck.create!({
   'title'=> 'roman history',
-  'author_id'=> u3.id,
+  'author_id'=> cy.id,
   'category_id'=> cat2.id
 })
 
@@ -151,14 +126,14 @@ d5 = Deck.create!({
 c1 = Card.create!({
   'front'=> "True/False: The Roman empire was the largest empire in history",
   'back'=> "False: It was only the 28th largest in history",
-  'deck_id' => roman.id
+  'deck_id' => d5.id
   })
 
 
 c2 = Card.create!({
-  'front'=> "Which Roman conflist was the longest of it's history?",
+  'front'=> "Which Roman conflict was the longest of its history?",
   'back'=> "The Roman/Persian conflict was longest: it lasted 721 years",
-  'deck_id' => roman.id
+  'deck_id' => d5.id
   })
 
 
@@ -168,20 +143,20 @@ c3 = Card.create!({
               B: urine
               C: goat's milk",
   'back'=> "B: urine",
-  'deck_id' => roman.id
+  'deck_id' => d5.id
   })
 
 c101 = Card.create!({
   'front'=> "True/False: Romans solely spoke Latin",
   'back'=> "False: Latin was one of many languages spoke in Rome, including
   Celtic, Syriac, Greek and Thracian",
-  'deck_id' => roman.id
+  'deck_id' => d5.id
   })
 
 c100 = Card.create!({
-  'front'=> "Ancient Roman women used __________ as a perfume to improve their beauty and complexion",
+  'front'=> "Ancient Roman women used __________ as a moisturizer their beauty and complexion",
   'back'=> "Gladiator sweat",
-  'deck_id' => roman.id
+  'deck_id' => d5.id
   })
 
 
@@ -189,31 +164,31 @@ c99 = Card.create!({
   'front'=> "You can make which of the following using organic chemistry principles?
               A: Pesticides
               B: Soap
-              C: Crystal Meth
+              C: Plastic
               D: All of the above!",
   'back'=> "D: All of the above!",
-  'deck_id' => orgo.id
+  'deck_id' => d1.id
   })
 
 
 c5 = Card.create!({
   'front'=> "The basis for organic chemistry is: _____ ",
   'back'=> "Carbon",
-  'deck_id' => orgo.id
+  'deck_id' => d1.id
   })
 
 
 c39 = Card.create!({
   'front'=> "The arrangement and interaction of molecules in space is called what?",
   'back'=> "Stereochemistry",
-  'deck_id' => orgo.id
+  'deck_id' => d1.id
   })
 
 
 c41 = Card.create!({
-  'front'=> "The arrangement and interaction of molecules in space is called what?",
-  'back'=> "Stereochemistry",
-  'deck_id' => orgo.id
+  'front'=> "The origin of the name 'carbon' comes from the Latin word carbo, meaning what?",
+  'back'=> "Charcoal",
+  'deck_id' => d1.id
   })
 
 
@@ -221,17 +196,17 @@ c41 = Card.create!({
 c6 = Card.create!({
   'front'=> "Who was the fifth president of the U.S.?",
   'back'=> "Abraham Lincoln",
-  'deck_id' => usa.id
+  'deck_id' => d2.id
   })
 
 c26 = Card.create!({
-  'front'=> "Explosion of the USS Maine in Havana Harbor in 1898 began whichw war?",
+  'front'=> "The explosion of the USS Maine in Havana Harbor in 1898 began which war?",
   'back'=> "Spanish/American War",
-  'deck_id' => usa.id
+  'deck_id' => d2.id
   })
 
 c27 = Card.create!({
   'front'=> "This Amendment made it illegal to manufacture, distribute, or possess any type of alcoholic beverage",
   'back'=> "Prohibition",
-  'deck_id' => usa.id
+  'deck_id' => d2.id
   })

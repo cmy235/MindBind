@@ -9,6 +9,8 @@ json.categories @categories do |category|
   json.decks category.decks
 end
 
+
+
 # or
 
 # --

@@ -26,10 +26,12 @@ class CardsIndex extends React.Component {
      });
   }
 
+{/*
   flipCard (back) {
    const flop = document.getElementById("card-text");
    flop.innerHTML= back;
 }
+*/}
 
 
   render() {
@@ -45,6 +47,15 @@ class CardsIndex extends React.Component {
     const card = this.props.cards[cardId];
       return (
         <div className="card-list-inner">
+          <FlipCard
+            width={"50%"}
+            height={"25%"}
+            onClick={ () => this.setState({cardFlipped: !this.state.cardFlipped })}
+           frontChild={<CardFront question={card.front} />}
+           backChild={<cardFront answer={card.back} />}
+           flipped={this.state.cardFlipped}
+         />
+       
           <div className="card-text">
             <div class="front">
               {card ? card.front : "Add some cards"}
@@ -53,8 +64,9 @@ class CardsIndex extends React.Component {
               {card ? card.back : ""}
             </div>
           </div>
+
+
           <button className="flip-button"
-              onClick={ () => $("#inner-text").flip() }
               >Flip card!
           </button>
           <button className="delete-card-button"

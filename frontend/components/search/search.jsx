@@ -1,5 +1,7 @@
 import React from 'react';
-import SearchContainer from './search';
+import SearchContainer from './search_container';
+import SearchResultsContainer from './search_results_container';
+import SearchResults from './search_results';
 
 class Search extends React.Component {
   constructor(props) {
@@ -26,33 +28,20 @@ class Search extends React.Component {
 
   render(){
     debugger
-    let displayCategoryName = ;
-    let displayDecks = "Search for some categories/decks!";
+
+    let categoriesArray = [];
       if (this.props.results) {
         const searchResults = this.props.results;
-        debugger
-        const categoriesList = searchResults.map( (category) => {
-          displayCategoryName.push(category.name;
+        const categoriesList = searchResults.map( (categoryObject) => {
+          categoriesArray.push(categoryObject);
 
-          let decksArray = category.decks.map( (deck) => {
-            displayDecks.push=deck.title;
           }
-          return displayCategoryName
         );
-
-      });
       }
 
     return(
-
+      <div className="full-page">
       <div className="search-container">
-        <SearchBox />
-      </div>
-      <div className="search-container">
-        <SearchResults />
-      </div>
-
-      <div>
         <form onSubmit={this.handleSubmit}
           className="search-form">
             <input type="text"
@@ -61,33 +50,15 @@ class Search extends React.Component {
               onChange={this.update('query')}
               className="input-query"
             />
-          <button  className="modal-signup-button"> Search </button>
+          <button className="modal-signup-button"> Search </button>
         </form>
-
-        <div className="results-list">
-          <ul>
-            {
-
-            }
-            {displayCategoryName}
-          <br/>
-            {displayDecks}
-          </ul>
-        </div>
       </div>
+      <div className="results-container">
+        <SearchResults categoriesArray={categoriesArray} />
+      </div>
+    </div>
     );
   }
 }
 
 export default Search;
-
-{/*
-{ let resultsProps;
-  if (this.props) {
-    resultsProps = this.props;
-    resultsArray = resultsProps.results.map( (category) => {
-    return category.name;
-});
-}
-}
-*/}

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { searchCategories } from '../../actions/search_action';
-import Search from './search';
+import SearchResults from './search_results';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     results: state.entities.query.categories
   };
@@ -14,7 +14,5 @@ const mapDispatchToProps = (query) => (dispatch) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Search);
+export default connect(mapStateToProps,
+   mapDispatchToProps)(SearchResults);

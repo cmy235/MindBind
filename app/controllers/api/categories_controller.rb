@@ -18,11 +18,11 @@ class Api::CategoriesController < ApplicationController
     if params[:query].present?
       @categories = Category.where('UPPER(name) ~ UPPER(?)', params[:query].upcase)
       # @categories = Category.where('name LIKE ?', params[:query].upcase)
-      
+
       render template: 'api/categories/index.json'
     else
       # @categories = Category.none
-      render ["Category not found"]
+      render @categories.errors.full_messages
     end
   end
 

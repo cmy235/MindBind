@@ -1,6 +1,6 @@
 # MindBind
 
-MindBind is a learning app which allows you to create decks of flashcards to study.  You can add decks, create and delete card to certain decks, as well as search for categories of decks via the search page. Find the live version <HERE>.
+MindBind is a learning app which allows you to create decks of flashcards to study.  You can add decks, create and delete card to certain decks, as well as search for categories of decks via the search page. Find the live version [here](https://aa-mindbind.herokuapp.com/#/).
   
 Technologies Used:
 

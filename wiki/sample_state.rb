@@ -19,14 +19,14 @@
       42: {
         id: 42,
         category_id: 12,
-        cards: [3, 2, 12, 44, 32],
+        card_ids: [3, 2, 12, 44, 32],
         current_user_follows: true
       },
 
       63: {
         id: 63,
         category_id: 9,
-        cards: [3, 18, 6, 12, 42, 21],
+        card_ids: [3, 18, 6, 12, 42, 21],
         current_user_follows: false
       }
     }

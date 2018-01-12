@@ -35,7 +35,6 @@ class DecksIndex extends React.Component {
         /> :
         null);
 
-
     return(
       <div>
         {addDeck}

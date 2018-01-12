@@ -18,8 +18,8 @@ class CardBack extends React.Component {
           {this.state.showBack ? this.props.back : ""}
         </div>
         <button className="flip-button"
-          onClick={() => this.setState({ showBack: true })}
-        >See answer!</button>
+          onClick={() => this.setState({ showBack: !this.state.showBack })}
+        >{ this.state.showBack ? "Hide!" : "Show!" }</button>
       </div>
     );
   }

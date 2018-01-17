@@ -18,6 +18,7 @@ const App = () => (
       <Route exact path="/" component={UI_Container} />
       <Route path="/decks" component={DecksIndexContainer} />
       <Route path= "/decks/:deckId" component={DeckShowContainer} />
+      // <Route path= "/cards/:cardId" component={CardShowContainer} />
       <Route path="/search" component={SearchContainer} />
  </div>
 );

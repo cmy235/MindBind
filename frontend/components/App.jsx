@@ -8,6 +8,7 @@ import UI_Container from './ui/ui_container';
 import DecksIndexContainer from './decks/decks_index_container';
 import DeckShowContainer from './decks/deck_show_container';
 import SearchContainer from './search/search_container';
+import CardShowContainer from './cards/card_show_container';
 
 
 const App = () => (
@@ -18,7 +19,7 @@ const App = () => (
       <Route exact path="/" component={UI_Container} />
       <Route path="/decks" component={DecksIndexContainer} />
       <Route path= "/decks/:deckId" component={DeckShowContainer} />
-      // <Route path= "/cards/:cardId" component={CardShowContainer} />
+      <Route path= "/cards/:cardId" component={CardShowContainer} />
       <Route path="/search" component={SearchContainer} />
  </div>
 );

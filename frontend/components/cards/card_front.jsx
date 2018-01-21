@@ -5,19 +5,16 @@ class CardFront extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      showFront: true
-    };
   }
 
 
   render() {
-debugger
+    debugger
     return(
-      <div class="card-front">
-        {
-          this.state.showFront ? this.props.front : ""
-        }
+        <div className="card-text">
+          <div class="flashcard">
+          {this.props.front}
+        </div>
       </div>
     );
   }

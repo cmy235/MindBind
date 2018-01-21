@@ -8,9 +8,7 @@ import { Route } from 'react-router-dom';
 class DeckShow extends React.Component {
   constructor(props){
     super(props);
-
     this.fetchDeck = this.props.fetchDeck.bind(this);
-
   }
 
   componentDidMount() {

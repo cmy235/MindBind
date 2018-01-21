@@ -5,21 +5,18 @@ class CardBack extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      showBack: false
-    };
   }
 
 
   render() {
     return(
       <div>
-        <div class="card-back">
-          {this.state.showBack ? this.props.back : ""}
+          <div className="card-text">
+            <div class="flashcard">
+            {this.props.back}
+          </div>
         </div>
-        <button className="flip-button"
-          onClick={() => this.setState({ showBack: !this.state.showBack })}
-        >{ this.state.showBack ? "Hide!" : "Show!" }</button>
+
       </div>
     );
   }

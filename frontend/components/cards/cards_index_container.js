@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     cards: state.entities.cards,
     deck: (state.entities.deck[ownProps.match.params.deckId]) || { cardIds: [] }

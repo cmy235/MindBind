@@ -1,0 +1,109 @@
+//
+
+.card-show-container {
+  display: grid;
+  grid-template-columns: 40px 360px 900px;
+}
+
+.personal { // contact icons
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: black;
+  height: 100vh;
+}
+
+.progress {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 100%;
+  background-color: #333333;
+  flex-grow: 1;
+  height: 100%
+}
+
+
+
+
+.flashcard-container {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  background-color: #D3D3D3;
+
+  aside {
+    text-align: center;
+    width: inherit;
+    padding-left: 350px;
+    margin: 50px;
+    height: 400px;
+  }
+
+
+  section {
+
+  }
+
+}
+
+.flashcard {
+  // background-color: blue;
+  margin-top: 22%;
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 25%;
+}
+
+.card-text {
+  text-align: center;
+  font-size: 24px;
+  position: absolute;
+  width: 178%;
+  height: 100%;
+  left: -350px;
+  background-color: white;
+  /* border: 1px solid; */
+  box-shadow: 1px 3px #888888;
+}
+
+.done-button {
+  font-family: inherit;
+  text-align: center;
+	text-decoration: none!important;
+  color: white;
+  background: #29a5dc;
+  padding: 5px 14px;
+  border-radius: 2px;
+  width: 50%;
+	border-style: none;
+}
+
+// .progress {
+//   height: 220px;
+//   box-sizing: border-box;
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   &> div {
+//     height: 20px;
+//     margin-bottom: 15px;
+//     display: flex;
+//     align-items: center;
+//     span {
+//       display: inline-block;
+//       color: white;
+//       font-family: Montserrat;
+//       font-size: 14px;
+//       width: 20px;
+//       text-align: right;
+//     }
+//     section {
+//       margin-left: 20px;
+//       display: inline-block;
+//       height: 20px;
+//       width: 100%;
+//       background-color: red;
+//     }
+//     div {
+//       height: 20px;
+//       width: 20px;
+//     }
+//   }
+// }

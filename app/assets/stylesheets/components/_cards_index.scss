@@ -4,8 +4,14 @@
   bottom: 0;
   left: 34%;
   width: 62vw;
-  // display: flex;
-  // justify-content: space-between;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eeeeee;
+
+  }
+
 }
 
 .add-card-input {
@@ -25,17 +31,15 @@
 .deck-name {
   font-size: 38px;
   padding: 50px;
-  border-bottom: 1px solid #eeeeee;
   font-family: 'Montserrat', sans-serif;
   color: #ff8a47;
   padding: 20px;
   margin-bottom: 40px;
-  border-bottom: 1px solid #eeeeee;
 }
 
 .card-list-outer {
   background-color: #ffffff;
-  // margin-top: 60px;
+  margin-top: 50px;
 }
 
 .card-list-container {
@@ -69,7 +73,6 @@
 }
 
 #card-back {
-
 }
 
 .cards-display {

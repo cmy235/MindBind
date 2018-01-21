@@ -9,18 +9,28 @@ class DeckShow extends React.Component {
   constructor(props){
     super(props);
     this.fetchDeck = this.props.fetchDeck.bind(this);
+
+    this.toggleDelete = this.toggleDelete.bind(this);
+
+    this.state = {
+      showDropdown: false
+    };
   }
 
   componentDidMount() {
-     const deckId = this.props.match.params.deckId;
-     this.props.fetchDeck(deckId);
-   }
+    const deckId = this.props.match.params.deckId;
+    this.props.fetchDeck(deckId);
+  }
 
-   componentWillReceiveProps(nextProps) {
-     if (this.props.match.params.deckId !== nextProps.match.params.deckId){
-       this.props.fetchDeck(nextProps.match.params.deckId);
-     }
-   }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.deckId !== nextProps.match.params.deckId){
+      this.props.fetchDeck(nextProps.match.params.deckId);
+    }
+  }
+
+  toggleDelete() {
+    this.setState({showDropdown: !this.state.showDropdown});
+  }
 
   render() {
     let deckName;
@@ -35,13 +45,21 @@ class DeckShow extends React.Component {
     debugger
 
     return (
-      <div className='cards-container'>
-        <div className="deck-name">{deckName}
-        </div>
-        <button onClick={ () => this.props.deleteDeck(deckId) }>DELETE</button>
-         <CardsIndexContainer />
-       </div>
-      );
+      <div className="cards-container">
+        <section>
+          <div className="deck-name">{deckName}</div>
+          <div className="settings-icon"
+            onClick={() => this.toggleDelete()}>
+            <i className="fa fa-cog settings-icon" aria-hidden="true"></i>
+          </div>
+          { this.state.showDropdown ?
+            <button onClick={ () => this.props.deleteDeck(deckId) }>Delete</button>
+            : ""
+          }
+        </section>
+        <CardsIndexContainer />
+      </div>
+    );
   }
 }
 

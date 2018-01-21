@@ -1,4 +1,4 @@
-import { RECEIVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
+import { RECEIVE_DECK, REMOVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
 import { RECEIVE_CARD, REMOVE_CARD } from '../actions/card_actions';
 import  merge  from 'lodash/merge';
 
@@ -11,10 +11,13 @@ const deckReducer = (state = {}, action) => {
     case RECEIVE_CARD:
     case RECEIVE_DECK:
       newState = Object.assign({}, state, {[action.deck.id]: action.deck});
-
+      return newState;
+    case REMOVE_DECK:
+    debugger
+      newState = Object.assign({}, state);
+      delete newState[action.payload.deck.id];
       return newState;
     case RECEIVE_ALL_DECKS:
-
       newState = Object.assign({}, state, action.decks);
       return newState;
     default:

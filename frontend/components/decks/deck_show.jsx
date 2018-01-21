@@ -24,17 +24,21 @@ class DeckShow extends React.Component {
 
   render() {
     let deckName;
+    let deckId;
     if (this.props.deck) {
       deckName = this.props.deck.title;
+      deckId = this.props.deck.id;
     } else {
       deckName = "";
     }
 
+    debugger
 
     return (
       <div className='cards-container'>
         <div className="deck-name">{deckName}
-          </div>
+        </div>
+        <button onClick={ () => this.props.deleteDeck(deckId) }>DELETE</button>
          <CardsIndexContainer />
        </div>
       );

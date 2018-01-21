@@ -19,35 +19,43 @@ class CardsIndex extends React.Component {
   }
 
   toggleCard (){
-     this.setState({
-       cardsArray: true
-     });
+    this.setState({
+      cardsArray: true
+    });
   }
 
   render() {
 
     const addCard = (this.state.showDeckForm ?
-          <AddCardContainer
-            showModal={this.state.showCardForm}
-            closeCardForm={() => this.setState({showCardForm: false})}
-            /> :
+      <AddCardContainer
+        showModal={this.state.showCardForm}
+        closeCardForm={() => this.setState({showCardForm: false})}
+        /> :
         null);
 
-    const currentDeckId = this.props.match.params.deckId;
-    const cards = this.props.deck.cardIds.map( (cardId, idx) => {
-    const card = this.props.cards[cardId];
+        const currentDeckId = this.props.match.params.deckId;
+        const cards = this.props.deck.cardIds.map( (cardId, idx) => {
+          const card = this.props.cards[cardId];
 
-      return (
-        <div className="card-list-inner">
-          { card ? <Link to={`/cards/${card.id}`}
-          className="in-line">Study!
-        </Link> : "" }
+
+          return (
+            <div className="card-list-inner">
+              { card ? <Link to={
+                {    pathname: `/cards/${card.id}`,
+                state: {
+                  deck: this.props.deck,
+                  currentDeckId: currentDeckId
+                }
+              }
+            }
+            className="in-line">Study!
+          </Link> : "" }
 
           <button className="delete-card-button"
             onClick={card ? () => this.props.deleteCard(card.id) : ""}
             >x</button>
-            <div className="card-flip-container">
-            </div>
+          <div className="card-flip-container">
+          </div>
         </div>
       );
     });
@@ -58,10 +66,20 @@ class CardsIndex extends React.Component {
           {cards}
         </div>
         <AddCardContainer />
-       </div>
-      );
+      </div>
+    );
   }
-
 }
 
 export default CardsIndex;
+
+{/*  old way, works perfect. Just need to pass props with it.
+
+  <div className="card-list-inner">
+  { card ? <Link to={`/cards/${card.id}`}
+  deck = {this.props.deck}
+  myDeckId = {currentDeckId}
+  className="in-line">Study!
+  </Link> : "" }
+
+  */}

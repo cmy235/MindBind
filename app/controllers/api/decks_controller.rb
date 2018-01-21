@@ -27,8 +27,14 @@ class Api::DecksController < ApplicationController
   end
 
   def destroy
-    @deck = current_user.decks.find(params[:id])
-    @deck.destroy!
+    @deck = Deck.find(params[:id])
+
+    if @deck
+      @deck.destroy!
+      render :show
+    else
+      render json: @deck.errors.full_messages
+    end
   end
 
   def update

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RECEIVE_CARDS, RECEIVE_ALL_CARDS,
    REMOVE_CARD, RECEIVE_CARD } from '../actions/card_actions.js';
-import { RECEIVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
+import { RECEIVE_DECK, REMOVE_DECK, RECEIVE_ALL_DECKS } from '../actions/deck_actions';
 
 import  merge  from 'lodash/merge';
 
@@ -20,10 +20,14 @@ const cardsReducer = (state = {}, action) => {
       newState = Object.assign({}, state, cardObject);
       return newState;
     case REMOVE_CARD:
-    
       newState = Object.assign({}, state);
       delete newState[action.cardId];
       return newState;
+      // case REMOVE_DECK:
+      // debugger
+      //   newState = Object.assign({}, state);
+      //   delete newState[action.payload.deck.id];
+      //   return newState;
     case RECEIVE_ALL_CARDS:
       return state;
     default:

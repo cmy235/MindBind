@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   debugger
   return {
     cards: state.entities.cards,
-    currentCard: (state.entities.cards[ownProps.match.params.cardId])
+    currentCard: (state.entities.cards[ownProps.match.params.cardId]),
+    deck: (ownProps.location.state ? ownProps.location.state.deck : "")
   };
 };
 

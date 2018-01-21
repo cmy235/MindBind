@@ -2,6 +2,7 @@ import * as APIUtil from '../util/deck_api_util';
 
 export const RECEIVE_ALL_DECKS = "RECEIVE_ALL_DECKS";
 export const RECEIVE_DECK = "RECEIVE_DECK";
+export const REMOVE_DECK = "REMOVE_DECK";
 
 import  merge  from 'lodash/merge';
 
@@ -13,13 +14,19 @@ export const receiveAllDecks = (decks) => {
 };
 
 export const receiveDeck = ({cards, deck}) => {
-  
   return {
     type: RECEIVE_DECK,
     deck: deck,
     cards: cards
   };
 };
+
+export const removeDeck = (payload) => {
+  return {
+    type: REMOVE_DECK,
+    payload
+  }
+}
 
 export const requestDeck = (deckId) => dispatch => {
   return APIUtil.fetchDeck(deckId).then ( (payload) => {
@@ -39,8 +46,10 @@ export const addDeck = (deck) => dispatch => {
   });
 };
 
-export const removeDeck = (deck) => dispatch => {
-  return APIUtil.removeDeck(deck).then ( () => {
-    return dispatch(receiveDeck());
+export const deleteDeck = (deckId) => dispatch => {
+  debugger
+  return APIUtil.removeDeck(deckId).then ( (payload) => {
+    debugger
+    return dispatch(removeDeck(payload));
   });
 };

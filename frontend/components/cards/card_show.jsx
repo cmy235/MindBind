@@ -3,6 +3,7 @@ import CardShowContainer from './card_show_container';
 import { FlipCard } from 'react-flop-card';
 import CardFront from './card_front';
 import CardBack from './card_back';
+import { Link } from 'react-router-dom';
 
 class CardShow extends React.Component {
   constructor(props){
@@ -48,12 +49,23 @@ class CardShow extends React.Component {
             </li>
           </ul>
         </div>
-        <div className="progress">
 
+        <div className="progress">
           <section>
-            section section progress section
-            <button className="done-button">Done</button>
+            <div className="section-title">
+              <div className="study-title">
+                Studying:
+            </div>
+            <div className="current-deck-title">
+              {this.props ? this.props.deck.title : ""}
+            </div>
+          </div>
           </section>
+            <Link to={`/decks/${this.props.deck.id}`}>
+              <button className="done-button">
+                Done
+              </button>
+            </Link>
         </div>
 
         <div className="flashcard-container">
@@ -95,6 +107,10 @@ export default CardShow;
   { card ? <CardBack back={card.back}/> : "" }
   </div>
   </div>
+
+
+
+ALSO:  add link
 
 
   */}

@@ -24,8 +24,6 @@ class Api::CardsController < ApplicationController
     # deck = current_user.decks.find(params[:id]);
     @card = Card.find(params[:id])
 
-    # 
-    # @card = Deck.find(params[:id])
     if @card
       @card.destroy!
       render :show

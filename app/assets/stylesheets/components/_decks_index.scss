@@ -31,10 +31,23 @@
   text-align: center;
   position: relative;
   border-radius: 7px;
+  color: white;
+  border-color: #46b8da;
 }
 
 .fa-set {
 
+}
+
+.delete-button {
+  position: relative;
+  right: -40px;
+  top: -15px;
+  border: 1px solid gray;
+  padding: 3px 30px;
+  box-shadow: -1px 1px #dddddd;
+  font-family: inherit;
+  border-color: #dddddd;
 }
 
 

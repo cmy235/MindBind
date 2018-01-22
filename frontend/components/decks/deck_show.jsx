@@ -47,15 +47,21 @@ class DeckShow extends React.Component {
     return (
       <div className="cards-container">
         <section>
-          <div className="deck-name">{deckName}</div>
-          <div className="settings-icon"
-            onClick={() => this.toggleDelete()}>
-            <i className="fa fa-cog settings-icon" aria-hidden="true"></i>
+          <div className="deck-name">{deckName}
           </div>
-          { this.state.showDropdown ?
-            <button onClick={ () => this.props.deleteDeck(deckId) }>Delete</button>
-            : ""
-          }
+          <div className="dropdown">
+            <div className="settings-icon"
+              onClick={() => this.toggleDelete()}>
+              <i className="fa fa-cog settings-icon" aria-hidden="true"></i>
+            </div>
+            { this.state.showDropdown ?
+              <button className="delete-button"
+                onClick={ () => this.props.deleteDeck(deckId) }>
+                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                Delete</button>
+              : ""
+            }
+          </div>
         </section>
         <CardsIndexContainer />
       </div>

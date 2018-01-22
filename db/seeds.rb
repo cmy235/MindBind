@@ -90,6 +90,10 @@ cat13 = Category.create!({
   'name'=> "Certifications"
   })
 
+cat14 = Category.create!({
+  'name'=> "Topography"
+  })
+
 
 d1 = Deck.create!({
   'title'=> 'organic chemistry',

@@ -1,7 +1,6 @@
 .main-nav  {
 	display: flex;
   height: 60px;
-	// position: fixed;
 	justify-content: space-between;
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
@@ -12,7 +11,6 @@
 .main-nav-current-user  {
 	display: flex;
   height: 60px;
-	// position: fixed;
 	justify-content: space-between;
   flex-direction: row-reverse;
 	font-family: 'Montserrat', sans-serif;
@@ -76,6 +74,27 @@
   border: 1px solid black;
 }
 
+.error-outer {
+	border: 2px solid #29a5dc;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.errors-login {
+	position: absolute;
+	margin-left: 15px;
+	margin-top: -40px;
+	// border: 2px solid black;
+	// padding: 4px;
+	// border-radius: 4px;
+}
+
+.errors-signup {
+	position: absolute;
+  top: 13px;
+  margin-left: 99px;
+
+}
 
 .box-3 {
   padding-top: 40px;

@@ -1,8 +1,8 @@
 
-// .deck-section {
-//   width: 27%;
-// }
-
+.sidebar-title {
+  margin-left: 10px;
+  font-size: 20px;
+}
 
 .deck-title-container {
   // margin-top: -57px;
@@ -99,7 +99,7 @@
 
 .deck-list-item {
   // position: absolute;
-  // display: flex;
+  display: flex;
   // justify-content: space-between;
   align-items: center;
   padding: 20px 15px 5px;
@@ -134,15 +134,24 @@
   border: 1px solid #dddddd;
 }
 
+.dropdown {
+  position: absolute;
+  left: 400px;
+  top: 20px;
+}
+
 .gray-bar {
   margin-top: 2px;
   position: relative;
-	width: 70%;
+	// width: 70%;
+  width: 200px;
 	height: 10px;
 	background: #acacac;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
 	border-radius: 100px;
+  margin-bottom: 15px;
+  margin-left: 10px;
 }
 
 .deck-list-item:hover {

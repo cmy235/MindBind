@@ -35,49 +35,47 @@ class DecksIndex extends React.Component {
         /> :
         null);
 
-    return(
-      <div>
-        {addDeck}
-        <div className="deck-title-container">
-          <div className="search-add-icons">
-            <span onClick={this.showDeckModal}>
-              <i className="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
-            </span>
-              <Link to={"/search"} className="in-line">
-                <i className="search-button fas fa-search btn fa-2x">
-                </i>
-              </Link>
-          </div>
-          <div className="deck-title">
-          Decks
-        </div>
-      </div>
-        <div className="deck-outer">
-          {
-          this.props.decks.map( (deck) => (
-            <div className="deck-container">
-              <div className="deck-list">
-                <ul
-                  className="deck-list-item"
-                  >
-                  <div className="item-title">
-                  <img className="deck-img" src={window.img.deck}></img>
-                    <Link to={`/decks/${deck.id}`} className="in-line">{deck.title}</Link>
-                    <div className="gray-bar"></div>
-                  </div>
-                </ul>
+        return(
+          <div>
+            {addDeck}
+            <div className="deck-title-container">
+              <div className="search-add-icons">
+                <span onClick={this.showDeckModal}>
+                  <i className="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
+                </span>
+                <Link to={"/search"} className="in-line">
+                  <i className="search-button fas fa-search btn fa-2x">
+                  </i>
+                </Link>
+              </div>
+              <div className="deck-title">
+                Decks
               </div>
             </div>
-          ))
-        }
-      </div>
-      </div>
-    );
-  }
-}
+            <div className="deck-outer">
+              {
+                this.props.decks.map( (deck) => (
+                  <div className="deck-container">
+                    <div className="deck-list">
+                      <Link to={`/decks/${deck.id}`} className="in-line">
+                        <ul className="deck-list-item">
+                          <img className="deck-img" src={window.img.deck}></img>
+                          <div className="item-title">
+                            <div className="sidebar-title">
+                              {deck.title}
+                            </div>
+                            <div className="gray-bar"></div>
+                          </div>
+                        </ul>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        );
+      }
+    }
 
-export default DecksIndex;
-
-// <div className="cards-container">
-//   {showCards}
-// </div>
+    export default DecksIndex;

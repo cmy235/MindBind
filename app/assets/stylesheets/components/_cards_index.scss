@@ -29,17 +29,21 @@
 }
 
 .deck-name {
+  position: absolute;
+  top: 25px;
   font-size: 38px;
   padding: 50px;
   font-family: 'Montserrat', sans-serif;
   color: #ff8a47;
   padding: 20px;
   margin-bottom: 40px;
+  left: 10px;
 }
 
 .card-list-outer {
   background-color: #ffffff;
   margin-top: 50px;
+  margin-top: 120px;
 }
 
 .card-list-container {

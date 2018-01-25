@@ -4,6 +4,7 @@ import SessionForm from './session_form';
 import { closeModals } from '../../actions/ui_actions';
 
 const mapStateToProps = (state, { type }) => {
+  debugger
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session,

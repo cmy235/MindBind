@@ -94,11 +94,6 @@ cy = User.create!({
                                     'name'=> "Topography"
                                     })
 
-                                    d = Deck.create!({
-                                      'title'=> 'Organic Chemistry',
-                                      'author_id'=> cy.id,
-                                      'category_id'=> cat1.id
-                                      })
 
                                       d001 = Deck.create!({
                                         'title'=> 'American Sign Language',
@@ -195,7 +190,7 @@ cy = User.create!({
 
 
                                                                 d1 = Deck.create!({
-                                                                  'title'=> 'Rrganic chemistry',
+                                                                  'title'=> 'Organic chemistry',
                                                                   'author_id'=> cy.id,
                                                                   'category_id'=> cat1.id
                                                                   })
@@ -207,7 +202,7 @@ cy = User.create!({
                                                                     })
 
                                                                     d3 = Deck.create!({
-                                                                      'title'=> 'psychology',
+                                                                      'title'=> 'Psychology',
                                                                       'author_id'=> cy.id,
                                                                       'category_id'=> cat3.id
                                                                       })
@@ -315,3 +310,46 @@ cy = User.create!({
                                                                                                   'back'=> "Prohibition",
                                                                                                   'deck_id' => d2.id
                                                                                                   })
+
+                                                                                                  c29 = Card.create!({
+                                                                                                    'front'=> "The type of psychologist who is trained to provide psychotherapy and to administer and interpret psychological tests is called",
+                                                                                                    'back'=> "Clinical psychologist",
+                                                                                                    'deck_id' => d3.id
+                                                                                                    })
+
+                                                                                                    c30 = Card.create!({
+                                                                                                      'front'=> "Group in an experiment or study that does not receive treatment by the researchers; used as a benchmark to measure how the other tested subjects",
+                                                                                                      'back'=> "Control group",
+                                                                                                      'deck_id' => d3.id
+                                                                                                      })
+
+                                                                                                      c31 = Card.create!({
+                                                                                                        'front'=> "a school of thought that explains how people are able to see meaningful organization and patterns when individual parts are seen together as a whole.",
+                                                                                                        'back'=> "Gestalt",
+                                                                                                        'deck_id' => d3.id
+                                                                                                        })
+
+                                                                                                  c32 = Card.create!({
+                                                                                                    'front'=> "A school of thought centered on the idea that the mind can be studied by breaking it down into its most basic elements.",
+                                                                                                    'back'=> "Structuralism",
+                                                                                                    'deck_id' => d3.id
+                                                                                                    })
+
+                                                                                                    c33 = Card.create!({
+                                                                                                      'front'=> "threadlike structures made of DNA molecules that contain the genes",
+                                                                                                      'back'=> "Chromosomes",
+                                                                                                      'deck_id' => d4.id
+                                                                                                      })
+
+                                                                                                      c34 = Card.create!({
+                                                                                                        'front'=> "A part of the cell containing DNA and RNA and responsible for growth and reproduction, and also Gavin Belson's company",
+                                                                                                        'back'=> "Nucleus",
+                                                                                                        'deck_id' => d4.id
+                                                                                                        })
+
+                                                                                                        c35 = Card.create!({
+                                                                                                          'front'=> "What is the difference between DNA and RNA?",
+                                                                                                          'back'=> "DNA, sugar is deoxyribose, two strands, base - thymine
+ .......   RNA, sugar is ribose, one strand, base - uracil, only molecule to enter or leave the nucleus",
+                                                                                                          'deck_id' => d4.id
+                                                                                                          })

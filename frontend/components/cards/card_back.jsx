@@ -11,16 +11,6 @@ class CardBack extends React.Component {
 
   render() {
     debugger
-
-    const index = this.props ?
-    ((this.props.index + 1) % this.props.length)
-    : 0;
-
-    const nextCardId = this.props ?
-    (this.props.deck.cardIds[index])
-    : 0;
-
-    debugger
     return(
       <div>
         <div className="card-text">
@@ -28,10 +18,6 @@ class CardBack extends React.Component {
             {this.props.back}
           </div>
         </div>
-        <button className="next-button">Next
-  { console.log("ELO")}
-      </button>
-
     </div>
   );
 }

@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     cards: state.entities.cards,
     currentCard: (state.entities.cards[ownProps.match.params.cardId]),
-    deck: (ownProps.location.state ? ownProps.location.state.deck : "")
+    deck: (ownProps.location.state ? ownProps.location.state.deck : ""),
+    back: (ownProps.location.state ? ownProps.location.state.back : "")
   };
 };
 

@@ -1,9 +1,11 @@
 import React from 'react';
 {/*} import CardShowContainer from './card_show_container'; */}
 import { FlipCard } from 'react-flop-card';
+import { Link } from 'react-router-dom';
 import CardFront from './card_front';
 import CardBack from './card_back';
-import { Link } from 'react-router-dom';
+import BackButtons from './back_buttons';
+import FrontButtons from './front_buttons';
 
 class CardShow extends React.Component {
   constructor(props){
@@ -12,7 +14,7 @@ class CardShow extends React.Component {
     this.state = {
       cards: props.cards,
       back: false,
-      card: props.currentCard
+      // card: props.currentCard
     };
   }
 
@@ -83,49 +85,56 @@ class CardShow extends React.Component {
           <aside>
             <FlipCard width={"100%"} height={"100%"}
               onClick={() => this.setState({ back: !this.state.back })}
-              frontChild={<CardFront front={this.state.card ? this.state.card.front : ""} />}
+              frontChild={<CardFront front={this.props.currentCard ? this.props.currentCard.front : ""} />}
               backChild={<CardBack
-                back={this.state.card ? this.state.card.back : ""}
-                currentCard={this.props ? this.props.currentCard : ""}
-                deck={this.props ? this.props.deck : ""}
-                index={this.props ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
-                length={this.props ? this.props.deck.cardIds.length : ""}
+                back={this.props.currentCard ? this.props.currentCard.back : ""}
                 />}
-              flipped={this.state.back}
-              />
-          </aside>
+                flipped={this.state.back}
+                />
+            </aside>
+
+            <div className="bottom-buttons">
+              { this.state.back ?
+                <BackButtons
+                  flipBack={() => this.setState({ back: !this.state.back })}
+                  currentCard={this.props.deck ? this.props.currentCard : ""}
+                  deck={this.props.deck ? this.props.deck : ""}
+                  index={this.props.deck ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
+                  length={this.props.deck ? this.props.deck.cardIds.length : ""}/>
+                :
+                <FrontButtons />}
+                </div>
+              </div>
+            </div>
+          );
+
+        }
+
+      }
+
+      export default CardShow;
+
+      {/* inside flashcard container above
+
+        <FlipCard width={"50%"} height={"50%"}
+        onClick={() => this.setState({ back: !this.state.back })}
+        frontChild={<CardFront question={card.front} />}
+        backChild={<CardBack answer={card.back} />}
+        flipped={this.state.back}
+        />
+
+        <div className="card-text">
+        <div class="card-front">
+        { card ? <CardFront front={card.front}/> : "" }
         </div>
-      </div>
-    );
-
-  }
-
-}
-
-
-export default CardShow;
-
-{/* inside flashcard container above
-
-  <FlipCard width={"50%"} height={"50%"}
-  onClick={() => this.setState({ back: !this.state.back })}
-  frontChild={<CardFront question={card.front} />}
-  backChild={<CardBack answer={card.back} />}
-  flipped={this.state.back}
-  />
-
-  <div className="card-text">
-  <div class="card-front">
-  { card ? <CardFront front={card.front}/> : "" }
-  </div>
-  <div class="card-back">
-  { card ? <CardBack back={card.back}/> : "" }
-  </div>
-  </div>
+        <div class="card-back">
+        { card ? <CardBack back={card.back}/> : "" }
+        </div>
+        </div>
 
 
 
-  ALSO:  add link
+        ALSO:  add link
 
 
-  */}
+        */}

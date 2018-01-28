@@ -24,7 +24,7 @@ class SearchResults extends React.Component {
 
 
     return(
-        <div>{categories}</div>
+        <div className="query-container">{categories}</div>
     );
   }
 }

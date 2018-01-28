@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import DecksIndexContainer from './decks_index_container';
 
 class AddDeckForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +23,7 @@ class AddDeckForm extends React.Component {
     e.preventDefault();
     const deck = this.state;
     this.props.addDeck(deck);
+    this.props.closeDeckModal();
   }
 
   updateDeckName(deck){
@@ -33,26 +33,27 @@ class AddDeckForm extends React.Component {
   }
 
   render() {
-
+    debugger
     return(
       <div className="modal-overlay">
         <div className="add-deck-form">
           <form onSubmit={this.submitNewDeck}>
             <p className="add-deck-title">New Deck</p>
-              <input
-                placeholder="e.g., European History"
-                value={this.state.title}
-                onChange={this.updateDeckName('title')}
-                className="form-input"
-                type="text">
-              </input>
-              <div className="form-buttons">
-                <button onClick={this.props.closeDeckModal}
-                  className="cancel-button"
-                  >Cancel
-                </button>
-                <button className="save-button">Save</button>
-              </div>
+            <input
+              placeholder="e.g., European History"
+              value={this.state.title}
+              onChange={this.updateDeckName('title')}
+              className="form-input"
+              type="text">
+            </input>
+            <div className="form-buttons">
+              <button onClick={this.props.closeDeckModal}
+                className="cancel-button"
+                >Cancel
+              </button>
+              <button className="save-button"
+                >Save</button>
+            </div>
           </form>
         </div>
       </div>

@@ -11,8 +11,8 @@ render() {
 
 
   return(
-    <div>
-      Hello
+    <div className="front-button-container">
+      click above to reveal answer!
     </div>
   );
 }

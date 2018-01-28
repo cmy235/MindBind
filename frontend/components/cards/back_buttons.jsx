@@ -23,24 +23,34 @@ class BackButtons extends React.Component {
 
     debugger
     return(
-      <div>
-        { this.props.deck ? <Link to={
-          {
-            pathname: `/cards/${nextCardId}`,
-            state: {
-              deck: this.props.deck,
-              currentCard: this.props.currentCard,
-              back: false
+      <div className="back-button-outer">
+        <div className="how-well">
+          How well did you know this?
+        </div>
+        { this.props.deck ? <Link
+          className="back-button-container"
+          onClick={() => {this.props.flipBack();}}
+          to={
+            {
+              pathname: `/cards/${nextCardId}`,
+              state: {
+                deck: this.props.deck,
+                currentCard: this.props.currentCard,
+                back: false
+              }
             }
-          }
-        }><div onClick={() => {this.props.flipBack();}}>
-        Next
-      </div>
-      </Link> : "" }
-    </div>
-  );
+          }>
 
-}
+          <div className="rank-1">1</div>
+          <div className="rank-2">2</div>
+          <div className="rank-3">3</div>
+          <div className="rank-4">4</div>
+          <div className="rank-5">5</div>
+        </Link> : "" }
+      </div>
+    );
+
+  }
 
 }
 

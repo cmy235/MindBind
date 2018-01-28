@@ -14,6 +14,10 @@ class CardBack extends React.Component {
     return(
       <div>
         <div className="card-text">
+          <div className="card-header">A.
+
+          <i class="fa fa-comment comment" aria-hidden="true"></i>
+          </div>
           <div class="flashcard">
             {this.props.back}
           </div>

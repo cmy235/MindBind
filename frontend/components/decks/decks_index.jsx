@@ -14,20 +14,21 @@ class DecksIndex extends React.Component {
       // showDeckIndex: false
     };
 
-    this.showDeckModal = this.showDeckModal.bind(this);
+    this.flipDeckModal = this.flipDeckModal.bind(this);
   }
 
   componentDidMount() {
     this.props.requestDecks();
   }
 
-  showDeckModal() {
+  flipDeckModal() {
     this.setState({
-      showDeckForm: true
+      showDeckForm: !this.state.showDeckForm
     });
   }
 
   render (){
+    debugger
     const addDeck = (this.state.showDeckForm ?
       <AddDeckContainer
         showModal={this.state.showDeckForm}
@@ -40,7 +41,7 @@ class DecksIndex extends React.Component {
             {addDeck}
             <div className="deck-title-container">
               <div className="search-add-icons">
-                <span onClick={this.showDeckModal}>
+                <span onClick={this.flipDeckModal}>
                   <i className="add-button fa fa-plus-square btn fa-2x" aria-hidden="true"></i>
                 </span>
                 <Link to={"/search"} className="in-line">

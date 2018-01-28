@@ -17,200 +17,222 @@ cy = User.create!({
   })
 
 
-u1 = User.create!({
-  username: "userTwo",
-  password: "chewbacca"
-  })
+  u1 = User.create!({
+    username: "userTwo",
+    password: "chewbacca"
+    })
 
 
-u2 = User.create!({
-  username: "student_noob_036",
-  password: "chewbacca"
-  })
+    u2 = User.create!({
+      username: "student_noob_036",
+      password: "chewbacca"
+      })
 
 
-u3 = User.create!({
-  username: "HistoryBuff46",
-  password: "chewbacca"
-  })
+      u3 = User.create!({
+        username: "HistoryBuff46",
+        password: "chewbacca"
+        })
 
-cat1 = Category.create!({
-  'name'=> "Science"
-  })
+        cat1 = Category.create!({
+          'name'=> "Science"
+          })
 
-cat2 = Category.create!({
-  'name'=> "History"
-  })
-
-
-cat3 = Category.create!({
-  'name'=> "Medicine"
-  })
-
-cat4 = Category.create!({
-  'name'=> "Other"
-  })
-
-cat5 = Category.create!({
-  'name'=> "Bio-science"
-  })
-
-cat6 = Category.create!({
-  'name'=> "Art"
-  })
+          cat2 = Category.create!({
+            'name'=> "History"
+            })
 
 
-cat7 = Category.create!({
-  'name'=> "Law"
-  })
+            cat3 = Category.create!({
+              'name'=> "Medicine"
+              })
 
-cat8 = Category.create!({
-  'name'=> "Foreign Language"
-  })
+              cat4 = Category.create!({
+                'name'=> "Other"
+                })
 
+                cat5 = Category.create!({
+                  'name'=> "Bio-science"
+                  })
 
-cat9 = Category.create!({
-  'name'=> "Business"
-  })
-
-cat10 = Category.create!({
-  'name'=> "Technology"
-  })
-
-
-cat11 = Category.create!({
-  'name'=> "Math"
-  })
-
-cat12 = Category.create!({
-  'name'=> "Vocations"
-  })
-
-cat13 = Category.create!({
-  'name'=> "Certifications"
-  })
-
-cat14 = Category.create!({
-  'name'=> "Topography"
-  })
+                  cat6 = Category.create!({
+                    'name'=> "Art"
+                    })
 
 
-d1 = Deck.create!({
-  'title'=> 'organic chemistry',
-  'author_id'=> cy.id,
-  'category_id'=> cat1.id
-})
+                    cat7 = Category.create!({
+                      'name'=> "Law"
+                      })
 
-d2 = Deck.create!({
-    'title'=> 'american history',
-    'author_id'=> cy.id,
-    'category_id'=>cat2.id
-  })
-
-d3 = Deck.create!({
-    'title'=> 'psychology',
-    'author_id'=> cy.id,
-    'category_id'=> cat3.id
-  })
-
-d4 = Deck.create!({
-    'title'=> 'biology',
-    'author_id'=> cy.id,
-    'category_id'=> cat3.id
-  })
+                      cat8 = Category.create!({
+                        'name'=> "Foreign Language"
+                        })
 
 
-d5 = Deck.create!({
-  'title'=> 'roman history',
-  'author_id'=> cy.id,
-  'category_id'=> cat2.id
-})
+                        cat9 = Category.create!({
+                          'name'=> "Business"
+                          })
+
+                          cat10 = Category.create!({
+                            'name'=> "Technology"
+                            })
 
 
-c1 = Card.create!({
-  'front'=> "True/False: The Roman empire was the largest empire in history",
-  'back'=> "False: It was only the 28th largest in history",
-  'deck_id' => d5.id
-  })
+                            cat11 = Category.create!({
+                              'name'=> "Math"
+                              })
+
+                              cat12 = Category.create!({
+                                'name'=> "Vocations"
+                                })
+
+                                cat13 = Category.create!({
+                                  'name'=> "Certifications"
+                                  })
+
+                                  cat14 = Category.create!({
+                                    'name'=> "Topography"
+                                    })
+
+                                    d = Deck.create!({
+                                      'title'=> 'organic chemistry',
+                                      'author_id'=> cy.id,
+                                      'category_id'=> cat1.id
+                                      })
 
 
-c2 = Card.create!({
-  'front'=> "Which Roman conflict was the longest of its history?",
-  'back'=> "The Roman/Persian conflict was longest: it lasted 721 years",
-  'deck_id' => d5.id
-  })
+                                      languages = ["German",
+                                        "Hebrew",
+                                        "Italian",
+                                        "Japanese",
+                                        "Korean",
+                                      ]
+
+                                      languages.each_with_index do |lng|
+                                        Deck.create!({
+                                          'title'=> `lang#{lng}`,
+                                          'author_id'=> cy.id,
+                                          'category_id'=> cat8.id
+                                          })
+                                      end
 
 
-c3 = Card.create!({
-  'front'=> "Which of the following was used in ancient Rome to wash clothes?
-              A: wine
-              B: urine
-              C: goat's milk",
-  'back'=> "B: urine",
-  'deck_id' => d5.id
-  })
+                                      d1 = Deck.create!({
+                                        'title'=> 'organic chemistry',
+                                        'author_id'=> cy.id,
+                                        'category_id'=> cat1.id
+                                        })
 
-c101 = Card.create!({
-  'front'=> "True/False: Romans solely spoke Latin",
-  'back'=> "False: Latin was one of many languages spoke in Rome, including
-  Celtic, Syriac, Greek and Thracian",
-  'deck_id' => d5.id
-  })
+                                        d2 = Deck.create!({
+                                          'title'=> 'american history',
+                                          'author_id'=> cy.id,
+                                          'category_id'=>cat2.id
+                                          })
 
-c100 = Card.create!({
-  'front'=> "Ancient Roman women used __________ as a moisturizer their beauty and complexion",
-  'back'=> "Gladiator sweat",
-  'deck_id' => d5.id
-  })
+                                          d3 = Deck.create!({
+                                            'title'=> 'psychology',
+                                            'author_id'=> cy.id,
+                                            'category_id'=> cat3.id
+                                            })
 
-
-c99 = Card.create!({
-  'front'=> "You can make which of the following using organic chemistry principles?
-              A: Pesticides
-              B: Soap
-              C: Plastic
-              D: All of the above!",
-  'back'=> "D: All of the above!",
-  'deck_id' => d1.id
-  })
+                                            d4 = Deck.create!({
+                                              'title'=> 'biology',
+                                              'author_id'=> cy.id,
+                                              'category_id'=> cat3.id
+                                              })
 
 
-c5 = Card.create!({
-  'front'=> "The basis for organic chemistry is: _____ ",
-  'back'=> "Carbon",
-  'deck_id' => d1.id
-  })
+                                              d5 = Deck.create!({
+                                                'title'=> 'roman history',
+                                                'author_id'=> cy.id,
+                                                'category_id'=> cat2.id
+                                                })
 
 
-c39 = Card.create!({
-  'front'=> "The arrangement and interaction of molecules in space is called what?",
-  'back'=> "Stereochemistry",
-  'deck_id' => d1.id
-  })
+                                                c1 = Card.create!({
+                                                  'front'=> "True/False: The Roman empire was the largest empire in history",
+                                                  'back'=> "False: It was only the 28th largest in history",
+                                                  'deck_id' => d5.id
+                                                  })
 
 
-c41 = Card.create!({
-  'front'=> "The origin of the name 'carbon' comes from the Latin word carbo, meaning what?",
-  'back'=> "Charcoal",
-  'deck_id' => d1.id
-  })
+                                                  c2 = Card.create!({
+                                                    'front'=> "Which Roman conflict was the longest of its history?",
+                                                    'back'=> "The Roman/Persian conflict was longest: it lasted 721 years",
+                                                    'deck_id' => d5.id
+                                                    })
+
+
+                                                    c3 = Card.create!({
+                                                      'front'=> "Which of the following was used in ancient Rome to wash clothes?
+                                                      A: wine
+                                                      B: urine
+                                                      C: goat's milk",
+                                                      'back'=> "B: urine",
+                                                      'deck_id' => d5.id
+                                                      })
+
+                                                      c101 = Card.create!({
+                                                        'front'=> "True/False: Romans solely spoke Latin",
+                                                        'back'=> "False: Latin was one of many languages spoke in Rome, including
+                                                        Celtic, Syriac, Greek and Thracian",
+                                                        'deck_id' => d5.id
+                                                        })
+
+                                                        c100 = Card.create!({
+                                                          'front'=> "Ancient Roman women used __________ as a moisturizer their beauty and complexion",
+                                                          'back'=> "Gladiator sweat",
+                                                          'deck_id' => d5.id
+                                                          })
+
+
+                                                          c99 = Card.create!({
+                                                            'front'=> "You can make which of the following using organic chemistry principles?
+                                                            A: Pesticides
+                                                            B: Soap
+                                                            C: Plastic
+                                                            D: All of the above!",
+                                                            'back'=> "D: All of the above!",
+                                                            'deck_id' => d1.id
+                                                            })
+
+
+                                                            c5 = Card.create!({
+                                                              'front'=> "The basis for organic chemistry is: _____ ",
+                                                              'back'=> "Carbon",
+                                                              'deck_id' => d1.id
+                                                              })
+
+
+                                                              c39 = Card.create!({
+                                                                'front'=> "The arrangement and interaction of molecules in space is called what?",
+                                                                'back'=> "Stereochemistry",
+                                                                'deck_id' => d1.id
+                                                                })
+
+
+                                                                c41 = Card.create!({
+                                                                  'front'=> "The origin of the name 'carbon' comes from the Latin word carbo, meaning what?",
+                                                                  'back'=> "Charcoal",
+                                                                  'deck_id' => d1.id
+                                                                  })
 
 
 
-c6 = Card.create!({
-  'front'=> "Who was the fifth president of the U.S.?",
-  'back'=> "Abraham Lincoln",
-  'deck_id' => d2.id
-  })
+                                                                  c6 = Card.create!({
+                                                                    'front'=> "Who was the fifth president of the U.S.?",
+                                                                    'back'=> "Abraham Lincoln",
+                                                                    'deck_id' => d2.id
+                                                                    })
 
-c26 = Card.create!({
-  'front'=> "The explosion of the USS Maine in Havana Harbor in 1898 began which war?",
-  'back'=> "Spanish/American War",
-  'deck_id' => d2.id
-  })
+                                                                    c26 = Card.create!({
+                                                                      'front'=> "The explosion of the USS Maine in Havana Harbor in 1898 began which war?",
+                                                                      'back'=> "Spanish/American War",
+                                                                      'deck_id' => d2.id
+                                                                      })
 
-c27 = Card.create!({
-  'front'=> "This Amendment made it illegal to manufacture, distribute, or possess any type of alcoholic beverage",
-  'back'=> "Prohibition",
-  'deck_id' => d2.id
-  })
+                                                                      c27 = Card.create!({
+                                                                        'front'=> "This Amendment made it illegal to manufacture, distribute, or possess any type of alcoholic beverage",
+                                                                        'back'=> "Prohibition",
+                                                                        'deck_id' => d2.id
+                                                                        })

@@ -13,11 +13,14 @@ class CardFront extends React.Component {
     return(
       <div className="flip-page">
         <div className="card-text">
+          <div className="card-header">Q.
+          <i class="fa fa-comment comment" aria-hidden="true"></i>
+          </div>
           <div class="flashcard">
           {this.props.front}
         </div>
       </div>
-      
+
     </div>
     );
   }

@@ -27,39 +27,40 @@ class Search extends React.Component {
   }
 
   render(){
-    
+
 
     let categoriesArray = [];
-      if (this.props.results) {
-        const searchResults = this.props.results;
-        const categoriesList = searchResults.map( (categoryObject) => {
-          categoriesArray.push(categoryObject);
+    if (this.props.results) {
+      const searchResults = this.props.results;
+      const categoriesList = searchResults.map( (categoryObject) => {
+        categoriesArray.push(categoryObject);
 
-          }
-        );
       }
+    );
+  }
 
-    return(
-      <div className="full-page">
+  return(
+    <div className="full-page">
       <div className="search-container">
         <form onSubmit={this.handleSubmit}
           className="search-form">
-            <input type="text"
-              placeholder="e.g. math, science"
-              value={this.state.query}
-              onChange={this.update('query')}
-              className="input-query"
+          <input type="text"
+            placeholder="e.g. math, science"
+            value={this.state.query}
+            onChange={this.update('query')}
+            className="input-query"
             />
           <button className="search-cat-button"> Search </button>
         </form>
-        <img src={window.img.girl}></img>
+        <img className="search-img" src={window.img.girl}></img>
       </div>
       <div className="results-container">
+        <h2 className="browse">Browse Flashcards</h2>
         <SearchResults categoriesArray={categoriesArray} />
       </div>
     </div>
-    );
-  }
+  );
+}
 }
 
 export default Search;

@@ -102,39 +102,38 @@ class CardShow extends React.Component {
                   index={this.props.deck ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
                   length={this.props.deck ? this.props.deck.cardIds.length : ""}/>
                 :
-                <FrontButtons />}
-                </div>
-              </div>
+                <FrontButtons />
+              }
             </div>
-          );
-
-        }
-
-      }
-
-      export default CardShow;
-
-      {/* inside flashcard container above
-
-        <FlipCard width={"50%"} height={"50%"}
-        onClick={() => this.setState({ back: !this.state.back })}
-        frontChild={<CardFront question={card.front} />}
-        backChild={<CardBack answer={card.back} />}
-        flipped={this.state.back}
-        />
-
-        <div className="card-text">
-        <div class="card-front">
-        { card ? <CardFront front={card.front}/> : "" }
+          </div>
         </div>
-        <div class="card-back">
-        { card ? <CardBack back={card.back}/> : "" }
-        </div>
-        </div>
+      );
+    }
+  }
+
+  export default CardShow;
+
+  {/* inside flashcard container above
+
+    <FlipCard width={"50%"} height={"50%"}
+    onClick={() => this.setState({ back: !this.state.back })}
+    frontChild={<CardFront question={card.front} />}
+    backChild={<CardBack answer={card.back} />}
+    flipped={this.state.back}
+    />
+
+    <div className="card-text">
+    <div class="card-front">
+    { card ? <CardFront front={card.front}/> : "" }
+    </div>
+    <div class="card-back">
+    { card ? <CardBack back={card.back}/> : "" }
+    </div>
+    </div>
 
 
 
-        ALSO:  add link
+    ALSO:  add link
 
 
-        */}
+    */}

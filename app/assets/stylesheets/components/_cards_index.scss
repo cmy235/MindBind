@@ -40,6 +40,14 @@
   left: 10px;
 }
 
+.cards {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px 10px;
+}
+
+
 .card-list-outer {
   background-color: #ffffff;
   margin-top: 50px;
@@ -56,6 +64,7 @@
   // justify-content: space-between;
   // align-items: center;
   flex-direction: row;
+  justify-content: space-between;
   padding: 10px;
   border-top: 2px solid #dddddd;
   font-family: 'Montserrat', sans-serif;
@@ -65,15 +74,99 @@
   text-overflow: ellipsis;
 }
 
-.flip-button {
-  color: white;
+.list-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.study-set {
+  position: absolute;
+  left: 650px;
+  // padding: 20px 10px;
+  display: flex;
+  align-items: center;
   background-color: #29a5dc;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.play {
+  color: white;
+  padding: 3px;
+}
+
+.delete-card-button {
+  color: black;
+  position: absolute;
+  right: -136px;
+  top: 18px;
+  border: 1px solid gray;
+  padding: 3px 30px;
+  box-shadow: -1px 1px #dddddd;
+  font-family: inherit;
+  border-color: #dddddd;
+}
+
+.card-settings-icon {
+  color: white;
+  background-color: #5bc0de;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+  border-radius: 0px 7px 7px 0px;
+  color: white;
+  left: 12px;
+  border-color: #46b8da;
+}
+
+.card-settings-icon:hover {
+  // background-color: darken(#5bc0de, 15%);
+}
+
+.study-button {
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.study-button:hover {
+  // background-color: darken(#29a5dc, 15%);
+}
+.study-set:hover {
+  // color: lighten($color, $amount);
+  background-color: darken(#29a5dc, 15%);
+}
+
+.card-preview-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 40%;
+  // width: 100%;
+}
+
+
+.add-card-button {
+  color: white;
+  background-color: #ec971f;
+  border-color: #d58512;
+  opacity: 0.75;
+  // background-color: #29a5dc;
   border-radius: 2px;
   width: 20%;
   height: 10%;
   text-align: center;
-  font-size: 10px;
-  padding: 4px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.add-card-button:hover {
+  opacity: 1;
 }
 
 #card-back {
@@ -82,18 +175,18 @@
 .cards-display {
   display: flex;
   align-items: baseline;
-  }
+}
 
 
 
 .add-card-form {
-  width: 75%;
+  width: 63%;
   height: 10%;
   display: flex;
   justify-content: space-between;
   padding: 10px;
   border: 3px solid #ff8a47;
-  border-radius: 3px;
+  border-radius: 13px;
   align-items: center;
 }
 
@@ -104,19 +197,4 @@
   border-bottom: 2px gray;
   color: #29a5dc;
   background-color: #eeeeee;
-}
-
-
-.delete-card-button {
-  font-size: 10px;
-  width: 12px;
-  height: 12px;
-  text-align: center;
-  border: 2px solid red;
-  border-radius: 3px;
-  text-align: center;
-}
-
-.study-button {
-
 }

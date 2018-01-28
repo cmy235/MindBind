@@ -48,7 +48,7 @@ class DecksIndex extends React.Component {
                   </i>
                 </Link>
               </div>
-              <div className="deck-title">
+              <div className="add-deck-title">
                 Decks
               </div>
             </div>

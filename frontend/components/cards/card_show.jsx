@@ -1,5 +1,5 @@
 import React from 'react';
-import CardShowContainer from './card_show_container';
+{/*} import CardShowContainer from './card_show_container'; */}
 import { FlipCard } from 'react-flop-card';
 import CardFront from './card_front';
 import CardBack from './card_back';
@@ -55,29 +55,44 @@ class CardShow extends React.Component {
             <div className="section-title">
               <div className="study-title">
                 Studying:
+              </div>
+              <div className="current-deck-title">
+                {this.props ? this.props.deck.title : ""}
+              </div>
             </div>
-            <div className="current-deck-title">
-              {this.props ? this.props.deck.title : ""}
-            </div>
-          </div>
           </section>
-            <Link to={`/decks/${this.props.deck.id}`}>
-              <button className="done-button">
+          <Link to={`/decks/${this.props.deck.id}`}>
+            <button className="done-button">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              <div className="done">
                 Done
-              </button>
-            </Link>
+              </div>
+            </button>
+          </Link>
         </div>
 
         <div className="flashcard-container">
+          { this.props.deck ?
+            <div className="card-list-array">
+              {this.props.deck.cardIds.indexOf(this.props.currentCard.id) + 1}
+              {" "} of {" "}
+              {this.props.deck.cardIds.length}
+            </div>
+            : ""
+          }
           <aside>
             <FlipCard width={"100%"} height={"100%"}
               onClick={() => this.setState({ back: !this.state.back })}
               frontChild={<CardFront front={this.state.card ? this.state.card.front : ""} />}
-              backChild={<CardBack back={this.state.card ? this.state.card.back : ""} />}
+              backChild={<CardBack
+                back={this.state.card ? this.state.card.back : ""}
+                currentCard={this.props ? this.props.currentCard : ""}
+                deck={this.props ? this.props.deck : ""}
+                index={this.props ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
+                length={this.props ? this.props.deck.cardIds.length : ""}
+                />}
               flipped={this.state.back}
               />
-            <button onClick={""}>
-            </button>
           </aside>
         </div>
       </div>
@@ -110,7 +125,7 @@ export default CardShow;
 
 
 
-ALSO:  add link
+  ALSO:  add link
 
 
   */}

@@ -49,7 +49,7 @@ class AddCardForm extends React.Component {
           className="add-card-input"
         />
 
-      <input className="flip-button" type="submit" value="Add Card!"></input>
+      <input className="add-card-button" type="submit" value="Add Card!"></input>
 
       </form>
     );

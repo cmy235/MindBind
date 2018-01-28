@@ -24,13 +24,16 @@ class Navbar extends React.Component{
   navbarLog () {
     return(
       <div className="main-nav-current-user">
-        <h2 className="headerName">Hello, {this.props.currentUser.username}!</h2>
-        <button className="logout-button"
-          onClick={this.deployLogout}
-          >Log Out</button>
+        <div className="header-wrapper">
+          <h2 className="headerName">Hello, {this.props.currentUser.username}!</h2>
+          <button className="logout-button"
+            onClick={this.deployLogout}
+            >Log Out</button>
+        </div>
         <Link to="/decks">
           <ul className="logo-container">
-            <li>
+            <li className="logo">
+              <img className="logo-img" src={window.img.logo}></img>
             </li>
             <li className="mindbind-title-one">
               MIND

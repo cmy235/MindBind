@@ -3,6 +3,7 @@ import AddCardContainer from './add_card_container';
 import { FlipCard } from 'react-flop-card';
 import CardFront from './card_front';
 import CardBack from './card_back';
+import CardDelete from './card_delete';
 import { Link } from 'react-router-dom';
 
 class CardsIndex extends React.Component {
@@ -24,6 +25,8 @@ class CardsIndex extends React.Component {
     });
   }
 
+
+
   render() {
 
     const addCard = (this.state.showDeckForm ?
@@ -37,31 +40,40 @@ class CardsIndex extends React.Component {
         const cards = this.props.deck.cardIds.map( (cardId, idx) => {
           const card = this.props.cards[cardId];
 
-
           return (
             <div className="card-list-inner">
-              { card ? <Link to={
-                {    pathname: `/cards/${card.id}`,
-                state: {
-                  deck: this.props.deck,
-                  currentDeckId: currentDeckId
-                }
-              }
-            }
-            className="in-line">Study!
-          </Link> : "" }
+              <ul className="list-container">
+                <li className="card-preview-text">
+                  {card ? card.front : ""}
+                </li>
 
-          <button className="delete-card-button"
-            onClick={card ? () => this.props.deleteCard(card.id) : ""}
-            >x</button>
-          <div className="card-flip-container">
-          </div>
+                <li className="study-set">
+                  { card ? <Link to={
+                    {    pathname: `/cards/${card.id}`,
+                    state: {
+                      deck: this.props.deck,
+                      currentDeckId: currentDeckId
+                    }
+                  }
+                }
+                className="study-button">
+                <i class="fa fa-play-circle-o play" aria-hidden="true"></i>
+                Study
+              </Link> : "" }
+              <CardDelete
+                deleteCard={this.props.deleteCard}
+                card = {card}/>
+            </li>
+          </ul>
         </div>
       );
     });
 
     return (
       <div className="card-list-outer">
+        <div className="cards">
+          Cards
+        </div>
         <div className="card-list-container">
           {cards}
         </div>
@@ -73,13 +85,16 @@ class CardsIndex extends React.Component {
 
 export default CardsIndex;
 
-{/*  old way, works perfect. Just need to pass props with it.
+{/*  when you update the settings button:
 
-  <div className="card-list-inner">
-  { card ? <Link to={`/cards/${card.id}`}
-  deck = {this.props.deck}
-  myDeckId = {currentDeckId}
-  className="in-line">Study!
-  </Link> : "" }
+  // should have dekc info, etc.
+
+  { this.state.showDeleteButton ?
+  <button className="delete-card-button"
+  onClick={card ? () => this.props.deleteCard(card.id) : ""}
+  >x</button>
+  : ""
+  }
+
 
   */}

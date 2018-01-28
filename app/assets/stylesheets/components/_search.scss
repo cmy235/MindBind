@@ -16,25 +16,100 @@
   display: flex;
 }
 
+.deck-single-title {
+  font-size: 32px;
+  color: #29a5dc;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  text-align: left;
+  left: 5%;
+}
+
+.deck-blurb {
+  background-color: #dadbdb;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  // justify-content: space-evenly;
+  width: 650px;
+  align-items: center;
+  height: 175px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.deck-blurb:hover {
+  background-color: rgba(37,54,70,0.6);
+}
+
+.deck-blurb-title {
+  position: absolute;
+  left: 51%;
+  width: 16%;
+}
+
+.a-right {
+  position: absolute;
+  left: 650px;
+}
+
+.cat-title {
+  color: #7f7f7f;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.deck-lrg {
+  width: 22%;
+}
+
+.deck-single-title:hover {
+  background-color: white;
+}
+
 .results-list-outer {
   // position: absolute;
-  padding: 0px 80px;
+  padding: 0px 5%;
   // margin-top: 90px;
+}
+
+.blue {
+  color: #29a5dc;
+}
+
+h4 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  top: 82px;
+  left: 61px;
 }
 
 .query-container {
   margin-top: 50px;
   display: table;
+  overflow: scroll;
 }
 
 .results-container {
-  height: 94vh;
+  height: 95vh;
   background-color: white;
   left: 35%;
   position: absolute;
   width: 64.8%;
+  overflow: scroll;
 }
 
+.img-wrapper {
+  background-color: blue;
+}
 .input-query {
   background: white;
   margin-left: 25px;
@@ -44,11 +119,11 @@
 }
 
 .deck-info {
-  color: #29a5dc;
+  // color: #29a5dc;
 }
 
 .category-title {
-  text-transform: uppercase;
+  text-rm: uppercase;
   padding: 10px;
 }
 
@@ -59,17 +134,17 @@
 }
 
 .search-img {
-  width: 207%;
+  width: 209%;
   overflow: hidden;
   position: absolute;
-  left: -29%;
+  left: -30%;
 }
 
 .browse {
   font-family: 'Montserrat', sans-serif;
   color: #ff8a47;
   background-color: rgba(37,54,70,0.92);
-  height: 13.8%;
+  height: 140px;
   font-size: 37px;
   display: flex;
   align-items: center;

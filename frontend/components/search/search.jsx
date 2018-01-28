@@ -52,10 +52,14 @@ class Search extends React.Component {
             />
           <button className="search-cat-button"> Search </button>
         </form>
-        <img className="search-img" src={window.img.girl}></img>
+        <div className="img-wrapper">
+
+          <img className="search-img" src={window.img.girl}></img>
+        </div>
       </div>
       <div className="results-container">
         <h2 className="browse">Browse Flashcards</h2>
+        <h4>Click on the blue arrow to add a deck to your list!</h4>
         <SearchResults categoriesArray={categoriesArray} />
       </div>
     </div>

@@ -1,6 +1,6 @@
 .main-nav  {
 	display: flex;
-  height: 60px;
+	height: 60px;
 	justify-content: space-between;
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
@@ -10,9 +10,9 @@
 
 .main-nav-current-user  {
 	display: flex;
-  height: 60px;
+	height: 60px;
 	justify-content: space-between;
-  flex-direction: row-reverse;
+	flex-direction: row-reverse;
 	font-family: 'Montserrat', sans-serif;
 	align-items: center;
 	background-color: rgb(0,0,0);
@@ -26,42 +26,41 @@
 }
 
 .headerName {
-  color: white;
-  margin-right: 40px;
-  margin-left: 30px;
+	color: white;
+	margin-right: 40px;
+	margin-left: 30px;
 }
 
 .greeting {
 	position: absolute;
-	top: 80px;
+	top: 15%;
 	bottom: 0;
-	left: 0;
+	left: 11%;
 	right: 0;
-  // z-index: 500;
-  width: 40%;
-  text-align: center;
-  font-size: 58px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  margin-left: 320px;
+	width: 40%;
+	text-align: center;
+	font-size: 75px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
+	margin-left: 320px;
 }
 
 .bottom-boxes {
-  font-family: inherit;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  display: flex;
-  justify-content:center;
-  background: #29a5dc;
-  opacity: 0.8;
-  margin-top: 85%;
-  text-align: center;
-  font-size: 32px;
-  color: white;
+	font-family: inherit;
+	position: absolute;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background: #29a5dc;
+	opacity: 0.8;
+	height: 20%;
+	text-align: center;
+	font-size: 32px;
+	color: white;
 	cursor: pointer;
 }
 
@@ -80,24 +79,30 @@
 }
 
 .box-1 {
-  padding-top: 8%;
-  width: 33%;
-  // background: red;
-  border: 1px solid black;
+	padding: 7%;
+	width: 34%;
+	// background: red;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
 .box-2 {
-  padding-top: 8%;
-  width: 33%;
-  // background: red;
-  border: 1px solid black;
+	padding: 7%;
+	width: 34%;
+	// background: red;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .error-outer {
 	border: 2px solid #29a5dc;
-  padding: 4px;
-  border-radius: 4px;
+	padding: 4px;
+	border-radius: 4px;
 }
 
 .errors-login {
@@ -111,41 +116,44 @@
 
 .errors-signup {
 	position: absolute;
-  top: 13px;
-  margin-left: 99px;
+	top: 13px;
+	margin-left: 99px;
 
 }
 
 .box-3 {
-  padding-top: 8%;
-  width: 33%;
-  // background: red;
-  border: 1px solid black;
+	padding: 7%;
+	width: 34%;
+	// background: red;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .signup-button {
 	font-family: inherit;
-  text-align: center;
+	text-align: center;
 	text-decoration: none!important;
-  color: white;
-  background: #29a5dc;
-  padding: 5px 14px;
-  border-radius: 2px;
+	color: white;
+	background: #29a5dc;
+	padding: 5px 14px;
+	border-radius: 2px;
 	margin-right: 20px;
 	border-style: none;
 }
 
 .fa-user-o {
-  margin-left: 15px;
-  margin-right: 5px;
+	margin-left: 15px;
+	margin-right: 5px;
 }
 
 .login-button {
 	font-family: inherit;
 	background-color: Transparent;
 	cursor:pointer;
-  overflow: hidden;
-  outline:none;
+	overflow: hidden;
+	outline:none;
 	padding: 10px;
 	color: white;
 	border-style: none;
@@ -156,7 +164,7 @@
 
 
 .login-button:hover {
-  color: #29a5dc;
+	color: #29a5dc;
 }
 
 
@@ -171,27 +179,27 @@
 
 .signup-button:hover {
 	display: inline;
-  background: rgba(41, 165, 220, 0.42);
+	background: rgba(41, 165, 220, 0.42);
 	text-decoration: underline;
 }
 
 .logo-container {
-  display: flex;
-  align-items:baseline;
-  // text-align: center;
-  margin-left: 70px;
+	display: flex;
+	align-items:baseline;
+	// text-align: center;
+	margin-left: 70px;
 }
 
 .mindbind-title-one {
-  display: inline;
-  // padding-left: 15px;
+	display: inline;
+	// padding-left: 15px;
 	font-size: 20px;
 	color: white;
 	font-weight: bolder;
 }
 
 .mindbind-title-two {
-  display: inline;
+	display: inline;
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
@@ -200,20 +208,20 @@
 
 .logout-button {
 	font-family: inherit;
-  text-align: center;
+	text-align: center;
 	text-decoration: none!important;
-  color: white;
-  background: #29a5dc;
-  padding: 5px 14px;
-  border-radius: 2px;
+	color: white;
+	background: #29a5dc;
+	padding: 5px 14px;
+	border-radius: 2px;
 	padding-right: 20px;
-  margin-right: -60%;
+	margin-right: -60%;
 	border-style: none;
 }
 
 
 .logout-button:hover {
 	display: inline;
-  background: rgba(41, 165, 220, 0.42);
+	background: rgba(41, 165, 220, 0.42);
 	text-decoration: underline;
 }

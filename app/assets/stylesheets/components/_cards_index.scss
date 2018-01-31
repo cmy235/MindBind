@@ -8,8 +8,6 @@
   section {
     display: flex;
     justify-content: space-evenly;
-    border-bottom: 1px solid #eeeeee;
-
   }
 
 }
@@ -45,6 +43,9 @@
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 20px;
+
 }
 
 
@@ -132,6 +133,8 @@
   border-radius: 4px;
   font-size: 14px;
   padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .study-button:hover {

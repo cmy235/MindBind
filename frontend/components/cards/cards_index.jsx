@@ -57,7 +57,7 @@ class CardsIndex extends React.Component {
                   }
                 }
                 className="study-button">
-                <i class="fa fa-play-circle-o play" aria-hidden="true"></i>
+                <i class="fa fa-play-circle play" aria-hidden="true"></i>
                 Study
               </Link> : "" }
               <CardDelete

@@ -5,9 +5,8 @@ import CardShow from './card_show';
 class BackButtons extends React.Component {
   constructor(props){
     super(props);
+
   }
-
-
 
 
   render(){
@@ -16,6 +15,7 @@ class BackButtons extends React.Component {
     const index = this.props.deck ?
     ((this.props.index + 1) % this.props.length)
     : 0;
+
 
     const nextCardId = this.props.deck ?
     (this.props.deck.cardIds[index])
@@ -41,11 +41,11 @@ class BackButtons extends React.Component {
             }
           }>
 
-          <div className="rank-1">1</div>
-          <div className="rank-2">2</div>
-          <div className="rank-3">3</div>
-          <div className="rank-4">4</div>
-          <div className="rank-5">5</div>
+          <div onClick={() => this.props.rankScore(1)} className="rank-1">1</div>
+          <div onClick={() => this.props.rankScore(2)} className="rank-2">2</div>
+          <div onClick={() => this.props.rankScore(3)} className="rank-3">3</div>
+          <div onClick={() => this.props.rankScore(4)} className="rank-4">4</div>
+          <div onClick={() => this.props.rankScore(5)} className="rank-5">5</div>
         </Link> : "" }
       </div>
     );

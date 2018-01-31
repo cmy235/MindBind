@@ -76,14 +76,20 @@
 }
 
 .input-username {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 15px;
+  background: #f2f2f2;
+  margin-bottom: 5px;
+  margin-top: 5px;
   background: #f2f2f2;
 }
 
 .input-password {
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 15px;
+  background: #f2f2f2;
+  margin-bottom: 5px;
+  margin-top: 5px;
   background: #f2f2f2;
 }
 
@@ -112,13 +118,13 @@
   color: #29a5dc;
   border-color: 3px #29a5dc;
   /* https://stackoverflow.com/questions/17540383/is-it-possible-to-color-the-fontawesome-icon-colors */
- }
+}
 
- .fa-times-circle:hover {
-   // pops out
- }
+.fa-times-circle:hover {
+  // pops out
+}
 
- .flex-outer li {
+.flex-outer li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -130,7 +136,6 @@
   color: #ff8a47;
   flex: 1 0 120px;
   max-width: 100%;
-  // padding: 6px;
   margin-left: 60px;
   margin-right: 60px;
   background: #f2f2f2;
@@ -148,13 +153,14 @@
   justify-content: space-between;
   margin-left: 60px;
   margin-right: 60px;
-  background: #f2f2f2;
+  // background: #f2f2f2;
   color: #555555;
 }
 
 .name-wrapper > li {
   padding: 20px;
-
+  overflow: hidden;
+  background: #f2f2f2;
 }
 
 .modal-signup-button {

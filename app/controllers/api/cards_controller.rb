@@ -1,10 +1,9 @@
 
 class Api::CardsController < ApplicationController
   def create
-    #
     @card = Card.new(card_params)
     # @card.deck_id = Deck.find(params[:deck_id])
-#
+
     if @card.save
       render :show
     else

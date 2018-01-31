@@ -44,8 +44,10 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .current-deck-title {
   color: white;
+  padding-left: 10px;
 }
 
 .card-list-array {
@@ -85,7 +87,7 @@
 .bottom-buttons {
   background-color: yellow;
   position: relative;
-  top: 280px;
+  top: 2%;
   height: 17%;
   margin: 49px;
 }
@@ -117,7 +119,7 @@
 
 .how-well {
   position: absolute;
-  top: -22%;
+  top: -18%;
   left: 39%;
   color: #333333;
   font-family: 'Montserrat', sans-serif;
@@ -210,10 +212,14 @@
   font-size: 24px;
   // position: absolute;
   width: 100%;
-  height: 650px;
+  // height: 650px;
   background-color: white;
   /* border: 1px solid; */
   box-shadow: 0 3px 4px rgba(0,0,0,0.25);
+}
+
+.play {
+  margin-right: 3px;
 }
 
 .done-button {

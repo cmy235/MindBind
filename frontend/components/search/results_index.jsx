@@ -18,7 +18,8 @@ class ResultsIndex extends React.Component {
             </div>
           { deck ?
             <Link to={`/decks/${deck.id}`}>{deck.title}
-              <i class="fa fa-arrow-right a-right"  aria-hidden="true"></i>
+              <i onClick={ (deck) => this.props.addDeck(deck)} class="fa fa-arrow-right a-right"  aria-hidden="true"></i>
+
             </Link>
             : "Decks for this category coming soon!"}
 

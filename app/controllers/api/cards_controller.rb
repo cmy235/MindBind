@@ -20,7 +20,6 @@ class Api::CardsController < ApplicationController
   end
 
   def destroy
-    # deck = current_user.decks.find(params[:id]);
     @card = Card.find(params[:id])
 
     if @card

@@ -13,7 +13,6 @@ class Api::CategoriesController < ApplicationController
     # @category = Category.find(params[:query])
   end
 
-# Api::CategoriesController
   def search
     if params[:query].present?
       @categories = Category.where('UPPER(name) ~ UPPER(?)', params[:query].upcase)

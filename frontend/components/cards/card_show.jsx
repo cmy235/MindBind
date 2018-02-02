@@ -12,32 +12,38 @@ import CircularProgressbar from 'react-circular-progressbar';
 class CardShow extends React.Component {
   constructor(props){
     super(props);
-
+    debugger
     this.state = {
       cards: props.cards,
       back: false,
       mastered: 0
     };
-    // this.rankScore = this.rankScore.bind(this);
+    this.rankScore = this.rankScore.bind(this);
 
   }
 
   getPercentage() {
     let percentage;
     if (this.props.deck) {
-      percentage = (this.state.mastered / this.props.deck.cardIds.length);
+      percentage = (this.state.mastered / this.props.deck.cardIds.length)*100;
     } else {
       return 0;
     }
-    return percentage;
+    return Math.floor(percentage);
   }
 
 
   rankScore(score) {
-    if (score >= 4) {
-      this.setState({
-        mastered: this.state.mastered + 1
-      });
+    if (score == 5) {
+      if (this.state.mastered >= this.props.deck.cardIds.length){
+        this.setState({
+          mastered: 0
+        });
+      } else {
+        this.setState({
+          mastered: this.state.mastered + 1
+        });
+      }
     }
   }
 
@@ -89,7 +95,7 @@ class CardShow extends React.Component {
             </button>
           </Link>
           <div classname="progress-container">
-            <div style={{"width": "150px"}}><CircularProgressbar
+            <div style={{"width": "250px"}}><CircularProgressbar
               styles={{
                 path: { stroke: `rgba(62, 152, 199, ${this.getPercentage()})` },
               }}
@@ -98,65 +104,75 @@ class CardShow extends React.Component {
           </div>
         </div>
         <div className="mastery-container">
-          <div className="card-count">
-            {this.state.mastered} {" "}
-          </div>
-          <div className="cards-mastered">
-            Cards <br/> Mastered
-          </div>
-          { this.props.deck ?
+          <div className="pair-1">
             <div className="card-count">
-              {this.props.deck.cardIds.length}
+              {this.state.mastered} {" "}
             </div>
-            : ""
-          }
+            <br/>
+            <div className="cards-mastered">
+              Cards <br/> Mastered
+            </div>
+          </div>
 
-        <div className="card-count">
-          {this.cardsLength} {" "}
-        </div>
-        <div className="cards-mastered">
-          Total <br/>  Cards
+          <div className="card-count">
+            /
+          </div>
+          <div className="pair-2">
+
+            { this.props.deck ?
+              <div className="card-count">
+                {this.props.deck.cardIds.length}
+              </div>
+              : ""
+            }
+
+            <div className="card-count">
+              {this.cardsLength} {" "}
+            </div>
+            <div className="cards-mastered">
+              Total <br/>  Cards
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div className="flashcard-container">
-      { this.props.deck ?
-        <div className="card-list-array">
-          {this.props.deck.cardIds.indexOf(this.props.currentCard.id) + 1}
-          {" "} of {" "}
-          {this.props.deck.cardIds.length}
-        </div>
-        : ""
-      }
-      <aside>
-        <FlipCard width={"100%"} height={"100%"}
-          onClick={() => this.setState({ back: !this.state.back })}
-          frontChild={<CardFront front={this.props.currentCard ? this.props.currentCard.front : ""} />}
-          backChild={<CardBack
-            back={this.props.currentCard ? this.props.currentCard.back : ""}
-            />}
-            flipped={this.state.back}
-            />
-        </aside>
+      <div className="flashcard-container">
+        { this.props.deck ?
+          <div className="card-list-array">
+            {this.props.deck.cardIds.indexOf(this.props.currentCard.id) + 1}
+            {" "} of {" "}
+            {this.props.deck.cardIds.length}
+          </div>
+          : ""
+        }
+        <aside>
+          <FlipCard width={"100%"} height={"100%"}
+            onClick={() => this.setState({ back: !this.state.back })}
+            frontChild={<CardFront front={this.props.currentCard ? this.props.currentCard.front : ""} />}
+            backChild={<CardBack
+              back={this.props.currentCard ? this.props.currentCard.back : ""}
+              />}
+              flipped={this.state.back}
+              />
+          </aside>
 
-        <div className="bottom-buttons">
-          { this.state.back ?
-            <BackButtons
-              rankScore={() => this.rankScore}
-              flipBack={() => this.setState({ back: !this.state.back })}
-              currentCard={this.props.deck ? this.props.currentCard : ""}
-              deck={this.props.deck ? this.props.deck : ""}
-              index={this.props.deck ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
-              length={this.props.deck ? this.props.deck.cardIds.length : ""}/>
-            :
-            <FrontButtons />
-          }
+          <div className="bottom-buttons">
+            { this.state.back ?
+              <BackButtons
+                rankScore={(num) => this.rankScore(num)}
+                flipBack={() => this.setState({ back: !this.state.back })}
+                currentCard={this.props.deck ? this.props.currentCard : ""}
+                deck={this.props.deck ? this.props.deck : ""}
+                index={this.props.deck ? this.props.deck.cardIds.indexOf(this.props.currentCard.id) : 0}
+                length={this.props.deck ? this.props.deck.cardIds.length : ""}/>
+              :
+              <FrontButtons />
+            }
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default CardShow;

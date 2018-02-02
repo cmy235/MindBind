@@ -14,12 +14,13 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = current_user.decks.all
+    @decks = current_user.decks
     render :index
   end
 
   def show
-    @deck = Deck.find(params[:id])
+    @deck = current_user.decks.find(params[:id])
+    # @deck = Deck.find(params[:id])
     render :show
   end
 
@@ -44,7 +45,7 @@ class Api::DecksController < ApplicationController
 
   private
 
-# category_id will be passed up in permit via a dropdown button
+  # category_id will be passed up in permit via a dropdown button
 
   def deck_params
     params.require(:deck).permit(:title)

@@ -47,9 +47,7 @@ export const addDeck = (deck) => dispatch => {
 };
 
 export const deleteDeck = (deckId) => dispatch => {
-  debugger
   return APIUtil.removeDeck(deckId).then ( (payload) => {
-    debugger
     return dispatch(removeDeck(payload));
   });
 };

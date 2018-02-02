@@ -6,11 +6,9 @@ import SearchResults from './search_results';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       query: ""
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,8 +25,6 @@ class Search extends React.Component {
   }
 
   render(){
-
-
     let categoriesArray = [];
     if (this.props.results) {
       const searchResults = this.props.results;
@@ -54,13 +50,15 @@ class Search extends React.Component {
         </form>
         <div className="img-wrapper">
 
-          <img className="search-img" src={window.img.girl}></img>
+          <img className="search-img" src={window.img.bridge}></img>
         </div>
       </div>
       <div className="results-container">
         <h2 className="browse">Browse Flashcards</h2>
         <h4>Click on the blue arrow to add a deck to your list!</h4>
-        <SearchResults categoriesArray={categoriesArray} />
+        <SearchResults
+          addDeck={(deck) => this.props.addDeck(deck)}
+          categoriesArray={categoriesArray} />
       </div>
     </div>
   );

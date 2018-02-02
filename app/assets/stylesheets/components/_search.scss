@@ -1,10 +1,10 @@
 
 .full-page {
-  height: 94vh;
+  height: 92vh;
 }
 .search-container {
   position: absolute;
-  width: 35%;
+  width: 27vw;
   background-color: blue;
   background-color: rgba(37,54,70,0.98);
 
@@ -99,11 +99,11 @@ h4 {
 }
 
 .results-container {
-  height: 95vh;
+  height: 90vh;
   background-color: white;
-  left: 35%;
+  left: 27vw;
   position: absolute;
-  width: 64.8%;
+  width: 64.4%;
   overflow: scroll;
 }
 
@@ -134,10 +134,14 @@ h4 {
 }
 
 .search-img {
-  width: 209%;
+  // width: 209%;
+  // overflow: hidden;
+  // position: absolute;
+  // left: -30%;
+  width: 100%;
   overflow: hidden;
   position: absolute;
-  left: -30%;
+  height: 73.5vh;
 }
 
 .browse {
@@ -149,6 +153,7 @@ h4 {
   display: flex;
   align-items: center;
   padding-left: 5%;
+  width: 60vw;
 }
 
 .search-cat-button {

@@ -85,9 +85,8 @@
 }
 
 .bottom-buttons {
-  background-color: yellow;
   position: relative;
-  top: 2%;
+  top: 3%;
   height: 17%;
   margin: 49px;
 }
@@ -118,9 +117,9 @@
 }
 
 .how-well {
-  position: absolute;
+  position: relative;
   top: -18%;
-  left: 39%;
+  text-align: center;
   color: #333333;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -203,7 +202,7 @@
 }
 
 .flashcard {
-  padding: 20% 17%;
+  padding: 18% 17%;
   height: 25%;
 }
 

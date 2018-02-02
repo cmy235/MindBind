@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (query) => (dispatch) => {
   return {
-    searchCategories: (query) => dispatch(searchCategories(query))
+    searchCategories: (query) => dispatch(searchCategories(query)),
+    addDeck: (deckId) => dispatch(addDeck(deckId))
   };
 };
 

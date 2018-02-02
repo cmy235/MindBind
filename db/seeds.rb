@@ -220,9 +220,6 @@ cy = User.create!({
                                                                           'category_id'=> cat2.id
                                                                           })
 
-
-
-
                                                                           c1 = Card.create!({
                                                                             'front'=> "True/False: The Roman empire was the largest empire in history",
                                                                             'back'=> "False: It was only the 28th largest in history",

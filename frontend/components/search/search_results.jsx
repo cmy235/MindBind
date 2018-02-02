@@ -9,13 +9,13 @@ class SearchResults extends React.Component {
   }
 
   render(){
-    debugger
     const categories = this.props.categoriesArray.map( (category) => {
       return(
         <div className="results-list-outer">
 
           <div className="results-list-outer">
             <ResultsIndex
+              addDeck={(deck) => this.props.addDeck(deck)}
               decks={category.decks}
               category={category.name}
               author={category.author_id}/>

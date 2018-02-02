@@ -23,11 +23,11 @@ class SessionForm extends React.Component {
     );
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/decks');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/decks');
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -37,8 +37,9 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.closeModals();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user}).then( () => this.props.history.push('/decks'));
   }
 
   renderErrors() {

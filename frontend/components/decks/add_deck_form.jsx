@@ -33,7 +33,6 @@ class AddDeckForm extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <div className="modal-overlay">
         <div className="add-deck-form">

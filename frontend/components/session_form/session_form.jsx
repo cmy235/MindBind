@@ -7,7 +7,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      passwordConfirm: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.displayLogin = this.displayLogin.bind(this);
@@ -38,8 +39,13 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.closeModals();
+    // throw error unless this.state.password == this.state.passwordConfirm
     const user = this.state;
-    this.props.processForm({user}).then( () => this.props.history.push('/decks'));
+    if (this.state.password == this.state.passwordConfirm) {
+      this.props.processForm({user}).then( () => this.props.history.push('/decks'));
+    } else {
+      {/* throw errors */}
+    }
   }
 
   renderErrors() {
@@ -162,8 +168,8 @@ class SessionForm extends React.Component {
                 <li>
                   <input type="password"
                     placeholder="Confirm Password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
+                    value={this.state.passwordConfirm}
+                    onChange={this.update('passwordConfirm')}
                     className="input-password"
                     />
                   <br/>

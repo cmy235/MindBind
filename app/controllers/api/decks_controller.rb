@@ -19,8 +19,8 @@ class Api::DecksController < ApplicationController
   end
 
   def show
-    @deck = current_user.decks.find(params[:id])
-    # @deck = Deck.find(params[:id])
+    # @deck = current_user.decks.find(params[:id])
+    @deck = Deck.find(params[:id])
     render :show
   end
 

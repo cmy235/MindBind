@@ -19,7 +19,6 @@ class Api::DecksController < ApplicationController
     demo_decks = User.find_by(username: "demoUser").decks
     @decks = user_decks + demo_decks
     # @decks = Deck.all
-    # @decks = current_user.decks.concat(User.find_by(username: "demoUser").decks)
     render :index
   end
 

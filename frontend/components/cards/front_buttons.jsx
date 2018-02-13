@@ -12,7 +12,7 @@ render() {
 
   return(
     <div className="front-button-container">
-      click above to reveal answer!
+      click the card to reveal answer!
     </div>
   );
 }

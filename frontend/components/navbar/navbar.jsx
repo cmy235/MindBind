@@ -22,7 +22,11 @@ class Navbar extends React.Component{
 
   deployLogout() {
     this.props.logout();
+    this.props.closeModals();
     this.props.history.push("/");
+    // NEED TO LOG OUT BETTER HERE
+    // Shouldn't need to push("/") if you have AuthRoutes in place ... just logout and BOOM you're redirected
+
   }
 
   navbarLog () {
@@ -32,7 +36,7 @@ class Navbar extends React.Component{
     } else {
       parsedName = this.props.currentUser.username;
     }
-    
+
     return(
       <div className="main-nav-current-user">
         <div className="header-wrapper">

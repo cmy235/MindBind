@@ -19,6 +19,10 @@ class DecksIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestDecks();
+    debugger
+    if (this.props && this.props.decks.length != 0) {
+      this.props.history.push(`/decks/${this.props.decks[0].id}`);
+    }
   }
 
   flipDeckModal() {
@@ -73,6 +77,8 @@ class DecksIndex extends React.Component {
                   </div>
                 ))
               }
+              <div className="welcome">
+              </div>
             </div>
           </div>
         );

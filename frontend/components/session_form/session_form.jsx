@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
     this.displaySignup = this.displaySignup.bind(this);
   }
 
-  demoSubmit(){
+  demoSubmit() {
     return (
       <input type="submit"
         id="demo-user"
@@ -24,11 +24,20 @@ class SessionForm extends React.Component {
     );
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/decks');
-  //   }
-  // }
+  closeAndClear() {
+    this.props.clearErrors();
+    this.props.closeModals();
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/decks');
+    }
+  }
 
   update(field) {
     return e => this.setState({
@@ -37,20 +46,33 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    this.props.closeModals();
+    this.props.clearErrors();
     // throw error unless this.state.password == this.state.passwordConfirm
     const user = this.state;
-    if (this.state.password == this.state.passwordConfirm) {
-      this.props.processForm({user}).then( () => this.props.history.push('/decks'));
-    } else {
-      {/* throw errors */}
-    }
+    // if ((this.state.password == this.state.passwordConfirm) || (this.state.passwordConfirm.length == 0)) {
+      this.props.processForm({user});
+      // .then(
+      //   // () => this.props.history.push('/decks'),
+      //   // () => this.props.closeModals()
+      //   // () => this.props.clearErrors()
+      // );
+    // } else {
+    //   this.renderErrors("Passwords must match");
+    // }
   }
 
   renderErrors() {
     debugger
-    if (this.props.errors){
+    if  ((this.state.password != this.state.passwordConfirm) && (this.state.passwordConfirm.length != 0)) {
+      return(
+        <ul>
+          <li className="password-outer">Passwords must match
+          </li>
+        </ul>
+      );
+    } else if (this.props.errors){
       return(
         <ul>
           {this.props.errors.map((error, i) => (
@@ -75,8 +97,8 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-modal">
             <br/>
             <div className="errors-login">
-            {this.renderErrors()}
-          </div>
+              {this.renderErrors()}
+            </div>
 
             <div className="login-input">
               <input type="text"
@@ -98,7 +120,7 @@ class SessionForm extends React.Component {
             <br/>
             <hr/>
             <input className="modal-login-button" type="submit" value="Login"></input>
-            <div onClick={this.props.closeModals}>
+            <div onClick={() => this.closeAndClear()}>
               <i class="fas fa-times-circle icon-star-empty"></i>
             </div>
 
@@ -123,9 +145,9 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit}
               className="signup-form-modal">
               <br/>
-                <div className="errors-signup">
+              <div className="errors-signup">
                 {this.renderErrors()}
-                </div>
+              </div>
               <ul className="flex-outer">
                 <section className="name-wrapper">
                   <li>
@@ -177,14 +199,11 @@ class SessionForm extends React.Component {
                 <br/>
                 <hr/>
                 <input className="modal-signup-button" type="submit" value="Sign Up"></input>
-                <div onClick={this.props.closeModals}>
+                <div onClick={() => this.closeAndClear()}>
                   <i class="fas fa-times-circle icon-star-empty"></i>
                 </div>
               </ul>
-
             </form>
-
-
           </div>
         </div>
       );

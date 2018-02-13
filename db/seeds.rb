@@ -262,7 +262,7 @@ cy = User.create!({
                                                                                   })
 
                                                                                   c100 = Card.create!({
-                                                                                    'front'=> "Ancient Roman women used __________ as a moisturizer their beauty and complexion",
+                                                                                    'front'=> "Ancient Roman women used __________ as a moisturizer for their beauty and complexion",
                                                                                     'back'=> "Gladiator sweat",
                                                                                     'deck_id' => d5.id
                                                                                     })

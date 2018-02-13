@@ -107,6 +107,14 @@
 	border-radius: 4px;
 }
 
+.password-outer {
+	border: 2px solid #29a5dc;
+	padding: 4px;
+	border-radius: 4px;
+	position: relative;
+	left: 50%;
+}
+
 .errors-login {
 	position: absolute;
 	margin-left: 15px;

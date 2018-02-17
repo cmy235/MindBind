@@ -37,12 +37,17 @@
 	bottom: 0;
 	left: 12%;
 	right: 0;
-	width: 40%;
+	width: 36%;
 	text-align: center;
-	font-size: 90px;
-	font-family: 'Montserrat', sans-serif;
+	font-size: 104px;
+	// font-family: 'Montserrat', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-weight: bolder;
 	margin-left: 320px;
+	background-color: rgba(38, 57, 86, 0.34);
+	// background-color: rgba(41, 165, 220, 0.24);
+	color: #383434;
+	bottom: 38%;
 }
 
 .bottom-boxes {
@@ -62,6 +67,7 @@
 	font-size: 32px;
 	color: white;
 	cursor: pointer;
+	font-family: 'Nunito', sans-serif;
 }
 
 .logo {
@@ -101,10 +107,21 @@
 	margin-top: -2%;
 }
 
+.err-container {
+	display: flex;
+	width: 137%;
+	z-index: 2000;
+}
+
 .error-outer {
-	border: 2px solid #29a5dc;
-	padding: 4px;
+	border: 0.5px solid black;
+	padding: 4px 8px;
 	border-radius: 4px;
+	box-shadow: 3px 1px #bababa;
+	display: flex;
+	align-items: center;
+	font-family: 'Nunito', sans-serif;
+	background-color: white;
 }
 
 .password-outer {
@@ -115,20 +132,57 @@
 	left: 50%;
 }
 
+// #error-arrow {
+// 	width:200px;
+// 	height:100px;
+// 	background-color:blue;
+// 	position:relative;
+// }
+
+// NEW
+// #error-arrow {
+// border: 0.5px solid black;
+//     padding: 4px;
+//     border-radius: 4px;
+//     box-shadow: 3px 1px grey;
+//     /* width: 200px; */
+//     /* height: 100px; */
+//     /* background-color: blue; */
+//     position: relative;
+// }
+// END NEW
+
+// #error-arrow:after {
+// 	content:"";
+// 	border-color: #ff0 transparent transparent transparent;
+// 	border-style:solid;
+// 	border-width:20px;
+// 	width:0;
+// 	height:0;
+// 	position:absolute;
+// 	bottom:-40px;
+// 	left:20px
+// }
+
+.ex-point {
+	color: white;
+	background-color: orange;
+	margin-right: 5px;
+	font-size: 15px;
+	padding: 3px 7px;
+	border-radius: 2px;
+}
+
 .errors-login {
 	position: absolute;
-	margin-left: 15px;
-	margin-top: -40px;
-	// border: 2px solid black;
-	// padding: 4px;
-	// border-radius: 4px;
+	margin-left: 46px;
+	margin-top: 106px;
 }
 
 .errors-signup {
 	position: absolute;
-	top: 13px;
-	margin-left: 99px;
-
+	top: 318px;
+	margin-left: 126px;
 }
 
 .box-3 {
@@ -197,13 +251,11 @@
 .logo-container {
 	display: flex;
 	align-items:baseline;
-	// text-align: center;
 	margin-left: 70px;
 }
 
 .mindbind-title-one {
 	display: inline;
-	// padding-left: 15px;
 	font-size: 20px;
 	color: white;
 	font-weight: bolder;

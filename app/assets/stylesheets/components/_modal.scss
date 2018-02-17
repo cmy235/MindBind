@@ -76,6 +76,7 @@
 }
 
 .input-username {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 5px;
   padding: 15px;
   background: #f2f2f2;
@@ -85,6 +86,7 @@
 }
 
 .input-password {
+  font-family: 'Montserrat', sans-serif;
   margin-top: 5px;
   padding: 15px;
   background: #f2f2f2;
@@ -111,14 +113,18 @@
 
 
 .fa-times-circle {
-  fill: black;
   position: absolute;
-  top: -4px;
-  right: -4px;
-  color: #29a5dc;
-  border-color: 3px #29a5dc;
-  /* https://stackoverflow.com/questions/17540383/is-it-possible-to-color-the-fontawesome-icon-colors */
+  top: -15px;
+  right: -15px;
+  border-radius: 50px;
+  color: black;
+  background-color: #29a5dc;
+  font-size: 40px;
+  display: block;
+  height: 40px;
+  padding: 5px;
 }
+
 
 .fa-times-circle:hover {
   // pops out
@@ -145,20 +151,28 @@
 }
 
 
-.name-wrapper {
+.name-container {
   font-family: 'Montserrat', sans-serif;
   text-align: left;
-  // don't grow, don't shrink, start at 120px width
   flex: 1 0 120px;
   display: flex;
   justify-content: space-between;
   margin-left: 60px;
   margin-right: 60px;
   // background: #f2f2f2;
+  align-items: flex-end;
   color: #555555;
 }
 
-.name-wrapper > li {
+.name-wrapper-first > li {
+  width: 61%;
+  padding: 20px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.name-wrapper-last > li {
+  width: 61%;
   padding: 20px;
   overflow: hidden;
   background: #f2f2f2;

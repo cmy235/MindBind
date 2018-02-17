@@ -46,38 +46,29 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     this.props.clearErrors();
-    // throw error unless this.state.password == this.state.passwordConfirm
     const user = this.state;
-    // if ((this.state.password == this.state.passwordConfirm) || (this.state.passwordConfirm.length == 0)) {
-      this.props.processForm({user});
-      // .then(
-      //   // () => this.props.history.push('/decks'),
-      //   // () => this.props.closeModals()
-      //   // () => this.props.clearErrors()
-      // );
-    // } else {
-    //   this.renderErrors("Passwords must match");
-    // }
+    this.props.processForm({user});
   }
 
   renderErrors() {
-    debugger
     if  ((this.state.password != this.state.passwordConfirm) && (this.state.passwordConfirm.length != 0)) {
       return(
-        <ul>
-          <li className="password-outer">Passwords must match
+        <ul className="err-container">
+
+          <li className="error-outer"><i className="fas fa-exclamation ex-point"></i>Passwords must match
           </li>
         </ul>
       );
     } else if (this.props.errors){
       return(
-        <ul>
+
+        <ul className="err-container">
+
           {this.props.errors.map((error, i) => (
             <li className="error-outer"
-              key={`error-${i}`}>
+              key={`error-${i}`}><i className="fas fa-exclamation ex-point"></i>
               {error}
             </li>
           ))}
@@ -87,7 +78,6 @@ class SessionForm extends React.Component {
   }
 
   displayLogin() {
-    debugger
     return (
       <div className="modal-overlay">
         <div class="login-container">
@@ -121,7 +111,7 @@ class SessionForm extends React.Component {
             <hr/>
             <input className="modal-login-button" type="submit" value="Login"></input>
             <div onClick={() => this.closeAndClear()}>
-              <i class="fas fa-times-circle icon-star-empty"></i>
+              <i class="fas fa-times-circle icon-star"></i>
             </div>
 
             <button onClick={() => (this.setState({
@@ -149,24 +139,28 @@ class SessionForm extends React.Component {
                 {this.renderErrors()}
               </div>
               <ul className="flex-outer">
-                <section className="name-wrapper">
-                  <li>
-                    <input type="text"
-                      placeholder="First Name"
-                      value={this.state.firstname}
-                      onChange={this.update('firstname')}
-                      className="input-firstname"
-                      />
-                  </li>
-                  <br/>
-                  <li>
-                    <input type="text"
-                      placeholder="Last Name"
-                      value={this.state.lastname}
-                      onChange={this.update('lastname')}
-                      className="input-lastname"/>
-                  </li>
-                </section>
+                <div className="name-container">
+                  <section className="name-wrapper-first">
+                    <li>
+                      <input type="text"
+                        placeholder="First Name"
+                        value={this.state.firstname}
+                        onChange={this.update('firstname')}
+                        className="input-firstname"
+                        />
+                    </li>
+                  </section>
+                  <section className="name-wrapper-last">
+                    <br/>
+                    <li>
+                      <input type="text"
+                        placeholder="Last Name"
+                        value={this.state.lastname}
+                        onChange={this.update('lastname')}
+                        className="input-lastname"/>
+                    </li>
+                  </section>
+                </div>
 
                 <br/>
                 <li>
@@ -200,7 +194,7 @@ class SessionForm extends React.Component {
                 <hr/>
                 <input className="modal-signup-button" type="submit" value="Sign Up"></input>
                 <div onClick={() => this.closeAndClear()}>
-                  <i class="fas fa-times-circle icon-star-empty"></i>
+                  <i class="fas fa-times-circle icon-star"></i>
                 </div>
               </ul>
             </form>

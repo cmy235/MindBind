@@ -5,6 +5,8 @@ import CardFront from './card_front';
 import CardBack from './card_back';
 import CardDelete from './card_delete';
 import { Link } from 'react-router-dom';
+import onClickOutside from "react-onclickoutside";
+
 
 class CardsIndex extends React.Component {
   constructor(props) {
@@ -15,7 +17,6 @@ class CardsIndex extends React.Component {
       cardsArray: []
     };
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleCard = this.toggleCard.bind(this);
   }
 
@@ -25,6 +26,12 @@ class CardsIndex extends React.Component {
     });
   }
 
+
+  handleClickOutside(evt) {
+    this.setState({
+      showDeleteButton: false
+    });
+  }
 
 
   render() {
@@ -61,6 +68,7 @@ class CardsIndex extends React.Component {
                 Study
               </Link> : "" }
               <CardDelete
+                hideDeleteDeck={this.props.hideDelete}
                 deleteCard={this.props.deleteCard}
                 card = {card}/>
             </li>
@@ -83,11 +91,11 @@ class CardsIndex extends React.Component {
   }
 }
 
-export default CardsIndex;
+export default onClickOutside(CardsIndex);
 
 {/*  when you update the settings button:
 
-  // should have dekc info, etc.
+  // should have deck info, etc.
 
   { this.state.showDeleteButton ?
   <button className="delete-card-button"

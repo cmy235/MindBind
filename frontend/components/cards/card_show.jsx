@@ -12,7 +12,6 @@ import CircularProgressbar from 'react-circular-progressbar';
 class CardShow extends React.Component {
   constructor(props){
     super(props);
-    debugger
     this.state = {
       cards: props.cards,
       back: false,
@@ -48,7 +47,6 @@ class CardShow extends React.Component {
   }
 
   render(){
-    debugger
     return(
       <div className="card-show-container">
         <div className="personal">
@@ -176,28 +174,3 @@ class CardShow extends React.Component {
 }
 
 export default CardShow;
-
-{/* inside flashcard container above
-
-  <FlipCard width={"50%"} height={"50%"}
-  onClick={() => this.setState({ back: !this.state.back })}
-  frontChild={<CardFront question={card.front} />}
-  backChild={<CardBack answer={card.back} />}
-  flipped={this.state.back}
-  />
-
-  <div className="card-text">
-  <div class="card-front">
-  { card ? <CardFront front={card.front}/> : "" }
-  </div>
-  <div class="card-back">
-  { card ? <CardBack back={card.back}/> : "" }
-  </div>
-  </div>
-
-
-
-  ALSO:  add link
-
-
-  */}

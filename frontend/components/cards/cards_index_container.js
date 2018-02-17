@@ -10,15 +10,19 @@ const mapStateToProps = (state, ownProps) => {
   debugger
   return {
     cards: state.entities.cards,
-    deck: (state.entities.deck[ownProps.match.params.deckId]) || { cardIds: [] }
+    deck: (state.entities.deck[ownProps.match.params.deckId]) || { cardIds: [] },
+    hideDelete: ownProps.hideDelete
   };
 };
 
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchDeck: (deckId) => dispatch(requestDeck(deckId)),
-  addCard: (card) => dispatch(addCard(card)),
-  deleteCard: (cardId) => dispatch(deleteCard(cardId))
-});
+const mapDispatchToProps = (dispatch) => {
+  debugger
+  return {
+    fetchDeck: (deckId) => dispatch(requestDeck(deckId)),
+    addCard: (card) => dispatch(addCard(card)),
+    deleteCard: (cardId) => dispatch(deleteCard(cardId))
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(cardsIndex));

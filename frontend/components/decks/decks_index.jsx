@@ -19,7 +19,6 @@ class DecksIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestDecks();
-    debugger
     if (this.props && this.props.decks.length != 0) {
       this.props.history.push(`/decks/${this.props.decks[0].id}`);
     }
@@ -32,7 +31,6 @@ class DecksIndex extends React.Component {
   }
 
   render (){
-    debugger
     const addDeck = (this.state.showDeckForm ?
       <AddDeckContainer
         showModal={this.state.showDeckForm}

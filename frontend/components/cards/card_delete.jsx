@@ -1,5 +1,7 @@
 import React from 'react';
 import CardsIndex from './cards_index';
+import onClickOutside from "react-onclickoutside";
+
 
 class CardDelete extends React.Component {
   constructor(props){
@@ -10,15 +12,22 @@ class CardDelete extends React.Component {
     };
   }
 
-  toggleDelete (){
+  toggleDelete () {
     this.setState({
       showDeleteButton: !this.state.showDeleteButton
     });
   }
 
+  handleClickOutside(evt) {
+    this.props.hideDeleteDeck();
+    this.setState({
+      showDeleteButton: false
+    });
+  }
+
+
   render(){
     const card = this.props.card;
-    debugger
     return(
       <div>
         <div className="card-settings-icon"
@@ -41,4 +50,4 @@ class CardDelete extends React.Component {
 
 }
 
-export default CardDelete;
+export default onClickOutside(CardDelete);

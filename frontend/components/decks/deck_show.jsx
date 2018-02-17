@@ -3,18 +3,30 @@ import DeckShowContainer from './deck_show_container';
 import { withRouter } from 'react-router-dom';
 import CardsIndexContainer from '../cards/cards_index_container';
 import { Route } from 'react-router-dom';
+import onClickOutside from "react-onclickoutside";
+
 
 
 class DeckShow extends React.Component {
+
   constructor(props){
     super(props);
     this.fetchDeck = this.props.fetchDeck.bind(this);
 
     this.toggleDelete = this.toggleDelete.bind(this);
+    this.hideDelete = this.hideDelete.bind(this);
 
     this.state = {
       showDropdown: false
     };
+  }
+
+  handleClickOutside(evt) {
+    this.setState({showDropdown: false});
+  }
+
+  hideDelete() {
+    this.setState({showDropdown: false});
   }
 
   componentDidMount() {
@@ -32,6 +44,8 @@ class DeckShow extends React.Component {
     this.setState({showDropdown: !this.state.showDropdown});
   }
 
+
+
   render() {
     let deckName;
     let deckId;
@@ -41,8 +55,6 @@ class DeckShow extends React.Component {
     } else {
       deckName = "";
     }
-
-    debugger
 
     return (
       <div className="cards-container">
@@ -63,20 +75,15 @@ class DeckShow extends React.Component {
             }
           </div>
         </section>
-        <CardsIndexContainer />
+        <CardsIndexContainer
+          hideDelete = {() => this.hideDelete()}/>
       </div>
     );
   }
 }
 
 
-export default withRouter(DeckShow);
+export default withRouter(onClickOutside(DeckShow));
 
-
-
-
-
-
-//
-// {if (this.props.state.deck[this.props.match.params.deckId].title)}
-// {currentDeckName ? <h2> currentDeckName </h2> : ""}
+{/*
+  export default onClickOutside(withRouter(DeckShow)); */}

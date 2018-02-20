@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      passwordConfirm: ''
+      passwordConfirm: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.displayLogin = this.displayLogin.bind(this);
@@ -49,7 +49,13 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.clearErrors();
     const user = this.state;
-    this.props.processForm({user});
+    if (this.props.type === 'signup') {
+      if (this.state.password === this.state.passwordConfirm) {
+        this.props.processForm({user});
+      }
+    } else if (this.props.type === 'login') {
+      this.props.processForm({user});
+    }
   }
 
   renderErrors() {

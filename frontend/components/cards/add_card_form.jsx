@@ -10,9 +10,7 @@ class AddCardForm extends React.Component {
       front: "",
       back: ""
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleSubmit(e){

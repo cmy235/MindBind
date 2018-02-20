@@ -10,7 +10,6 @@ class BackButtons extends React.Component {
 
 
   render(){
-    debugger
 
     const index = this.props.deck ?
     ((this.props.index + 1) % this.props.length)
@@ -21,9 +20,8 @@ class BackButtons extends React.Component {
     (this.props.deck.cardIds[index])
     : 0;
 
-    debugger
     return(
-      <div className="back-button-outer">
+      <div>
         <div className="how-well">
           How well did you know this?
         </div>

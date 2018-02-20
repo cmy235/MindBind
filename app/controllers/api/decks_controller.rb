@@ -14,19 +14,23 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    # debugger
     user_decks = current_user.decks
     demo_decks = User.find_by(username: "demoUser").decks
     @decks = user_decks + demo_decks
-    # @decks = Deck.all
     render :index
   end
 
   def show
-    # next steps:
-    # onClick of deck in search results should be addOtherUserDeck action
+    # Next steps:
+    # onClick of deck in search results will be addOtherDeck action
     # @deck = current_user.decks.find(params[:id])
     # addOtherUserDeck adds current_user.id to author_id array
+    # @deck = Deck.find(params[:id])
+    # @deck = current_user.decks.find(params[:id])
+    # if @deck.nil?
+    #   @deck = User.find_by(username: "demoUser").decks.find(params[:id])
+    #   render :show
+    # end
     @deck = Deck.find(params[:id])
     render :show
   end
@@ -35,7 +39,6 @@ class Api::DecksController < ApplicationController
   end
 
   def destroy
-    # should be current_user.decks
     @deck = Deck.find(params[:id])
 
     if @deck
@@ -54,7 +57,6 @@ class Api::DecksController < ApplicationController
   private
 
   # category_id will be passed up in permit via a dropdown button
-
   def deck_params
     params.require(:deck).permit(:title)
   end

@@ -10,7 +10,7 @@
   grid-column-start: 1;
   grid-column-end: 2;
   background-color: black;
-  height: 94vh;
+  // height: 94vh;
 }
 
 .progress {
@@ -86,7 +86,8 @@
 
 .bottom-buttons {
   position: relative;
-  top: 3%;
+  // top: 3%;
+  top: -9%;
   height: 17%;
   margin: 49px;
 }
@@ -104,6 +105,7 @@
   align-items: center;
   position: relative;
   justify-content: center;
+  padding: 21.4px 21.4px;
 }
 
 .back-button-container {
@@ -117,8 +119,12 @@
 }
 
 .how-well {
-  position: relative;
-  top: -18%;
+  // position: relative;
+  // top: -150%;
+  // left: 35%;
+  position: absolute;
+  top: -55%;
+  left: 41%;
   text-align: center;
   color: #333333;
   font-family: 'Montserrat', sans-serif;
@@ -151,6 +157,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 25px;
 }
 
 .rank-2 {
@@ -163,6 +170,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 25px;
 }
 
 .rank-3 {
@@ -175,6 +183,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 25px;
 }
 
 .rank-4 {
@@ -187,6 +196,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 25px;
 }
 
 .rank-5 {
@@ -199,6 +209,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 25px;
 }
 
 .flashcard {

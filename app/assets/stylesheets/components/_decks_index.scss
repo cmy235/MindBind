@@ -5,12 +5,10 @@
 }
 
 .deck-title-container {
-  // margin-top: -57px;
   margin-top: 0px;
   margin-bottom: 10px;
   padding-right: 10px;
   height: 56px;
-  // border-right: #e8e8e8 solid 4px;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -48,6 +46,12 @@
   box-shadow: -1px 1px #dddddd;
   font-family: inherit;
   border-color: #dddddd;
+}
+
+.welcome-img {
+  height: 90%;
+  width: 90%;
+  margin: 40px;
 }
 
 
@@ -144,13 +148,13 @@
 .gray-bar {
   margin-top: 2px;
   position: relative;
-	// width: 70%;
+  // width: 70%;
   width: 200px;
-	height: 10px;
-	background: #acacac;
-	-moz-border-radius: 100px;
-	-webkit-border-radius: 100px;
-	border-radius: 100px;
+  height: 10px;
+  background: #acacac;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
   margin-bottom: 15px;
   margin-left: 10px;
 }
@@ -181,6 +185,34 @@
   font-size: 18px;
   font-weight: bolder;
   opacity: 1;
+}
+
+.img-text-1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  font-size: 36px;
+  color: white;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.background-img-container {
+  text-align: center;
+
+}
+
+
+.img-text-2 {
+  // text-align: center;
+  position: relative;
+  top: -90px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  left: 7%;
+  color: #29a5dc;
+  font-weight: bolder;
 }
 
 .form-input {

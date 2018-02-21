@@ -25,7 +25,6 @@
 }
 
 .card-flip-container {
-  // background-color: red;
 }
 
 .deck-name {
@@ -64,8 +63,6 @@
 .card-list-inner {
   width: 83%;
   display: flex;
-  // justify-content: space-between;
-  // align-items: center;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
@@ -87,7 +84,6 @@
 .study-set {
   position: absolute;
   left: 650px;
-  // padding: 20px 10px;
   display: flex;
   align-items: center;
   background-color: #29a5dc;

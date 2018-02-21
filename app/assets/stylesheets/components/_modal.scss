@@ -127,8 +127,8 @@
 
 
 .fa-times-circle:hover {
-  // pops out
-  background-color: white;
+  font-size: 43px;
+  height: 43px;
 }
 
 .flex-outer li {
@@ -204,7 +204,6 @@
 }
 
 .signup-name {
-  // flex: 0 0 100px;
   max-width: 100px;
   display: block;
   background-color: #29a5dc;

@@ -45,9 +45,9 @@ class AddCardForm extends React.Component {
           value={this.state.back}
           onChange={this.update('back')}
           className="add-card-input"
-        />
+          />
 
-      <input className="add-card-button" type="submit" value="Add Card!"></input>
+        <input className="add-card-button" type="submit" value="Add Card!"></input>
 
       </form>
     );

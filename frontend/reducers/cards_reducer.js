@@ -24,7 +24,7 @@ const cardsReducer = (state = {}, action) => {
       delete newState[action.cardId];
       return newState;
       // case REMOVE_DECK:
-      // debugger
+      // 
       //   newState = Object.assign({}, state);
       //   delete newState[action.payload.deck.id];
       //   return newState;

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return {
     cards: state.entities.cards,
     deck: (state.entities.deck[ownProps.match.params.deckId]) || { cardIds: [] },
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
+  
   return {
     fetchDeck: (deckId) => dispatch(requestDeck(deckId)),
     addCard: (card) => dispatch(addCard(card)),

@@ -13,7 +13,7 @@ const deckReducer = (state = {}, action) => {
       newState = Object.assign({}, state, {[action.deck.id]: action.deck});
       return newState;
     case REMOVE_DECK:
-    debugger
+    
       newState = Object.assign({}, state);
       delete newState[action.payload.deck.id];
       return newState;

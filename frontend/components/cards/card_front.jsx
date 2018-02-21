@@ -9,7 +9,7 @@ class CardFront extends React.Component {
 
 
   render() {
-    debugger
+    
     return(
       <div className="flip-page">
         <div className="card-text">

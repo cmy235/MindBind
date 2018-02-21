@@ -48,7 +48,7 @@ class DecksIndex extends React.Component {
             <br/>
             <img className="welcome-img" src={window.img.filler}>
             </img>
-              <div className="img-text-1">Learn faster, the MindBind way. Click a deck to begin!  </div>
+            <div className="img-text-1">Learn faster, the MindBind way. Click a deck to begin!  </div>
             <br/>
           </div>
           : "" );

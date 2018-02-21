@@ -1,6 +1,4 @@
 .cards-container {
-  // left: 34%;
-  // width: 62vw;
   position: absolute;
   top: 65px;
   bottom: 0;
@@ -24,7 +22,10 @@
   margin-right: 7px;
 }
 
-.card-flip-container {
+.add-card {
+  position: absolute;
+  top: 8%;
+  left: 62%;
 }
 
 .deck-name {
@@ -46,7 +47,29 @@
   padding: 5px 10px;
   border-top: 1px solid #eeeeee;
   padding-top: 20px;
+}
 
+span.toggle-card {
+  border-radius: 7px 0px 0px 7px;
+  color: white;
+
+}
+
+.toggle-card {
+  background-color: #5cb85c;
+  font-family: 'Montserrat', sans-serif;
+  width: 136px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 45%;
+}
+
+.add-cards {
+  margin-left: 14px;
+  font-size: 17.5px;
 }
 
 
@@ -72,6 +95,10 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.card-icon {
+  margin-left: 5px;
 }
 
 .list-container {
@@ -148,7 +175,6 @@
   white-space: nowrap;
   overflow: hidden;
   padding-right: 40%;
-  // width: 100%;
 }
 
 
@@ -157,7 +183,6 @@
   background-color: #ec971f;
   border-color: #d58512;
   opacity: 0.75;
-  // background-color: #29a5dc;
   border-radius: 2px;
   width: 20%;
   height: 10%;
@@ -170,15 +195,10 @@
   opacity: 1;
 }
 
-#card-back {
-}
-
 .cards-display {
   display: flex;
   align-items: baseline;
 }
-
-
 
 .add-card-form {
   width: 63%;

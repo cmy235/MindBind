@@ -13,7 +13,7 @@ class CardsIndex extends React.Component {
     super(props);
 
     this.state = {
-      showCardForm: false,
+      cardForm: false,
       cardsArray: []
     };
 
@@ -22,7 +22,7 @@ class CardsIndex extends React.Component {
 
   toggleCard (){
     this.setState({
-      cardsArray: true
+      cardForm: true
     });
   }
 
@@ -35,11 +35,11 @@ class CardsIndex extends React.Component {
 
 
   render() {
-
-    const addCard = (this.state.showDeckForm ?
+    debugger
+    const addCard = (this.state.cardForm ?
       <AddCardContainer
-        showModal={this.state.showCardForm}
-        closeCardForm={() => this.setState({showCardForm: false})}
+        showModal={this.state.cardForm}
+        closeCardForm={() => this.setState({cardForm: false})}
         /> :
         null);
 
@@ -79,13 +79,25 @@ class CardsIndex extends React.Component {
 
     return (
       <div className="card-list-outer">
+
+          <span className="toggle-card"
+            onClick={() => this.toggleCard()}>
+            <i className="fas fa-plus btn fa-1x card-icon" aria-hidden="true">
+            </i>
+            <div className="add-cards">
+              Add Cards
+            </div>
+          </span>
+
+
+
         <div className="cards">
           Cards
         </div>
         <div className="card-list-container">
           {cards}
         </div>
-        <AddCardContainer />
+        {addCard}
       </div>
     );
   }
@@ -93,16 +105,22 @@ class CardsIndex extends React.Component {
 
 export default onClickOutside(CardsIndex);
 
-{/*  when you update the settings button:
-
-  // should have deck info, etc.
-
-  { this.state.showDeleteButton ?
-  <button className="delete-card-button"
-  onClick={card ? () => this.props.deleteCard(card.id) : ""}
-  >x</button>
-  : ""
-  }
-
+{/*
+  // where the {addCard} const is NOW!
+  <AddCardContainer />
 
   */}
+
+  {/*  when you update the settings button:
+
+    // should have deck info, etc.
+
+    { this.state.showDeleteButton ?
+    <button className="delete-card-button"
+    onClick={card ? () => this.props.deleteCard(card.id) : ""}
+    >x</button>
+    : ""
+    }
+
+
+    */}

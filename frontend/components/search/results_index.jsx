@@ -8,7 +8,7 @@ class ResultsIndex extends React.Component {
   }
 
   render() {
-    debugger
+    
     const decks = this.props.decks.map( (deck) => {
       return(
         <ul className="deck-blurb">

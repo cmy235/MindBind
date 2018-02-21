@@ -10,7 +10,7 @@ class CardBack extends React.Component {
 
 
   render() {
-    debugger
+    
     return(
       <div>
         <div className="card-text">

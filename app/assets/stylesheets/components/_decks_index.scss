@@ -28,9 +28,10 @@
   height: 40px;
   text-align: center;
   position: relative;
-  border-radius: 7px;
+  border-radius: 0px 7px 7px 0px;
   color: white;
   border-color: #46b8da;
+
 }
 
 .fa-set {
@@ -141,7 +142,7 @@
 
 .dropdown {
   position: absolute;
-  left: 65%;
+  left: 58%;
   top: 20px;
 }
 

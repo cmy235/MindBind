@@ -5,7 +5,7 @@ import { deleteDeck } from '../../actions/deck_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-debugger
+
   return {
     deck: state.entities.deck[ownProps.match.params.deckId],
     deckName: state.entities.title

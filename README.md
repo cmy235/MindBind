@@ -13,8 +13,8 @@ Users can log into the website and see their home page.  Decks already added by 
 
 ## Specific features
 
-Add/remove cards to a deck
---
+### Add/remove cards to a deck
+
 
 When a deck is clicked on, the cards are displayed along with a form to add another card.  This was done using a modal, where the showDeckForm is set to either true/false in local state.
 
@@ -32,10 +32,9 @@ Also on the decks index page is a link to the specific deckId, which renders the
 ```
 Cards are related to decks via a one-to-many association in the database.  The redux state is updated with these relationships based on the deckId of the current page it is on. (i.e., if the page is /decks/42 then the add card will be submitted to the deck with id=42).
 
-## Specific features
 
 ### Study deck
---
+
 
 User can navigate to a a deck study page, where cards are looped through based on the original card clicked on.
 
@@ -46,7 +45,7 @@ After a card is flipped, a prompt requires the user to rank 1 - 5 based on how w
 ![text](https://github.com/cmy235/MindBind/blob/master/app/assets/images/1b.png)
 
 ### Search decks/categories
---
+
 
 The search function uses an AJAX request to a CategoriesController.
 
@@ -75,4 +74,4 @@ The query results are stored in redux state under key "query".
 Future plans include:
 * Allow new decks to be added to a category
 * Change local modals' react state to redux global state
-* Further implement and style the search page
+* Add user profile functionality to allow users to navigate to other user profiles

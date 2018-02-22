@@ -277,7 +277,7 @@ cy = User.create!({
                                                                                     'deck_id' => d5.id
                                                                                     })
                                                                                   c103 = Card.create!({
-                                                                                    'front'=> "Who was a legendary founder of Rome?",
+                                                                                    'front'=> "Who was the legendary founder of Rome?",
                                                                                     'back'=> "Romulus",
                                                                                     'deck_id' => d5.id
                                                                                     })

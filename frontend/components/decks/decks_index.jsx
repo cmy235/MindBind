@@ -4,6 +4,8 @@ import AddDeckContainer from './add_deck_container';
 import AddDeckForm from './add_deck_form';
 import CardsIndexContainer from '../cards/cards_index_container';
 import { Link, withRouter } from 'react-router-dom';
+import onClickOutside from "react-onclickoutside";
+
 
 class DecksIndex extends React.Component {
   constructor(props){
@@ -34,6 +36,13 @@ class DecksIndex extends React.Component {
       showDeckForm: !this.state.showDeckForm
     });
   }
+
+  handleClickOutside(evt) {
+    this.setState({
+      showDeckForm: false
+    });
+  }
+
 
   render (){
     const addDeck = (this.state.showDeckForm ?
@@ -102,7 +111,7 @@ class DecksIndex extends React.Component {
         }
       }
 
-      export default DecksIndex;
+      export default onClickOutside(DecksIndex);
 
       {/*
         const showBackground = (this.props.link.length > 7 ?

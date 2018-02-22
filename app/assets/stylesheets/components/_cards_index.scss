@@ -15,11 +15,12 @@
 .add-card-input {
   border: 1px solid #cccccc;
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: 18px;
   border-radius: 4px;
   padding-top: 8px;
   margin-top: 2px;
-  margin-right: 7px;
+  margin-right: 17px;
+  width: 20%;
 }
 
 .add-card {
@@ -52,7 +53,9 @@
 span.toggle-card {
   border-radius: 7px 0px 0px 7px;
   color: white;
-
+  position: absolute;
+  left: 550px;
+  top: 20px;
 }
 
 .toggle-card {
@@ -201,14 +204,23 @@ span.toggle-card {
 }
 
 .add-card-form {
+  position: fixed;
+  bottom: 40%;
+  left: 20%;
+  /* right: 0; */
+  z-index: 5000;
+  background: #f5f5f5;
   width: 63%;
   height: 10%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 25px;
   border: 3px solid #ff8a47;
-  border-radius: 13px;
+  /* border-radius: 13px; */
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+
 }
 
 .card-list-item {

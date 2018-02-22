@@ -34,7 +34,9 @@ class AddDeckForm extends React.Component {
 
   render() {
     return(
-      <div className="modal-overlay">
+      <div>
+        <div onClick={() => this.props.closeDeckModal()} className="modal-overlay">
+        </div>
         <div className="add-deck-form">
           <form onSubmit={this.submitNewDeck}>
             <p className="add-deck-title">New Deck</p>
@@ -56,7 +58,6 @@ class AddDeckForm extends React.Component {
           </form>
         </div>
       </div>
-
     );
   }
 }

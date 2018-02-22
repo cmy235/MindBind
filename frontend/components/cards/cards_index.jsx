@@ -22,20 +22,22 @@ class CardsIndex extends React.Component {
 
   toggleCard (){
     this.setState({
-      cardForm: true
+      cardForm: !this.state.cardForm
     });
   }
 
 
   handleClickOutside(evt) {
     this.setState({
-      showDeleteButton: false
+      showDeleteButton: false,
+      cardForm: false
     });
   }
 
 
   render() {
     debugger
+
     const addCard = (this.state.cardForm ?
       <AddCardContainer
         showModal={this.state.cardForm}

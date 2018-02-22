@@ -19,6 +19,7 @@ class AddCardForm extends React.Component {
     const deckId = this.props.match.params.deckId;
     let cardObj = Object.assign({}, card, {deck_id: deckId});
     this.props.addCard(cardObj);
+    this.props.closeCardForm();
   }
 
   update(field) {
@@ -27,29 +28,41 @@ class AddCardForm extends React.Component {
     });
   }
 
+  handleClickOutside(evt) {
+    this.props.closeCardForm();
+  }
+
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}
-        className="add-card-form">
+      <div>
+        <div className="modal-overlay"
+          onClick={() => this.props.closeCardForm()}>
+        </div>
 
-        <input type="text"
-          placeholder="There are __ continents?"
-          value={this.state.front}
-          onChange={this.update('front')}
-          className="add-card-input"
-          />
+        <form onSubmit={this.handleSubmit}
+          className="add-card-form">
 
-        <input type="text"
-          placeholder="7"
-          value={this.state.back}
-          onChange={this.update('back')}
-          className="add-card-input"
-          />
+          <textarea rows="4" cols="50"
+            placeholder="e.g., In which country can you find 8 of the 10 highest mountains?"
+            value={this.state.front}
+            onChange={this.update('front')}
+            className="add-card-input"
+            ></textarea>
+          <textarea rows="4" cols="50"
 
-        <input className="add-card-button" type="submit" value="Add Card!"></input>
+            placeholder="Nepal"
+            value={this.state.back}
+            onChange={this.update('back')}
+            className="add-card-input"
+            ></textarea>
 
-      </form>
+
+          <input className="save-button" type="submit" value="Add Card!"></input>
+
+        </form>
+      </div>
+
     );
   }
 

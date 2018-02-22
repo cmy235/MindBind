@@ -142,7 +142,7 @@
 
 .dropdown {
   position: absolute;
-  left: 58%;
+  left: 684px;
   top: 20px;
 }
 
@@ -185,6 +185,9 @@
   font-size: 18px;
   font-weight: bolder;
   opacity: 1;
+  z-index: 5000;
+  border: 3px solid #ff8a47;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .img-text-1 {
@@ -220,7 +223,7 @@
 .form-input {
   border: 1px solid #cccccc;
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: 18px;
   border-radius: 4px;
   padding-top: 8px;
 }
@@ -235,7 +238,7 @@
   border: 1px solid transparent;
   // close modal on this
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   border-radius: 3px;
   background: #acacac;
@@ -246,7 +249,7 @@
   border: 1px solid transparent;
   margin: 7px;
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   border-radius: 3px;
   background: #29a5dc;
